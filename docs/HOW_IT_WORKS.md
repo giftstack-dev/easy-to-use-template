@@ -31,7 +31,7 @@ The project is structured with complete modularity so that each template can fun
 │   ├── HOW_IT_WORKS.md         # This technical deep-dive
 │   └── INTERVIEW_NOTES.md      # Engineering interview questions & answers
 ├── README.md                   # Project overview & documentation
-├── LICENSE                     # MIT License (2026 Eseoghene Gift-Asisisi Asisisi)
+├── LICENSE                     # MIT License (2026 Frontdoor HTML Templates)
 ├── .nojekyll                   # Prevents Jekyll preprocessing on GitHub Pages
 └── .gitignore                  # Git exclusions
 ```

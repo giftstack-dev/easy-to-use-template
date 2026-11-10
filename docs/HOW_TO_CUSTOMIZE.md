@@ -34,11 +34,11 @@ Look near line 30 for the navigation bar:
 ```
 
 ### B. Nigerian Phone Number
-Search for `0800 000 0000`:
+Search for `07060725593`:
 ```html
 <!-- BEFORE -->
 <!-- REPLACE: Phone Number -->
-<a href="tel:08000000000">Call Us: 0800 000 0000</a>
+<a href="tel:07060725593">Call Us: 07060725593</a>
 
 <!-- AFTER -->
 <a href="tel:08012345678">Call Us: 0801 234 5678</a>
@@ -53,14 +53,14 @@ WhatsApp click-to-chat links use the international country code format **without
 ```html
 <!-- BEFORE -->
 <!-- REPLACE: WhatsApp Link -->
-<a href="https://wa.me/2348000000000?text=Hello%20Adaeze%20Couture,%20I%20want%20to%20book%20a%20fitting">
+<a href="https://wa.me/2347060725593?text=Hello%20Adaeze%20Couture,%20I%20want%20to%20book%20a%20fitting">
 
 <!-- AFTER -->
 <a href="https://wa.me/2348031234567?text=Hello%20Blessing%20Designs,%20I%20want%20to%20book%20a%20fitting">
 ```
 
 ### D. Email Address & Location
-Search for `hello@example.com` and `Delta State, Nigeria`:
+Search for `ese.dev13@gmail.com`:
 ```html
 <!-- REPLACE: Email Address -->
 <a href="mailto:contact@blessingdesigns.ng">contact@blessingdesigns.ng</a>

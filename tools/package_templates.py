@@ -46,9 +46,9 @@ QUICK START IN 4 SIMPLE STEPS:
    Open index.html in any text editor (such as Notepad, VS Code,
    or TextEdit). Look for the <!-- REPLACE --> comments:
    - Replace the business name with your business name.
-   - Replace the phone number (e.g., 0800 000 0000) with yours.
+   - Replace the phone number (e.g., 07060725593) with yours.
    - Replace WhatsApp links:
-     Change '2348000000000' to your phone number in international format
+     Change '2347060725593' to your phone number in international format
      (for Nigeria, start with 234 and drop the first 0, e.g. 2348012345678).
    - Replace the email address and city location.
 

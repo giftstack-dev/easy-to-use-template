@@ -15,7 +15,7 @@
 - **WhatsApp-First Conversion**: Click-to-chat WhatsApp buttons with pre-filled, URL-encoded Nigerian messages on every service, product card, and package.
 - **Layered Photo Resilience**: CSS background layers (`background: var(--photo), linear-gradient(...)`) ensure that if an image is missing, slow, or offline, a beautiful branded gradient displays with no broken-image icon.
 - **Pure CSS Interactions**: Fixed top bars with smooth checkbox mobile hamburger menus, interactive multi-category filtering powered by CSS `:has()`, accessible dialog modals powered by CSS `:target`, interactive price list tabs, and native `<details>`/`<summary>` accordions.
-- **Nigerian Demo Defaults**: Pre-configured with Nigerian phone formats (`0800 000 0000`), international WhatsApp links (`https://wa.me/2348000000000`), Naira pricing (`₦`), and local context across Delta State, Lagos, and beyond.
+- **Nigerian Demo Defaults**: Pre-configured with Nigerian phone formats (`07060725593`), international WhatsApp links (`https://wa.me/2347060725593`), Naira pricing (`₦`), and local context across Nigeria and worldwide.
 
 ---
 
@@ -106,4 +106,4 @@ Each generated ZIP contains:
 
 ## License
 
-MIT License &copy; 2026 Eseoghene Gift-Asisisi Asisisi. See [`LICENSE`](LICENSE) for full details.
+MIT License &copy; 2026 Frontdoor HTML Templates. See [`LICENSE`](LICENSE) for full details.
