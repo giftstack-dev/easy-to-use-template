@@ -1,0 +1,22 @@
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# Build Artifacts & Logs
+dist/
+build/
+*.log
+
+# Node dependencies (if cloned into environments with npm)
+node_modules/
+.npm/
+
+# IDE / Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment files
+.env
+.env.local

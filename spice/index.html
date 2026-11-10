@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mama Put & Co Gourmet Catering | Authentic Nigerian Cuisine & Events in Delta State</title>
+  <meta name="description" content="Mama Put & Co Gourmet Catering delivers authentic firewood party jollof, succulent grills, gourmet small chops, and premium event catering in Delta State, Nigeria.">
+  <meta property="og:title" content="Mama Put & Co Gourmet Catering | Delta State, Nigeria">
+  <meta property="og:description" content="Authentic firewood jollof, small chops, and bespoke catering packages for weddings, birthdays, and corporate events.">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍲</text></svg>">
+
+  <!-- Google Fonts: DM Serif Display & Nunito -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="top">
+
+  <!-- =======================================================================
+       1. FIXED TOP NAVIGATION BAR
+       ======================================================================= -->
+  <header class="top-nav">
+    <div class="container nav-wrapper">
+      <!-- REPLACE: Brand Name -->
+      <a href="#top" class="brand-logo">MAMA PUT <span>& CO</span></a>
+
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation menu">
+      <label for="nav-toggle" class="nav-toggle-label">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="#menu" class="nav-link">Menu & Prices</a></li>
+          <li><a href="#packages" class="nav-link">Party Packs</a></li>
+          <li><a href="#how-to-order" class="nav-link">How to Order</a></li>
+          <li><a href="#gallery" class="nav-link">Gallery</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li><a href="#faq" class="nav-link">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-cta">
+        <!-- REPLACE: WhatsApp Link -->
+        <a href="https://wa.me/2348000000000?text=Hello%20Mama%20Put%20&%20Co,%20I%20want%20to%20place%20a%20food%20order" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          Order on WhatsApp
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- =====================================================================
+         2. HERO SECTION
+         ===================================================================== -->
+    <section class="hero-section" aria-labelledby="hero-heading">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="section-tag">Gourmet Catering · Delta State, Nigeria</span>
+          <!-- REPLACE: Main Headline -->
+          <h1 id="hero-heading" class="hero-title">Smoky party jollof and gourmet catering for celebrations.</h1>
+          <!-- REPLACE: Description -->
+          <p class="hero-desc">
+            From intimate birthday feasts to 1,000-guest grand weddings, Mama Put & Co delivers mouthwatering Nigerian classics cooked with firewood flavor and five-star hygiene.
+          </p>
+
+          <div class="hero-actions">
+            <!-- REPLACE: WhatsApp Link -->
+            <a href="https://wa.me/2348000000000?text=Hello%20Mama%20Put%20&%20Co,%20I%20want%20to%20order%20for%20my%20event" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              Order on WhatsApp
+            </a>
+            <a href="#packages" class="btn btn-outline">View Party Packs</a>
+          </div>
+
+          <div class="hero-trust">
+            <div class="trust-item">
+              <strong>50,000+</strong>
+              <span>Plates Served</span>
+            </div>
+            <div class="trust-item">
+              <strong>350+</strong>
+              <span>Weddings Catered</span>
+            </div>
+            <div class="trust-item">
+              <strong>100%</strong>
+              <span>On-Time Event Delivery</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-photo-wrap">
+          <div class="hero-photo" role="img" aria-label="Mama Put and Co signature party jollof with fried plantain and peppered beef"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         3. MENU TABS (Pure CSS with :has())
+         5 Categories: Rice & Stews, Grills, Small Chops, Drinks, Party Packs
+         ===================================================================== -->
+    <section id="menu" class="menu-section scroll-fade" aria-labelledby="menu-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">A La Carte & Platters</span>
+          <h2 id="menu-heading" class="section-title">The Gourmet Menu</h2>
+          <p class="section-desc" style="margin: 0 auto;">
+            Cooked fresh daily with locally sourced ingredients, native herbs, and zero shortcuts.
+          </p>
+        </div>
+
+        <div class="menu-wrapper">
+          <input type="radio" name="spice-tab" id="tab-rice" class="tab-radio" checked>
+          <input type="radio" name="spice-tab" id="tab-grills" class="tab-radio">
+          <input type="radio" name="spice-tab" id="tab-chops" class="tab-radio">
+          <input type="radio" name="spice-tab" id="tab-drinks" class="tab-radio">
+          <input type="radio" name="spice-tab" id="tab-packs" class="tab-radio">
+
+          <div class="menu-tabs">
+            <label for="tab-rice" class="menu-tab-btn">Rice & Stews</label>
+            <label for="tab-grills" class="menu-tab-btn">Peppered Grills</label>
+            <label for="tab-chops" class="menu-tab-btn">Small Chops</label>
+            <label for="tab-drinks" class="menu-tab-btn">Artisan Drinks</label>
+            <label for="tab-packs" class="menu-tab-btn">Family Bowls</label>
+          </div>
+
+          <!-- GROUP: RICE -->
+          <div class="menu-group" data-cat="rice">
+            <div class="menu-grid">
+              <div class="dish-card">
+                <div class="dish-info">
+                  <h3>Original Firewood Party Jollof</h3>
+                  <p>Smoky long-grain rice slow-cooked in rich pepper reduction with fried sweet plantain (Dodo).</p>
+                  <span class="dish-meta">Served with coleslaw</span>
+                </div>
+                <div class="dish-price-wrap">
+                  <span class="dish-price">₦3,500</span>
+                  <a href="https://wa.me/2348000000000?text=Order%20Firewood%20Party%20Jollof" target="_blank" rel="noopener noreferrer" class="dish-order-btn">Order</a>
+                </div>
+              </div>
+
+              <div class="dish-card">
+                <div class="dish-info">
+                  <h3>Special Fried Rice & Gizzard Medley</h3>
+                  <p>Basmati rice sautéed in rich herb butter, sweet corn, liver bits, and crispy spiced gizzards.</p>
+                  <span class="dish-meta">Customer favorite</span>
+                </div>
+                <div class="dish-price-wrap">
+                  <span class="dish-price">₦4,200</span>
+                  <a href="https://wa.me/2348000000000?text=Order%20Special%20Fried%20Rice" target="_blank" rel="noopener noreferrer" class="dish-order-btn">Order</a>
+                </div>
+              </div>
+
+              <div class="dish-card">
+                <div class="dish-info">
+                  <h3>Native Ofada Rice & Designer Stew (Ayamase)</h3>
+                  <p>Unpolished sweet fragrant rice served in banana leaves with green habanero sauce and assorted meats.</p>
+                  <span class="dish-meta">Includes boiled egg</span>
+                </div>
+                <div class="dish-price-wrap">
+                  <span class="dish-price">₦4,500</span>
+                  <a href="https://wa.me/2348000000000?text=Order%20Ayamase%20Ofada" target="_blank" rel="noopener noreferrer" class="dish-order-btn">Order</a>
+                </div>
+              </div>
+
+              <div class="dish-card">
+                <div class="dish-info">
+                  <h3>Ofe Nabaku (Banga Soup) & Starch</h3>
+                  <p>Authentic Delta fresh palm fruit soup simmered with dried fish, stockfish, and aromatic Banga stick.</p>
+                  <span class="dish-meta">Traditional Delta recipe</span>
+                </div>
+                <div class="dish-price-wrap">
+                  <span class="dish-price">₦5,000</span>
+                  <a href="https://wa.me/2348000000000?text=Order%20Banga%20Soup" target="_blank" rel="noopener noreferrer" class="dish-order-btn">Order</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- GROUP: GRILLS -->
+          <div class="menu-group" data-cat="grills">
+            <div class="menu-grid">
+              <div class="dish-card">
+                <div class="dish-info">
+                  <h3>Charcoal Suya Spiced Croaker Fish</h3>
+                  <p>Whole jumbo croaker chargrilled on open coals, glazed in spicy yaji pepper and sliced onions.</p>
+                  <span class="dish-meta">Comes with roasted yam chips</span>
+                </div>
+                <div class="dish-price-wrap">
+                  <span class="dish-price">₦8,500</span>
+                  <a href="https://wa.me/2348000000000?text=Order%20Suya%20Croaker" target="_blank" rel="noopener noreferrer" class="dish-order-btn">Order</a>
+                </div>
+              </div>
+
+              <div class="dish-card">
+                <div class="dish-info">
+                  <h3>Jumbo Peppered Turkey Wings</h3>
+                  <p>Braised tender, then deep fried and tossed in caramelized Scotch bonnet and bell pepper relish.</p>
+                  <span class="dish-meta">Portion of 2 large wings</span>
+                </div>
+                <div class="dish-price-wrap">
+                  <span class="dish-price">₦5,500</span>
+                  <a href="https://wa.me/2348000000000?text=Order%20Peppered%20Turkey" target="_blank" rel="noopener noreferrer" class="dish-order-btn">Order</a>
+                </div>
+              </div>
+
+              <div class="dish-card">
+                <div class="dish-info">
+                  <h3>Smoked Asun (Spicy Goat Meat Bites)</h3>
+                  <p>Tender young goat meat fire-roasted with skin on, chopped and tossed in ferocious habanero peppers.</p>
+                  <span class="dish-meta">True party starter</span>
+                </div>
+                <div class="dish-price-wrap">
+                  <span class="dish-price">₦6,000</span>
+                  <a href="https://wa.me/2348000000000?text=Order%20Smoked%20Asun" target="_blank" rel="noopener noreferrer" class="dish-order-btn">Order</a>
+                </div>
+              </div>
+
+              <div class="dish-card">
+                <div class="dish-info">
+                  <h3>Honey Glazed BBQ Chicken Quarters</h3>
+                  <p>Slow roasted chicken steeped in garlic, local ginger, and natural honey glaze.</p>
+                  <span class="dish-meta">Mild spicy option available</span>
+                </div>
+                <div class="dish-price-wrap">
+                  <span class="dish-price">₦4,000</span>
+                  <a href="https://wa.me/2348000000000?text=Order%20BBQ%20Chicken" target="_blank" rel="noopener noreferrer" class="dish-order-btn">Order</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- GROUP: CHOPS -->
+          <div class="menu-group" data-cat="chops">
+            <div class="menu-grid">
+              <div class="dish-card">
+                <div class="dish-info">
+                  <h3>Classic Small Chops Platter (Single)</h3>
+                  <p>1 Spring Roll, 1 Samosa, 4 Golden Puff-Puff, and 2 Spiced Gizzard skewer pieces.</p>
+                  <span class="dish-meta">Boxed hot</span>
+                </div>
+                <div class="dish-price-wrap">
+                  <span class="dish-price">₦2,500</span>
+                  <a href="https://wa.me/2348000000000?text=Order%20Single%20Small%20Chops" target="_blank" rel="noopener noreferrer" class="dish-order-btn">Order</a>
+                </div>
+              </div>
+
+              <div class="dish-card">
+                <div class="dish-info">
+                  <h3>VIP Executive Finger Food Tray (Serves 5)</h3>
+                  <p>5 Spring Rolls, 5 Samosas, 15 Puff-Puff, 5 Chicken Skewers, and 5 Peppered Beef Chunks.</p>
+                  <span class="dish-meta">Ideal for office meetings</span>
+                </div>
+                <div class="dish-price-wrap">
+                  <span class="dish-price">₦18,000</span>
+                  <a href="https://wa.me/2348000000000?text=Order%20Executive%20Tray" target="_blank" rel="noopener noreferrer" class="dish-order-btn">Order</a>
+                </div>
+              </div>
+
+              <div class="dish-card">
+                <div class="dish-info">
+                  <h3>Cinnamon Sugar Gourmet Puff-Puff Bucket</h3>
+                  <p>50 pieces of fluffy golden puff-puff dusted with brown cinnamon sugar or condensed milk dip.</p>
+                  <span class="dish-meta">Party favorite</span>
+                </div>
+                <div class="dish-price-wrap">
+                  <span class="dish-price">₦7,000</span>
+                  <a href="https://wa.me/2348000000000?text=Order%20Puff%20Puff%20Bucket" target="_blank" rel="noopener noreferrer" class="dish-order-btn">Order</a>
+                </div>
+              </div>
+
+              <div class="dish-card">
+                <div class="dish-info">
+                  <h3>Crispy Prawn Spring Rolls (Box of 10)</h3>
+                  <p>Wild-caught prawns, glass noodles, and fresh cabbage rolled in wafer-thin pastry with sweet chili dip.</p>
+                  <span class="dish-meta">Premium seafood</span>
+                </div>
+                <div class="dish-price-wrap">
+                  <span class="dish-price">₦12,000</span>
+                  <a href="https://wa.me/2348000000000?text=Order%20Prawn%20Spring%20Rolls" target="_blank" rel="noopener noreferrer" class="dish-order-btn">Order</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- GROUP: DRINKS -->
+          <div class="menu-group" data-cat="drinks">
+            <div class="menu-grid">
+              <div class="dish-card">
+                <div class="dish-info">
+                  <h3>Cold-Pressed Hibiscus Zobo Infusion</h3>
+                  <p>Organic hibiscus petals steeped with fresh ginger, pineapple chunks, and cloves. Zero sugar.</p>
+                  <span class="dish-meta">1 Litre chilled bottle</span>
+                </div>
+                <div class="dish-price-wrap">
+                  <span class="dish-price">₦2,500</span>
+                  <a href="https://wa.me/2348000000000?text=Order%20Zobo%20Bottle" target="_blank" rel="noopener noreferrer" class="dish-order-btn">Order</a>
+                </div>
+              </div>
+
+              <div class="dish-card">
+                <div class="dish-info">
+                  <h3>Creamy Tiger Nut & Date Milk (Kunu Aya)</h3>
+                  <p>Slow blended Spanish tiger nuts, sweet Arabian dates, and coconut water. Naturally sweet.</p>
+                  <span class="dish-meta">1 Litre bottle</span>
+                </div>
+                <div class="dish-price-wrap">
+                  <span class="dish-price">₦3,000</span>
+                  <a href="https://wa.me/2348000000000?text=Order%20Tigernut%20Milk" target="_blank" rel="noopener noreferrer" class="dish-order-btn">Order</a>
+                </div>
+              </div>
+
+              <div class="dish-card">
+                <div class="dish-info">
+                  <h3>Fresh Chapman Punch Jug</h3>
+                  <p>Classic Nigerian cocktail punch with Angostura bitters, fresh cucumber, lemon, and orange slices.</p>
+                  <span class="dish-meta">2 Litre party jug</span>
+                </div>
+                <div class="dish-price-wrap">
+                  <span class="dish-price">₦6,500</span>
+                  <a href="https://wa.me/2348000000000?text=Order%20Chapman%20Jug" target="_blank" rel="noopener noreferrer" class="dish-order-btn">Order</a>
+                </div>
+              </div>
+
+              <div class="dish-card">
+                <div class="dish-info">
+                  <h3>Fresh Sugarcane & Ginger Cooler</h3>
+                  <p>Crushed fresh sugarcane stalk extract with spicy ginger twist. Super refreshing on ice.</p>
+                  <span class="dish-meta">750ml bottle</span>
+                </div>
+                <div class="dish-price-wrap">
+                  <span class="dish-price">₦2,200</span>
+                  <a href="https://wa.me/2348000000000?text=Order%20Sugarcane%20Cooler" target="_blank" rel="noopener noreferrer" class="dish-order-btn">Order</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- GROUP: PACKS -->
+          <div class="menu-group" data-cat="packs">
+            <div class="menu-grid">
+              <div class="dish-card">
+                <div class="dish-info">
+                  <h3>Weekend Family Rice Cooler (Serves 6 - 8)</h3>
+                  <p>Large cooler of Firewood Jollof or Fried Rice with 8 portions of Peppered Chicken or Beef.</p>
+                  <span class="dish-meta">Includes dodo and coleslaw</span>
+                </div>
+                <div class="dish-price-wrap">
+                  <span class="dish-price">₦35,000</span>
+                  <a href="https://wa.me/2348000000000?text=Order%20Family%20Rice%20Cooler" target="_blank" rel="noopener noreferrer" class="dish-order-btn">Order</a>
+                </div>
+              </div>
+
+              <div class="dish-card">
+                <div class="dish-info">
+                  <h3>Party Jollof Feast Cooler (Serves 15 - 20)</h3>
+                  <p>Full catering cooler of Jollof rice, 20 pieces of protein, 20 fried plantains, and 2 bottles of Zobo.</p>
+                  <span class="dish-meta">Free Delta State delivery</span>
+                </div>
+                <div class="dish-price-wrap">
+                  <span class="dish-price">₦70,000</span>
+                  <a href="https://wa.me/2348000000000?text=Order%20Party%20Jollof%20Cooler" target="_blank" rel="noopener noreferrer" class="dish-order-btn">Order</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         4. PARTY PACKAGES WITH NAIRA PRICES
+         ===================================================================== -->
+    <section id="packages" class="packages-section scroll-fade" aria-labelledby="packages-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Event Catering Packages</span>
+          <h2 id="packages-heading" class="section-title">All-Inclusive Event Feasts</h2>
+          <p class="section-desc" style="margin: 0 auto;">
+            Complete catering packages designed for birthdays, traditional marriages, and corporate end-of-year banquets.
+          </p>
+        </div>
+
+        <div class="packages-grid">
+          <!-- Tier 1 -->
+          <div class="package-card">
+            <div>
+              <h3 class="package-name">Bronze Feast</h3>
+              <p class="package-serves">Designed for 25 to 30 Guests</p>
+              <div class="package-price">₦75,000</div>
+              <ul class="package-features">
+                <li>1 Cooler of Firewood Party Jollof</li>
+                <li>1 Cooler of Special Fried Rice</li>
+                <li>30 Portions of Peppered Chicken</li>
+                <li>30 Packs of Single Small Chops</li>
+                <li>Buffet serving chaffing dishes & chaffing fuel</li>
+                <li>1 Professional uniformed food steward</li>
+              </ul>
+            </div>
+            <!-- REPLACE: WhatsApp Link -->
+            <a href="https://wa.me/2348000000000?text=Hello,%20I%20want%20to%20book%20the%20Bronze%20Feast%20(₦75,000)" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="width: 100%;">
+              Book Bronze Package
+            </a>
+          </div>
+
+          <!-- Tier 2 (Highlighted) -->
+          <div class="package-card highlighted">
+            <span class="package-tag">Most Popular</span>
+            <div>
+              <h3 class="package-name">Silver Banquet</h3>
+              <p class="package-serves">Designed for 50 to 60 Guests</p>
+              <div class="package-price">₦150,000</div>
+              <ul class="package-features">
+                <li>2 Coolers of Firewood Jollof & Basmati Fried Rice</li>
+                <li>1 Cooler of Authentic Delta Banga or Egusi Soup</li>
+                <li>60 Portions of Assorted Meats, Fish & Turkey</li>
+                <li>60 Packs of Executive Small Chops</li>
+                <li>Chilled Zobo & Chapman Drink Station</li>
+                <li>2 Uniformed event servers & full buffet cleanup</li>
+              </ul>
+            </div>
+            <!-- REPLACE: WhatsApp Link -->
+            <a href="https://wa.me/2348000000000?text=Hello,%20I%20want%20to%20book%20the%20Silver%20Banquet%20(₦150,000)" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width: 100%;">
+              Book Silver Package
+            </a>
+          </div>
+
+          <!-- Tier 3 -->
+          <div class="package-card">
+            <div>
+              <h3 class="package-name">Gold Royal Spread</h3>
+              <p class="package-serves">Designed for 100+ Guests (Royal Weddings)</p>
+              <div class="package-price">₦280,000</div>
+              <ul class="package-features">
+                <li>3 Coolers of Jollof, Fried & Ofada Rice with Ayamase</li>
+                <li>2 Traditional Soup Stations (Banga & Native Soup)</li>
+                <li>120 Portions of Croaker, Asun, Turkey & Beef</li>
+                <li>100 Finger Food Trays & Fresh Palm Wine</li>
+                <li>Live Barbecue Grill Station on site</li>
+                <li>4 Dedicated hospitality staff & event supervisor</li>
+              </ul>
+            </div>
+            <!-- REPLACE: WhatsApp Link -->
+            <a href="https://wa.me/2348000000000?text=Hello,%20I%20want%20to%20book%20the%20Gold%20Royal%20Spread%20(₦280,000)" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="width: 100%;">
+              Book Gold Package
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         5. HOW TO ORDER (4 Steps)
+         ===================================================================== -->
+    <section id="how-to-order" class="steps-section scroll-fade" aria-labelledby="steps-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Seamless Process</span>
+          <h2 id="steps-heading" class="section-title">How To Place Your Order</h2>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-number">01</div>
+            <h3 class="step-title">Select Your Dishes</h3>
+            <p class="step-desc">Pick your favorite a la carte meals, weekly meal prep bowls, or all-inclusive party packages above.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">02</div>
+            <h3 class="step-title">Chat on WhatsApp</h3>
+            <p class="step-desc">Click any order button. Your item selection and quantity are pre-filled so you can message us in one click.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">03</div>
+            <h3 class="step-title">Confirm Delivery</h3>
+            <p class="step-desc">Provide your event date, delivery address in Delta State, and complete payment via instant bank transfer.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">04</div>
+            <h3 class="step-title">Feast & Enjoy</h3>
+            <p class="step-desc">Your food arrives piping hot in thermal insulation, garnished to perfection and ready to impress your guests.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         6. GALLERY
+         ===================================================================== -->
+    <section id="gallery" class="gallery-section scroll-fade" aria-labelledby="gallery-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Visual Feast</span>
+          <h2 id="gallery-heading" class="section-title">From Our Kitchen To Your Table</h2>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <div class="gallery-photo photo-dish-1" role="img" aria-label="Smoky Party Jollof Rice with Fried Plantains"></div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-photo photo-dish-2" role="img" aria-label="Spiced Charcoal Suya and Grilled Croaker"></div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-photo photo-dish-3" role="img" aria-label="Fresh Gourmet Small Chops Platter with Puff-Puff"></div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-photo photo-dish-4" role="img" aria-label="Delta Banga Soup with Assorted Fish"></div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-photo photo-dish-5" role="img" aria-label="Large Catering Event Buffet Setup"></div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-photo photo-dish-6" role="img" aria-label="Artisan Hibiscus Zobo and Chapman Drinks"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         7. TESTIMONIALS
+         ===================================================================== -->
+    <section class="testimonials-section scroll-fade" aria-label="Customer Reviews">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Verified Feedback</span>
+          <h2 class="section-title">Why Hosts Choose Mama Put & Co</h2>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-quote">
+              "We booked the Silver Banquet for 60 guests for my father's 70th birthday. The firewood flavor of the jollof was legendary. Not a single grain was left over!"
+            </p>
+            <div class="client-meta">
+              <strong>Osagie E.</strong>
+              <span>Asaba, Delta State</span>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-quote">
+              "Their small chops are always crisp, hot, and non-greasy. I order 20 boxes every Friday for our bank branch staff. Seamless WhatsApp ordering every time."
+            </p>
+            <div class="client-meta">
+              <strong>Jennifer O.</strong>
+              <span>Warri</span>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-quote">
+              "Catered our 400-person traditional wedding flawlessly. The food servers were polite, uniform was pristine, and the Banga soup taste was deeply authentic."
+            </p>
+            <div class="client-meta">
+              <strong>Emeka & Blessing N.</strong>
+              <span>Wedding Hosts</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         8. CONTACT & HOURS
+         ===================================================================== -->
+    <section id="contact" class="contact-section scroll-fade" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Direct Lines</span>
+          <h2 id="contact-heading" class="section-title">Place Your Order or Inquire</h2>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3>Fast Order Channels</h3>
+            <p>We receive orders via WhatsApp, phone, and email:</p>
+
+            <!-- REPLACE: WhatsApp Link -->
+            <a href="https://wa.me/2348000000000?text=Hello%20Mama%20Put%20&%20Co,%20I%20would%20like%20to%20order" target="_blank" rel="noopener noreferrer" class="contact-channel">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"/>
+              </svg>
+              <div>
+                <strong>Instant WhatsApp Order</strong>
+                <span style="font-size: 0.8125rem; color: var(--text-muted); display: block;">Average response time: 5 minutes</span>
+              </div>
+            </a>
+
+            <!-- REPLACE: Phone Number -->
+            <a href="tel:08000000000" class="contact-channel">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              <div>
+                <!-- REPLACE: Phone Number -->
+                <strong>Call Dispatch: 0800 000 0000</strong>
+                <span style="font-size: 0.8125rem; color: var(--text-muted); display: block;">Lines open 8:00 AM - 9:00 PM daily</span>
+              </div>
+            </a>
+
+            <!-- REPLACE: Email Address -->
+            <a href="mailto:hello@example.com" class="contact-channel">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+              <div>
+                <!-- REPLACE: Email Address -->
+                <strong>hello@example.com</strong>
+                <span style="font-size: 0.8125rem; color: var(--text-muted); display: block;">Corporate invoices & quotations</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="contact-card">
+            <h3>Kitchen Location & Hours</h3>
+            <p>
+              <!-- REPLACE: City Location -->
+              <strong>Kitchen Address:</strong> 22 Flavor Avenue, GRA, Delta State, Nigeria.
+            </p>
+
+            <table class="hours-table" aria-label="Kitchen operating hours">
+              <tbody>
+                <tr>
+                  <td>Monday - Saturday</td>
+                  <td>8:00 AM - 9:00 PM</td>
+                </tr>
+                <tr>
+                  <td>Sunday</td>
+                  <td>11:00 AM - 8:00 PM</td>
+                </tr>
+                <tr>
+                  <td>Event Catering</td>
+                  <td>Available 24/7 with advance booking</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         9. FAQ SECTION
+         ===================================================================== -->
+    <section id="faq" class="faq-section scroll-fade" aria-labelledby="faq-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Common Enquiries</span>
+          <h2 id="faq-heading" class="section-title">Frequently Asked Questions</h2>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary class="faq-summary">How much advance notice is required for party catering?</summary>
+            <div class="faq-body">
+              For weekend party coolers and packages under 50 guests, we require 48 hours notice. For weddings and corporate banquets exceeding 100 guests, we advise locking down your date at least 2 weeks in advance to secure equipment and food styling staff.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-summary">Do you cater events outside Delta State?</summary>
+            <div class="faq-body">
+              Yes! We regularly cater destination celebrations in Edo, Anambra, Rivers, and Lagos States. Dedicated logistics and mobile kitchen crew fees apply.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-summary">Can we schedule a food tasting session before booking?</summary>
+            <div class="faq-body">
+              Absolutely! For all Silver and Gold event packages, we host a complimentary tasting session for up to 3 people at our commercial kitchen so you can sample our Jollof, Banga soup, and protein glazes firsthand.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =======================================================================
+       10. FOOTER
+       ======================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <!-- REPLACE: Brand Name -->
+          <a href="#top" class="brand-logo">MAMA PUT <span>& CO</span></a>
+          <p>
+            Authentic Nigerian culinary artistry, smoky firewood jollof, succulent grills, and event catering based in Delta State, Nigeria.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Menu</h4>
+          <ul class="footer-links">
+            <li><a href="#menu">Firewood Jollof</a></li>
+            <li><a href="#menu">Peppered Grills</a></li>
+            <li><a href="#menu">Gourmet Small Chops</a></li>
+            <li><a href="#menu">Traditional Delta Soups</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Packages</h4>
+          <ul class="footer-links">
+            <li><a href="#packages">Bronze Feast (30 Guests)</a></li>
+            <li><a href="#packages">Silver Banquet (60 Guests)</a></li>
+            <li><a href="#packages">Gold Royal Spread (100+ Guests)</a></li>
+            <li><a href="#how-to-order">How It Works</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Direct Contact</h4>
+          <p style="font-size: 0.875rem; color: #D4BDB4; margin-bottom: 6px;">
+            <!-- REPLACE: City Location -->
+            Delta State, Nigeria
+          </p>
+          <p style="font-size: 0.875rem; color: #D4BDB4; margin-bottom: 6px;">
+            <!-- REPLACE: Phone Number -->
+            0800 000 0000
+          </p>
+          <p style="font-size: 0.875rem; color: #D4BDB4; margin-bottom: 16px;">
+            <!-- REPLACE: Email Address -->
+            hello@example.com
+          </p>
+          <!-- REPLACE: WhatsApp Link -->
+          <a href="https://wa.me/2348000000000" target="_blank" rel="noopener noreferrer" class="btn btn-accent" style="font-size: 0.75rem; padding: 8px 18px;">
+            Chat on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Mama Put & Co Gourmet Catering. All rights reserved. Built with Frontdoor HTML Templates.</p>
+        <a href="#top" class="back-to-top">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =======================================================================
+       11. FLOATING WHATSAPP
+       ======================================================================= -->
+  <!-- REPLACE: WhatsApp Link -->
+  <a href="https://wa.me/2348000000000?text=Hello%20Mama%20Put%20&%20Co,%20I%20want%20to%20order%20food" target="_blank" rel="noopener noreferrer" class="floating-whatsapp" aria-label="Order on WhatsApp from Mama Put and Co">
+    <svg viewBox="0 0 24 24">
+      <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"/>
+    </svg>
+  </a>
+
+</body>
+</html>

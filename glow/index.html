@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glow Sanctuary Spa & Studio | Luxury Hair, Nails & Skin Care in Delta State</title>
+  <meta name="description" content="Glow Sanctuary Spa & Studio offers bespoke hair styling, bridal makeup, luxury nail care, and restorative body treatments in Delta State, Nigeria.">
+  <meta property="og:title" content="Glow Sanctuary Spa & Studio | Delta State, Nigeria">
+  <meta property="og:description" content="Experience premium beauty, wellness, and pampering. Explore our services and book instantly on WhatsApp.">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
+
+  <!-- Google Fonts: Playfair Display & Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="top">
+
+  <!-- =======================================================================
+       1. FIXED TOP NAVIGATION BAR
+       ======================================================================= -->
+  <header class="top-nav">
+    <div class="container nav-wrapper">
+      <!-- REPLACE: Brand Name -->
+      <a href="#top" class="brand-logo">GLOW <span>SANCTUARY</span></a>
+
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation menu">
+      <label for="nav-toggle" class="nav-toggle-label">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="#services" class="nav-link">Services & Pricing</a></li>
+          <li><a href="#team" class="nav-link">Our Experts</a></li>
+          <li><a href="#testimonials" class="nav-link">Reviews</a></li>
+          <li><a href="#contact" class="nav-link">Visit Us</a></li>
+          <li><a href="#faq" class="nav-link">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-cta">
+        <!-- REPLACE: WhatsApp Link -->
+        <a href="https://wa.me/2348000000000?text=Hello%20Glow%20Sanctuary,%20I%20would%20like%20to%20book%20a%20spa%20appointment" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          Book on WhatsApp
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- =====================================================================
+         2. HERO SECTION
+         ===================================================================== -->
+    <section class="hero-section" aria-labelledby="hero-heading">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="section-tag">Luxury Beauty & Wellness · Delta State</span>
+          <!-- REPLACE: Main Headline -->
+          <h1 id="hero-heading" class="hero-title">Indulge in pure radiance and relaxation.</h1>
+          <!-- REPLACE: Description -->
+          <p class="hero-desc">
+            Your private urban retreat for world-class hair artistry, flawless bridal makeup, signature nail architecture, and deep holistic spa therapies.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#services" class="btn btn-primary">Explore Services & Prices</a>
+            <!-- REPLACE: WhatsApp Link -->
+            <a href="https://wa.me/2348000000000?text=Hello%20Glow%20Sanctuary,%20I%20want%20to%20book%20today" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+              Book on WhatsApp
+            </a>
+          </div>
+
+          <div class="hero-badges">
+            <div class="badge-item">
+              <strong>4.9 ★</strong>
+              <span>Over 800+ Verified Clients</span>
+            </div>
+            <div class="badge-item">
+              <strong>100%</strong>
+              <span>Organic & Premium Products</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-photo-wrap">
+          <div class="hero-photo" role="img" aria-label="Glow Sanctuary spa treatment and glowing skin therapy"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         3. SERVICES & PRICING TABS (Pure CSS Tabs with :has())
+         ===================================================================== -->
+    <section id="services" class="services-section scroll-fade" aria-labelledby="services-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Menu & Rates in Naira</span>
+          <h2 id="services-heading" class="section-title">Signature Beauty & Wellness Services</h2>
+          <p class="section-desc" style="margin: 0 auto;">
+            Transparent pricing for our most requested treatments. Select a category below to browse rates.
+          </p>
+        </div>
+
+        <!-- Wrapper for Pure CSS :has() Tabs -->
+        <div class="pricing-wrapper">
+          <input type="radio" name="service-tab" id="tab-hair" class="tab-radio" checked>
+          <input type="radio" name="service-tab" id="tab-makeup" class="tab-radio">
+          <input type="radio" name="service-tab" id="tab-nails" class="tab-radio">
+          <input type="radio" name="service-tab" id="tab-spa" class="tab-radio">
+
+          <div class="tabs-container">
+            <label for="tab-hair" class="tab-label">Hair Styling & Braids</label>
+            <label for="tab-makeup" class="tab-label">Makeup Studio</label>
+            <label for="tab-nails" class="tab-label">Nail Architecture</label>
+            <label for="tab-spa" class="tab-label">Massage & Body Spa</label>
+          </div>
+
+          <!-- Tab Content Groups -->
+          <!-- GROUP 1: HAIR -->
+          <div class="menu-group" data-cat="hair">
+            <div class="menu-grid">
+              <div class="service-card">
+                <div class="service-info">
+                  <h3>Knotless Goddess Braids</h3>
+                  <p>Tension-free installation with curly French curl or human hair tips. Scalp detox included.</p>
+                  <span class="service-duration">⏱ 3.5 Hours</span>
+                </div>
+                <div class="service-price-block">
+                  <span class="service-price">₦35,000</span>
+                  <!-- REPLACE: WhatsApp Link -->
+                  <a href="https://wa.me/2348000000000?text=Booking%20Knotless%20Goddess%20Braids" target="_blank" rel="noopener noreferrer" class="service-book-btn">Book Now</a>
+                </div>
+              </div>
+
+              <div class="service-card">
+                <div class="service-info">
+                  <h3>Lace Frontal Wig Customization & Install</h3>
+                  <p>Bleached knots, custom hairline plucking, melt band application, and precision styling.</p>
+                  <span class="service-duration">⏱ 2 Hours</span>
+                </div>
+                <div class="service-price-block">
+                  <span class="service-price">₦28,000</span>
+                  <a href="https://wa.me/2348000000000?text=Booking%20Lace%20Frontal%20Install" target="_blank" rel="noopener noreferrer" class="service-book-btn">Book Now</a>
+                </div>
+              </div>
+
+              <div class="service-card">
+                <div class="service-info">
+                  <h3>Deep Moisture Steam Treatment & Silk Press</h3>
+                  <p>Argan oil hydration therapy, ozone scalp steaming, and featherlight non-greasy silk press.</p>
+                  <span class="service-duration">⏱ 1.5 Hours</span>
+                </div>
+                <div class="service-price-block">
+                  <span class="service-price">₦18,000</span>
+                  <a href="https://wa.me/2348000000000?text=Booking%20Silk%20Press%20Treatment" target="_blank" rel="noopener noreferrer" class="service-book-btn">Book Now</a>
+                </div>
+              </div>
+
+              <div class="service-card">
+                <div class="service-info">
+                  <h3>Luxury Ponytail & Slick Updo</h3>
+                  <p>Sleek edge lay with organic pomades, hair extension attachment, and humidity-proof finish.</p>
+                  <span class="service-duration">⏱ 1.5 Hours</span>
+                </div>
+                <div class="service-price-block">
+                  <span class="service-price">₦22,000</span>
+                  <a href="https://wa.me/2348000000000?text=Booking%20Luxury%20Ponytail" target="_blank" rel="noopener noreferrer" class="service-book-btn">Book Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- GROUP 2: MAKEUP -->
+          <div class="menu-group" data-cat="makeup">
+            <div class="menu-grid">
+              <div class="service-card">
+                <div class="service-info">
+                  <h3>Bridal Full Glam & Gele Tying</h3>
+                  <p>Waterproof airbrush base, hand-placed mink lashes, touch-up kit, and autogele or hand-tied gele.</p>
+                  <span class="service-duration">⏱ 2.5 Hours</span>
+                </div>
+                <div class="service-price-block">
+                  <span class="service-price">₦85,000</span>
+                  <a href="https://wa.me/2348000000000?text=Booking%20Bridal%20Full%20Glam" target="_blank" rel="noopener noreferrer" class="service-book-btn">Book Now</a>
+                </div>
+              </div>
+
+              <div class="service-card">
+                <div class="service-info">
+                  <h3>Owambe Celebration Soft Glam</h3>
+                  <p>Camera-ready glow, sculpt contouring, defined brows, and 18-hour sweatproof setting.</p>
+                  <span class="service-duration">⏱ 1.5 Hours</span>
+                </div>
+                <div class="service-price-block">
+                  <span class="service-price">₦30,000</span>
+                  <a href="https://wa.me/2348000000000?text=Booking%20Owambe%20Soft%20Glam" target="_blank" rel="noopener noreferrer" class="service-book-btn">Book Now</a>
+                </div>
+              </div>
+
+              <div class="service-card">
+                <div class="service-info">
+                  <h3>Photo Shoot & Editorial Look</h3>
+                  <p>Tailored makeup optimized for studio strobe lighting, high-definition photography, and video.</p>
+                  <span class="service-duration">⏱ 1.5 Hours</span>
+                </div>
+                <div class="service-price-block">
+                  <span class="service-price">₦35,000</span>
+                  <a href="https://wa.me/2348000000000?text=Booking%20Photoshoot%20Glam" target="_blank" rel="noopener noreferrer" class="service-book-btn">Book Now</a>
+                </div>
+              </div>
+
+              <div class="service-card">
+                <div class="service-info">
+                  <h3>Semi-Permanent Ombre Powder Brows</h3>
+                  <p>Precision mapping, pigment color matching, and painless micro-shading lasting up to 2 years.</p>
+                  <span class="service-duration">⏱ 2.5 Hours</span>
+                </div>
+                <div class="service-price-block">
+                  <span class="service-price">₦75,000</span>
+                  <a href="https://wa.me/2348000000000?text=Booking%20Ombre%20Brows" target="_blank" rel="noopener noreferrer" class="service-book-btn">Book Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- GROUP 3: NAILS -->
+          <div class="menu-group" data-cat="nails">
+            <div class="menu-grid">
+              <div class="service-card">
+                <div class="service-info">
+                  <h3>Russian E-File Dry Manicure & Gel Extensions</h3>
+                  <p>Deep cuticle cleaning without water, sculpted hard gel extensions, and durable chrome finish.</p>
+                  <span class="service-duration">⏱ 2 Hours</span>
+                </div>
+                <div class="service-price-block">
+                  <span class="service-price">₦25,000</span>
+                  <a href="https://wa.me/2348000000000?text=Booking%20Russian%20Manicure" target="_blank" rel="noopener noreferrer" class="service-book-btn">Book Now</a>
+                </div>
+              </div>
+
+              <div class="service-card">
+                <div class="service-info">
+                  <h3>3D Acrylic Nail Artistry</h3>
+                  <p>Hand-crafted 3D florals, Swarovski crystal clusters, encapsulation, and custom ombre fades.</p>
+                  <span class="service-duration">⏱ 2 Hours</span>
+                </div>
+                <div class="service-price-block">
+                  <span class="service-price">₦22,000</span>
+                  <a href="https://wa.me/2348000000000?text=Booking%203D%20Acrylic%20Nails" target="_blank" rel="noopener noreferrer" class="service-book-btn">Book Now</a>
+                </div>
+              </div>
+
+              <div class="service-card">
+                <div class="service-info">
+                  <h3>Volcano Collagen Pedicure</h3>
+                  <p>Detox crystal soak, exfoliating sugar scrub, collagen cream mask, and warm towel foot wrap.</p>
+                  <span class="service-duration">⏱ 1.5 Hours</span>
+                </div>
+                <div class="service-price-block">
+                  <span class="service-price">₦20,000</span>
+                  <a href="https://wa.me/2348000000000?text=Booking%20Collagen%20Pedicure" target="_blank" rel="noopener noreferrer" class="service-book-btn">Book Now</a>
+                </div>
+              </div>
+
+              <div class="service-card">
+                <div class="service-info">
+                  <h3>Builder Gel (BIAB) on Natural Nails</h3>
+                  <p>Strengthening overlay that protects natural nail growth with clean, chip-proof pastel hues.</p>
+                  <span class="service-duration">⏱ 1 Hour</span>
+                </div>
+                <div class="service-price-block">
+                  <span class="service-price">₦16,000</span>
+                  <a href="https://wa.me/2348000000000?text=Booking%20BIAB%20Overlay" target="_blank" rel="noopener noreferrer" class="service-book-btn">Book Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- GROUP 4: SPA -->
+          <div class="menu-group" data-cat="spa">
+            <div class="menu-grid">
+              <div class="service-card">
+                <div class="service-info">
+                  <h3>Deep Tissue & Hot Stone Body Massage</h3>
+                  <p>Volcanic basalt stones, aromatic eucalyptus balm, and focused muscle tension relief.</p>
+                  <span class="service-duration">⏱ 75 Mins</span>
+                </div>
+                <div class="service-price-block">
+                  <span class="service-price">₦38,000</span>
+                  <a href="https://wa.me/2348000000000?text=Booking%20Hot%20Stone%20Massage" target="_blank" rel="noopener noreferrer" class="service-book-btn">Book Now</a>
+                </div>
+              </div>
+
+              <div class="service-card">
+                <div class="service-info">
+                  <h3>Hydra-Glow Anti-Aging Facial</h3>
+                  <p>Ultrasonic water exfoliation, hyaluronic acid infusion, LED light therapy, and firming collagen.</p>
+                  <span class="service-duration">⏱ 60 Mins</span>
+                </div>
+                <div class="service-price-block">
+                  <span class="service-price">₦32,000</span>
+                  <a href="https://wa.me/2348000000000?text=Booking%20Hydra%20Facial" target="_blank" rel="noopener noreferrer" class="service-book-btn">Book Now</a>
+                </div>
+              </div>
+
+              <div class="service-card">
+                <div class="service-info">
+                  <h3>Moroccan Hammam & Body Polish</h3>
+                  <p>Eucalyptus black soap steam bath, Kessa glove exfoliation, and whipped shea butter hydration.</p>
+                  <span class="service-duration">⏱ 90 Mins</span>
+                </div>
+                <div class="service-price-block">
+                  <span class="service-price">₦45,000</span>
+                  <a href="https://wa.me/2348000000000?text=Booking%20Moroccan%20Hammam" target="_blank" rel="noopener noreferrer" class="service-book-btn">Book Now</a>
+                </div>
+              </div>
+
+              <div class="service-card">
+                <div class="service-info">
+                  <h3>VIP Couples Pamper Package</h3>
+                  <p>Dual 60-min Swedish massages, foot reflexology, glass of chilled sparkling wine, and fresh fruit.</p>
+                  <span class="service-duration">⏱ 2 Hours</span>
+                </div>
+                <div class="service-price-block">
+                  <span class="service-price">₦80,000</span>
+                  <a href="https://wa.me/2348000000000?text=Booking%20Couples%20Pamper" target="_blank" rel="noopener noreferrer" class="service-book-btn">Book Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         4. TEAM SECTION
+         ===================================================================== -->
+    <section id="team" class="team-section scroll-fade" aria-labelledby="team-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Skilled Artisans</span>
+          <h2 id="team-heading" class="section-title">Meet Our Master Stylists</h2>
+          <p class="section-desc" style="margin: 0 auto;">
+            Certified beauty specialists dedicated to providing clean, luxurious, and personalized care.
+          </p>
+        </div>
+
+        <div class="team-grid">
+          <div class="team-card">
+            <div class="team-photo-wrap">
+              <div class="team-photo photo-team-1" role="img" aria-label="Blessing O., Creative Director & Hair Specialist"></div>
+            </div>
+            <div class="team-info">
+              <h3 class="team-name">Blessing O.</h3>
+              <p class="team-role">Creative Director & Master Braider</p>
+            </div>
+          </div>
+
+          <div class="team-card">
+            <div class="team-photo-wrap">
+              <div class="team-photo photo-team-2" role="img" aria-label="Efe K., Lead Bridal Makeup Artist"></div>
+            </div>
+            <div class="team-info">
+              <h3 class="team-name">Efe K.</h3>
+              <p class="team-role">Head of Makeup Artistry</p>
+            </div>
+          </div>
+
+          <div class="team-card">
+            <div class="team-photo-wrap">
+              <div class="team-photo photo-team-3" role="img" aria-label="Anita M., Senior Nail Sculptor"></div>
+            </div>
+            <div class="team-info">
+              <h3 class="team-name">Anita M.</h3>
+              <p class="team-role">Senior Nail Architect</p>
+            </div>
+          </div>
+
+          <div class="team-card">
+            <div class="team-photo-wrap">
+              <div class="team-photo photo-team-4" role="img" aria-label="Ngozi T., Licensed Massage Therapist"></div>
+            </div>
+            <div class="team-info">
+              <h3 class="team-name">Ngozi T.</h3>
+              <p class="team-role">Holistic Spa Therapist</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         5. TESTIMONIALS SECTION
+         ===================================================================== -->
+    <section id="testimonials" class="testimonials-section scroll-fade" aria-labelledby="testimonials-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Client Love</span>
+          <h2 id="testimonials-heading" class="section-title">What Our Guests Say</h2>
+          <p class="section-desc" style="margin: 0 auto;">
+            Real experiences from women across Delta State and returning diaspora clients.
+          </p>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div>
+              <div class="stars">★★★★★</div>
+              <p class="testimonial-quote">
+                "The Moroccan Hammam scrub transformed my skin completely before my traditional wedding. Efe did my makeup at 5:00 AM and it stayed flawless until the after-party at 11:00 PM!"
+              </p>
+            </div>
+            <div class="client-meta">
+              <strong>Chioma E.</strong>
+              <span>Bride · Asaba, Delta State</span>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div>
+              <div class="stars">★★★★★</div>
+              <p class="testimonial-quote">
+                "Finding a hygienic spa in Delta State that does true Russian e-file manicures was impossible until I found Glow Sanctuary. Anita is a perfectionist. My nails lasted 5 weeks without lifting."
+              </p>
+            </div>
+            <div class="client-meta">
+              <strong>Folake A.</strong>
+              <span>Corporate Executive · Warri</span>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div>
+              <div class="stars">★★★★★</div>
+              <p class="testimonial-quote">
+                "I booked the VIP Couples Pamper package for my anniversary. The ambience, herbal teas, and hot stone massage were five-star resort caliber. We will definitely be back every month."
+              </p>
+            </div>
+            <div class="client-meta">
+              <strong>Amina & Tunde B.</strong>
+              <span>Regular Guests</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         6. CONTACT & LOCATION SECTION
+         ===================================================================== -->
+    <section id="contact" class="contact-section scroll-fade" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Visit Our Sanctuary</span>
+          <h2 id="contact-heading" class="section-title">Bookings & Hours</h2>
+          <p class="section-desc" style="margin: 0 auto;">
+            We recommend booking 24 hours in advance to guarantee your preferred therapist and slot.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3>Instant Reservations</h3>
+            <p>Chat directly with our reception on WhatsApp for real-time slot availability:</p>
+
+            <div class="contact-channels">
+              <!-- REPLACE: WhatsApp Link -->
+              <a href="https://wa.me/2348000000000?text=Hello%20Glow%20Sanctuary,%20I%20would%20like%20to%20reserve%20an%20appointment" target="_blank" rel="noopener noreferrer" class="channel-row">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"/>
+                </svg>
+                <div>
+                  <strong>Chat on WhatsApp</strong>
+                  <span style="font-size: 0.8125rem; color: var(--text-muted); display: block;">Instant booking confirmation</span>
+                </div>
+              </a>
+
+              <!-- REPLACE: Phone Number -->
+              <a href="tel:08000000000" class="channel-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+                <div>
+                  <!-- REPLACE: Phone Number -->
+                  <strong>Call Front Desk: 0800 000 0000</strong>
+                  <span style="font-size: 0.8125rem; color: var(--text-muted); display: block;">Reception lines open daily</span>
+                </div>
+              </a>
+            </div>
+
+            <!-- REPLACE: WhatsApp Link Button -->
+            <a href="https://wa.me/2348000000000?text=Hello%20Glow%20Sanctuary,%20I%20want%20to%20inquire%20about%20group%20bookings" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width: 100%;">
+              Inquire for Bridal or Group Sessions
+            </a>
+          </div>
+
+          <div class="contact-card">
+            <h3>Studio Hours & Location</h3>
+            <p>
+              <!-- REPLACE: City Location -->
+              <strong>Location:</strong> 8 Sanctuary Crescent, Palm Grove Estate, Delta State, Nigeria.
+            </p>
+
+            <table class="hours-table" aria-label="Studio opening hours">
+              <tbody>
+                <tr>
+                  <td>Tuesday - Friday</td>
+                  <td>9:00 AM - 7:00 PM</td>
+                </tr>
+                <tr>
+                  <td>Saturday (Peak Glam)</td>
+                  <td>8:30 AM - 7:30 PM</td>
+                </tr>
+                <tr>
+                  <td>Sunday</td>
+                  <td>1:00 PM - 6:00 PM</td>
+                </tr>
+                <tr>
+                  <td>Monday</td>
+                  <td>Closed (Deep Sanitation & Training)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         7. FAQ SECTION
+         ===================================================================== -->
+    <section id="faq" class="faq-section scroll-fade" aria-labelledby="faq-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Helpful Details</span>
+          <h2 id="faq-heading" class="section-title">Frequently Asked Questions</h2>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary class="faq-summary">Do you accept walk-ins or is it appointment only?</summary>
+            <div class="faq-body">
+              While we accommodate walk-ins when a therapist is free, we strongly encourage booking in advance via WhatsApp to avoid waiting times, especially for weekend hair and spa services.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-summary">Do you offer on-location home or bridal services?</summary>
+            <div class="faq-body">
+              Yes! Our bridal glam team travels across Nigeria for weddings, engagements, and private group bookings. A dedicated travel logistics fee applies depending on the venue location.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-summary">What payment methods do you accept?</summary>
+            <div class="faq-body">
+              We accept direct bank transfers, Nigerian debit cards (POS), and cash payments at our reception desk upon arrival.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =======================================================================
+       8. FOOTER
+       ======================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <!-- REPLACE: Brand Name -->
+          <a href="#top" class="brand-logo">GLOW <span>SANCTUARY</span></a>
+          <p>
+            Luxury spa treatments, hair artistry, bridal glam, and wellness studio serving Delta State, Nigeria with distinction.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul class="footer-links">
+            <li><a href="#services">Hair & Braids</a></li>
+            <li><a href="#services">Makeup Studio</a></li>
+            <li><a href="#services">Nail Bar</a></li>
+            <li><a href="#services">Body Massage & Spa</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Studio</h4>
+          <ul class="footer-links">
+            <li><a href="#team">Our Therapists</a></li>
+            <li><a href="#testimonials">Client Reviews</a></li>
+            <li><a href="#contact">Hours & Directions</a></li>
+            <li><a href="#faq">Spa Etiquette & FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Direct Contact</h4>
+          <p style="font-size: 0.875rem; color: #D6BDCE; margin-bottom: 6px;">
+            <!-- REPLACE: City Location -->
+            Delta State, Nigeria
+          </p>
+          <p style="font-size: 0.875rem; color: #D6BDCE; margin-bottom: 6px;">
+            <!-- REPLACE: Phone Number -->
+            0800 000 0000
+          </p>
+          <p style="font-size: 0.875rem; color: #D6BDCE; margin-bottom: 16px;">
+            <!-- REPLACE: Email Address -->
+            hello@example.com
+          </p>
+          <!-- REPLACE: WhatsApp Link -->
+          <a href="https://wa.me/2348000000000" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="font-size: 0.75rem; padding: 8px 18px; color: #FFFFFF; border-color: rgba(255,255,255,0.4);">
+            WhatsApp Reception
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Glow Sanctuary Spa & Studio. All rights reserved. Built with Frontdoor HTML Templates.</p>
+        <a href="#top" class="back-to-top">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =======================================================================
+       9. FLOATING WHATSAPP
+       ======================================================================= -->
+  <!-- REPLACE: WhatsApp Link -->
+  <a href="https://wa.me/2348000000000?text=Hello%20Glow%20Sanctuary,%20I%20would%20like%20to%20book%20an%20appointment" target="_blank" rel="noopener noreferrer" class="floating-whatsapp" aria-label="Book on WhatsApp with Glow Sanctuary">
+    <svg viewBox="0 0 24 24">
+      <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"/>
+    </svg>
+  </a>
+
+</body>
+</html>
