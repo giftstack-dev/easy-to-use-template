@@ -10,7 +10,7 @@ The project is structured with complete modularity so that each template can fun
 
 ```
 /
-├── index.html                  # Gallery homepage showcasing all 8 templates
+├── index.html                  # Gallery homepage showcasing all 9 templates
 ├── gallery.css                 # Unified gallery stylesheet & iframe preview math
 ├── atelier/                    # Fashion & Bespoke Tailoring Template
 │   ├── index.html              # Standalone landing page
@@ -23,6 +23,7 @@ The project is structured with complete modularity so that each template can fun
 ├── launch/                     # Tech Startup & SaaS Template (Dark Mode)
 ├── folio/                      # Freelancer Portfolio Template
 ├── pulse/                      # Athletic Performance Gym Template (Dark Mode)
+├── graduate/                   # Developer & Graduate Portfolio Template (Printable CV)
 ├── downloads/                  # Directory containing generated template ZIP packages
 ├── tools/
 │   └── package_templates.py    # Zero-dependency Python 3 ZIP packaging script
@@ -273,7 +274,7 @@ In cutting-edge browsers (Chrome/Edge 115+), sections reveal themselves as the u
 ---
 
 ### Technique 7: Scaled iFrame Previews in the Gallery
-The main gallery displays interactive live previews of all 8 templates inside cards without loading heavy full-scale pages:
+The main gallery displays interactive live previews of all 9 templates inside cards without loading heavy full-scale pages:
 
 ```css
 .card-thumb-container {

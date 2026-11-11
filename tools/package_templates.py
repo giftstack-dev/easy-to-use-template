@@ -17,7 +17,7 @@ from pathlib import Path
 import sys
 import zipfile
 
-# The eight ready-made landing page templates in the Frontdoor collection
+# The nine ready-made landing page templates in the Frontdoor collection
 TEMPLATE_IDS = [
     "atelier",
     "glow",
@@ -27,6 +27,7 @@ TEMPLATE_IDS = [
     "launch",
     "folio",
     "pulse",
+    "graduate",
 ]
 
 HOW_TO_USE_TEXT = """============================================================
@@ -71,6 +72,12 @@ QUICK START IN 4 SIMPLE STEPS:
    - Free option 1: GitHub Pages (free hosting on your own name.github.io)
    - Free option 2: Netlify (drag and drop this unzipped folder into netlify.com)
    - Traditional option: cPanel / Any shared hosting File Manager
+
+6. PRINT-TO-PDF ONE-PAGE CV (Graduate Template)
+   If you are using the Graduate portfolio template, simply open
+   index.html in Chrome, Edge, or Safari, and press Ctrl+P (or Cmd+P).
+   The template includes custom @media print rules that automatically
+   generate a recruiter-ready single-page PDF resume!
    
 That's it! Your landing page is live, mobile-friendly, ultra-fast,
 and ready to convert Nigerian customers directly into WhatsApp chats.

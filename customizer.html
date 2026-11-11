@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frontdoor Template Customizer</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙️</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #101828;
+      --accent: #0F766E;
+      --accent-soft: #E6F4F1;
+      --bg: #F8FAFC;
+      --surface: #FFFFFF;
+      --border: #E2E8F0;
+      --text: #0F172A;
+      --text-muted: #64748B;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      overflow: hidden;
+    }
+    header.customizer-header {
+      background-color: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-shrink: 0;
+      z-index: 10;
+    }
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .brand {
+      font-weight: 700;
+      font-size: 1.125rem;
+      color: var(--primary);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .template-select-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+    select.form-select {
+      padding: 6px 12px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background-color: var(--bg);
+      font-weight: 600;
+      color: var(--text);
+      cursor: pointer;
+    }
+    .viewport-controls {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      background-color: var(--bg);
+      padding: 4px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+    .viewport-btn {
+      padding: 6px 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      border: none;
+      background: transparent;
+      border-radius: 6px;
+      cursor: pointer;
+      color: var(--text-muted);
+      transition: all 0.2s;
+    }
+    .viewport-btn.active {
+      background-color: var(--surface);
+      color: var(--primary);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .btn {
+      padding: 8px 16px;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+    .btn-primary { background-color: var(--accent); color: #fff; }
+    .btn-primary:hover { background-color: #0d645d; }
+    .btn-outline { background-color: transparent; border-color: var(--border); color: var(--text); }
+    .btn-outline:hover { background-color: var(--bg); }
+    
+    /* Layout */
+    .customizer-body {
+      display: flex;
+      flex-grow: 1;
+      overflow: hidden;
+    }
+    .editor-pane {
+      width: 440px;
+      background-color: var(--surface);
+      border-right: 1px solid var(--border);
+      overflow-y: auto;
+      padding: 24px;
+      flex-shrink: 0;
+    }
+    .preview-pane {
+      flex-grow: 1;
+      background-color: #CBD5E1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      overflow: hidden;
+      position: relative;
+    }
+    .preview-frame-container {
+      width: 100%;
+      height: 100%;
+      max-width: 1280px;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      overflow: hidden;
+      transition: max-width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .preview-frame-container.viewport-mobile { max-width: 390px; height: 844px; }
+    .preview-frame-container.viewport-tablet { max-width: 768px; }
+    .preview-frame-container.viewport-desktop { max-width: 1280px; }
+    iframe#preview-frame {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Accordions in Editor */
+    .accordion-group {
+      margin-bottom: 12px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      background-color: #fff;
+    }
+    .accordion-header {
+      padding: 14px 16px;
+      background-color: var(--bg);
+      font-weight: 600;
+      font-size: 0.875rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+    }
+    .accordion-content {
+      padding: 16px;
+      display: none;
+      flex-direction: column;
+      gap: 12px;
+      border-top: 1px solid var(--border);
+    }
+    .accordion-group.open .accordion-content { display: flex; }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .form-group label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .form-control {
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 0.875rem;
+    }
+    .form-control:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px rgba(15, 118, 110, 0.15);
+    }
+    .chip-editor {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+    .removable-chip {
+      background-color: var(--accent-soft);
+      color: var(--accent);
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .removable-chip button {
+      background: none;
+      border: none;
+      color: var(--accent);
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .item-card {
+      background-color: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      position: relative;
+    }
+    .remove-btn {
+      align-self: flex-end;
+      background: none;
+      border: none;
+      color: #EF4444;
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .add-btn {
+      padding: 6px 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      background-color: var(--accent-soft);
+      color: var(--accent);
+      border: 1px dashed var(--accent);
+      border-radius: 6px;
+      cursor: pointer;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header class="customizer-header">
+    <div class="header-left">
+      <a href="index.html" class="brand">🚪 FRONTDOOR <span>Customizer</span></a>
+      <div class="template-select-wrap">
+        <label for="template-picker">Template:</label>
+        <select id="template-picker" class="form-select">
+          <option value="graduate" selected>Graduate (Developer Portfolio)</option>
+          <option value="atelier">Atelier (Fashion)</option>
+          <option value="glow">Glow (Beauty Spa)</option>
+          <option value="spice">Spice (Food & Catering)</option>
+          <option value="covenant">Covenant (Church & Faith)</option>
+          <option value="estate">Estate (Real Estate)</option>
+          <option value="launch">Launch (Tech Startup)</option>
+          <option value="folio">Folio (Product Designer)</option>
+          <option value="pulse">Pulse (Fitness Gym)</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Viewport Switcher -->
+    <div class="viewport-controls">
+      <button class="viewport-btn" data-vp="mobile">📱 390px</button>
+      <button class="viewport-btn" data-vp="tablet">💻 768px</button>
+      <button class="viewport-btn active" data-vp="desktop">🖥️ 1280px</button>
+    </div>
+
+    <div class="header-actions">
+      <button id="reset-btn" class="btn btn-outline">Reset Demo</button>
+      <button id="print-cv-btn" class="btn btn-outline">🖨️ Print CV</button>
+      <a id="download-zip-btn" href="downloads/graduate.zip" download class="btn btn-primary">Download ZIP</a>
+    </div>
+  </header>
+
+  <div class="customizer-body">
+    <!-- Editor Controls Pane -->
+    <aside class="editor-pane" id="editor-pane">
+      <!-- Injected Dynamically Based On Selected Template -->
+    </aside>
+
+    <!-- Live Preview Pane -->
+    <main class="preview-pane">
+      <div id="preview-container" class="preview-frame-container viewport-desktop">
+        <iframe id="preview-frame" title="Live Preview"></iframe>
+      </div>
+    </main>
+  </div>
+
+  <script type="module">
+    import { graduateDefaultConfig, buildGraduateHtml } from './src/templates/graduate.ts';
+
+    var currentTemplate = 'graduate';
+    var state = JSON.parse(localStorage.getItem('frontdoor_graduate_config') || 'null') || JSON.parse(JSON.stringify(graduateDefaultConfig));
+
+    var frame = document.getElementById('preview-frame');
+    var editorPane = document.getElementById('editor-pane');
+    var picker = document.getElementById('template-picker');
+    var container = document.getElementById('preview-container');
+
+    function saveState() {
+      localStorage.setItem('frontdoor_graduate_config', JSON.stringify(state));
+    }
+
+    function renderPreview() {
+      if (currentTemplate === 'graduate') {
+        var html = buildGraduateHtml(state);
+        var blob = new Blob([html], { type: 'text/html' });
+        frame.src = URL.createObjectURL(blob);
+      } else {
+        frame.src = currentTemplate + '/index.html';
+      }
+      document.getElementById('download-zip-btn').href = 'downloads/' + currentTemplate + '.zip';
+    }
+
+    function renderEditor() {
+      if (currentTemplate !== 'graduate') {
+        editorPane.innerHTML = '<div style="padding: 20px; color: var(--text-muted);"><h3 style="margin-bottom:8px; color:var(--text);">Direct File Editing</h3><p>Open <code>' + currentTemplate + '/index.html</code> or <code>style.css</code> in your text editor to customize this template directly.</p></div>';
+        return;
+      }
+
+      editorPane.innerHTML = `
+        <div style="margin-bottom: 20px;">
+          <h2 style="font-size: 1.125rem; font-weight: 700; margin-bottom: 4px;">Graduate CV & Portfolio</h2>
+          <p style="font-size: 0.8125rem; color: var(--text-muted);">Customize your profile, skills, projects, and career timeline below. Changes update live in the preview pane.</p>
+        </div>
+
+        <!-- 1. Profile Accordion -->
+        <div class="accordion-group open">
+          <div class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
+            <span>👤 Profile & Personal Details</span>
+            <span>▼</span>
+          </div>
+          <div class="accordion-content">
+            <div class="form-group">
+              <label>Full Name</label>
+              <input type="text" class="form-control" id="f-name" value="${state.businessName}">
+            </div>
+            <div class="form-group">
+              <label>Headline / Target Role</label>
+              <input type="text" class="form-control" id="f-headline" value="${state.headline}">
+            </div>
+            <div class="form-group">
+              <label>Short Bio</label>
+              <textarea class="form-control" id="f-bio" rows="2">${state.shortBio}</textarea>
+            </div>
+            <div class="form-group">
+              <label>Location</label>
+              <input type="text" class="form-control" id="f-location" value="${state.location}">
+            </div>
+            <div class="form-group">
+              <label>Availability</label>
+              <input type="text" class="form-control" id="f-avail" value="${state.availability}">
+            </div>
+            <div class="form-group">
+              <label>Degree</label>
+              <input type="text" class="form-control" id="f-degree" value="${state.degree}">
+            </div>
+            <div class="form-group">
+              <label>University / School</label>
+              <input type="text" class="form-control" id="f-school" value="${state.school}">
+            </div>
+            <div class="form-group">
+              <label>Class of Degree</label>
+              <input type="text" class="form-control" id="f-class" value="${state.classOfDegree}">
+            </div>
+            <div class="form-group">
+              <label>GitHub URL</label>
+              <input type="url" class="form-control" id="f-github" value="${state.github}">
+            </div>
+            <div class="form-group">
+              <label>LinkedIn URL</label>
+              <input type="url" class="form-control" id="f-linkedin" value="${state.linkedin}">
+            </div>
+            <div class="form-group">
+              <label>CV File URL (Leave empty for WhatsApp request button)</label>
+              <input type="text" class="form-control" id="f-cv" value="${state.cvUrl || ''}">
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Skills Accordion -->
+        <div class="accordion-group">
+          <div class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
+            <span>⚡ Skills & Tech Stack</span>
+            <span>▼</span>
+          </div>
+          <div class="accordion-content">
+            <div id="skills-list"></div>
+            <button class="add-btn" id="add-skill-group-btn">+ Add Skill Group</button>
+          </div>
+        </div>
+
+        <!-- 3. Projects Accordion -->
+        <div class="accordion-group">
+          <div class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
+            <span>💻 Selected Projects</span>
+            <span>▼</span>
+          </div>
+          <div class="accordion-content">
+            <div id="projects-list"></div>
+            <button class="add-btn" id="add-project-btn">+ Add Project</button>
+          </div>
+        </div>
+
+        <!-- 4. Experience Accordion -->
+        <div class="accordion-group">
+          <div class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
+            <span>🏢 Career Experience</span>
+            <span>▼</span>
+          </div>
+          <div class="accordion-content">
+            <div id="experience-list"></div>
+            <button class="add-btn" id="add-exp-btn">+ Add Experience</button>
+          </div>
+        </div>
+
+        <!-- 5. Education & Certifications Accordion -->
+        <div class="accordion-group">
+          <div class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
+            <span>🎓 Education & Certifications</span>
+            <span>▼</span>
+          </div>
+          <div class="accordion-content">
+            <div class="form-group">
+              <label>Degree Honors & Project Note</label>
+              <textarea class="form-control" id="f-edu-note" rows="2">${state.education[0]?.note || ''}</textarea>
+            </div>
+            <div class="form-group">
+              <label>Certifications (comma-separated)</label>
+              <input type="text" class="form-control" id="f-certs" value="${state.certifications.join(', ')}">
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Contact Channels Accordion -->
+        <div class="accordion-group">
+          <div class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
+            <span>📞 Contact & Channels</span>
+            <span>▼</span>
+          </div>
+          <div class="accordion-content">
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="text" class="form-control" id="f-phone" value="${state.phone}">
+            </div>
+            <div class="form-group">
+              <label>WhatsApp Number</label>
+              <input type="text" class="form-control" id="f-whatsapp" value="${state.whatsapp}">
+            </div>
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" class="form-control" id="f-email" value="${state.email}">
+            </div>
+          </div>
+        </div>
+      `;
+
+      attachEditorEvents();
+    }
+
+    function attachEditorEvents() {
+      // Profile bindings
+      function bind(id, prop) {
+        var el = document.getElementById(id);
+        if (el) {
+          el.addEventListener('input', function() {
+            state[prop] = el.value;
+            saveState();
+            renderPreview();
+          });
+        }
+      }
+      bind('f-name', 'businessName');
+      bind('f-headline', 'headline');
+      bind('f-bio', 'shortBio');
+      bind('f-location', 'location');
+      bind('f-avail', 'availability');
+      bind('f-degree', 'degree');
+      bind('f-school', 'school');
+      bind('f-class', 'classOfDegree');
+      bind('f-github', 'github');
+      bind('f-linkedin', 'linkedin');
+      bind('f-cv', 'cvUrl');
+      bind('f-phone', 'phone');
+      bind('f-whatsapp', 'whatsapp');
+      bind('f-email', 'email');
+
+      var eduNote = document.getElementById('f-edu-note');
+      if (eduNote) {
+        eduNote.addEventListener('input', function() {
+          if (state.education && state.education[0]) {
+            state.education[0].note = eduNote.value;
+            saveState();
+            renderPreview();
+          }
+        });
+      }
+
+      var certsInput = document.getElementById('f-certs');
+      if (certsInput) {
+        certsInput.addEventListener('input', function() {
+          state.certifications = certsInput.value.split(',').map(function(s) { return s.trim(); }).filter(Boolean);
+          saveState();
+          renderPreview();
+        });
+      }
+
+      // Render Dynamic Skills
+      renderSkillsList();
+      renderProjectsList();
+      renderExperienceList();
+
+      document.getElementById('add-skill-group-btn').onclick = function() {
+        state.skillGroups.push({ title: 'New Skill Area', items: ['Skill 1', 'Skill 2'] });
+        saveState();
+        renderSkillsList();
+        renderPreview();
+      };
+
+      document.getElementById('add-project-btn').onclick = function() {
+        state.projects.push({
+          title: 'New Featured Project',
+          description: 'A responsive full-stack web application built to solve real-world workflows.',
+          tags: ['React', 'Node.js', 'PostgreSQL'],
+          repoUrl: 'https://github.com/yourname/new-project',
+          liveUrl: 'https://demo.example.com',
+          imageUrl: 'https://picsum.photos/seed/new-p/800/500'
+        });
+        saveState();
+        renderProjectsList();
+        renderPreview();
+      };
+
+      document.getElementById('add-exp-btn').onclick = function() {
+        state.experience.push({
+          role: 'Junior Engineer',
+          organization: 'Tech Enterprise, Lagos',
+          period: '2024 - Present',
+          points: ['Implemented modern responsive web components and accessible designs.']
+        });
+        saveState();
+        renderExperienceList();
+        renderPreview();
+      };
+    }
+
+    function renderSkillsList() {
+      var container = document.getElementById('skills-list');
+      if (!container) return;
+      container.innerHTML = state.skillGroups.map(function(g, idx) {
+        return `
+          <div class="item-card">
+            <button class="remove-btn" onclick="window.removeSkillGroup(${idx})">✕ Remove</button>
+            <div class="form-group">
+              <label>Group Title</label>
+              <input type="text" class="form-control" value="${g.title}" oninput="window.updateSkillGroupTitle(${idx}, this.value)">
+            </div>
+            <div class="form-group">
+              <label>Skills (comma separated)</label>
+              <input type="text" class="form-control" value="${g.items.join(', ')}" oninput="window.updateSkillGroupItems(${idx}, this.value)">
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function renderProjectsList() {
+      var container = document.getElementById('projects-list');
+      if (!container) return;
+      container.innerHTML = state.projects.map(function(p, idx) {
+        return `
+          <div class="item-card">
+            <button class="remove-btn" onclick="window.removeProject(${idx})">✕ Remove</button>
+            <div class="form-group">
+              <label>Title</label>
+              <input type="text" class="form-control" value="${p.title}" oninput="window.updateProject(${idx}, 'title', this.value)">
+            </div>
+            <div class="form-group">
+              <label>Description</label>
+              <textarea class="form-control" rows="2" oninput="window.updateProject(${idx}, 'description', this.value)">${p.description}</textarea>
+            </div>
+            <div class="form-group">
+              <label>Tags (comma separated)</label>
+              <input type="text" class="form-control" value="${p.tags.join(', ')}" oninput="window.updateProject(${idx}, 'tags', this.value.split(',').map(s=>s.trim()).filter(Boolean))">
+            </div>
+            <div class="form-group">
+              <label>GitHub Code Link</label>
+              <input type="url" class="form-control" value="${p.repoUrl}" oninput="window.updateProject(${idx}, 'repoUrl', this.value)">
+            </div>
+            <div class="form-group">
+              <label>Live Demo Link</label>
+              <input type="url" class="form-control" value="${p.liveUrl || ''}" oninput="window.updateProject(${idx}, 'liveUrl', this.value)">
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function renderExperienceList() {
+      var container = document.getElementById('experience-list');
+      if (!container) return;
+      container.innerHTML = state.experience.map(function(e, idx) {
+        return `
+          <div class="item-card">
+            <button class="remove-btn" onclick="window.removeExp(${idx})">✕ Remove</button>
+            <div class="form-group">
+              <label>Role</label>
+              <input type="text" class="form-control" value="${e.role}" oninput="window.updateExp(${idx}, 'role', this.value)">
+            </div>
+            <div class="form-group">
+              <label>Organization</label>
+              <input type="text" class="form-control" value="${e.organization}" oninput="window.updateExp(${idx}, 'organization', this.value)">
+            </div>
+            <div class="form-group">
+              <label>Period</label>
+              <input type="text" class="form-control" value="${e.period}" oninput="window.updateExp(${idx}, 'period', this.value)">
+            </div>
+            <div class="form-group">
+              <label>Bullet Points (one per line)</label>
+              <textarea class="form-control" rows="2" oninput="window.updateExp(${idx}, 'points', this.value.split('\\n').filter(Boolean))">${e.points.join('\n')}</textarea>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // Window handlers for inline events
+    window.removeSkillGroup = function(idx) {
+      state.skillGroups.splice(idx, 1);
+      saveState();
+      renderSkillsList();
+      renderPreview();
+    };
+    window.updateSkillGroupTitle = function(idx, val) {
+      state.skillGroups[idx].title = val;
+      saveState();
+      renderPreview();
+    };
+    window.updateSkillGroupItems = function(idx, val) {
+      state.skillGroups[idx].items = val.split(',').map(function(s) { return s.trim(); }).filter(Boolean);
+      saveState();
+      renderPreview();
+    };
+
+    window.removeProject = function(idx) {
+      state.projects.splice(idx, 1);
+      saveState();
+      renderProjectsList();
+      renderPreview();
+    };
+    window.updateProject = function(idx, prop, val) {
+      state.projects[idx][prop] = val;
+      saveState();
+      renderPreview();
+    };
+
+    window.removeExp = function(idx) {
+      state.experience.splice(idx, 1);
+      saveState();
+      renderExperienceList();
+      renderPreview();
+    };
+    window.updateExp = function(idx, prop, val) {
+      state.experience[idx][prop] = val;
+      saveState();
+      renderPreview();
+    };
+
+    // Viewport switcher
+    document.querySelectorAll('.viewport-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.viewport-btn').forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        var vp = btn.getAttribute('data-vp');
+        container.className = 'preview-frame-container viewport-' + vp;
+      });
+    });
+
+    picker.addEventListener('change', function() {
+      currentTemplate = picker.value;
+      renderEditor();
+      renderPreview();
+    });
+
+    document.getElementById('reset-btn').onclick = function() {
+      if (confirm('Reset Graduate demo content to default?')) {
+        state = JSON.parse(JSON.stringify(graduateDefaultConfig));
+        saveState();
+        renderEditor();
+        renderPreview();
+      }
+    };
+
+    document.getElementById('print-cv-btn').onclick = function() {
+      if (frame.contentWindow) {
+        frame.contentWindow.print();
+      }
+    };
+
+    // Initialize
+    renderEditor();
+    renderPreview();
+  </script>
+</body>
+</html>
