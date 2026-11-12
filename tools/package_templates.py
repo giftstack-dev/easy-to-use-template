@@ -17,7 +17,7 @@ from pathlib import Path
 import sys
 import zipfile
 
-# The nine ready-made landing page templates in the Frontdoor collection
+# The ten ready-made landing page templates in the Frontdoor collection
 TEMPLATE_IDS = [
     "atelier",
     "glow",
@@ -28,6 +28,7 @@ TEMPLATE_IDS = [
     "folio",
     "pulse",
     "graduate",
+    "universityportal",
 ]
 
 HOW_TO_USE_TEXT = """============================================================
@@ -111,7 +112,7 @@ def verify_templates(root_dir: Path) -> bool:
             all_valid = False
 
         if index_file.is_file() and style_file.is_file():
-            print(f"  [OK] {tid:10} -> index.html, style.css present")
+            print(f"  [OK] {tid:12} -> index.html, style.css present")
 
     return all_valid
 
@@ -120,6 +121,7 @@ def package_templates(root_dir: Path, output_dir: Path) -> None:
     """
     Packages each template directory into a standalone ZIP file in output_dir.
     Includes index.html, style.css, images/ directory, and HOW_TO_USE.txt.
+    For universityportal, includes robots.txt, access-slips.html, codes.csv, students.csv, results.csv, README.txt, and data/ shards if present.
     """
     output_dir.mkdir(parents=True, exist_ok=True)
     results = []
@@ -137,32 +139,51 @@ def package_templates(root_dir: Path, output_dir: Path) -> None:
         zip_path = output_dir / f"{tid}.zip"
 
         with zipfile.ZipFile(zip_path, mode="w", compression=zipfile.ZIP_DEFLATED) as zf:
-            # Add root HOW_TO_USE.txt
-            zf.writestr(f"{tid}/HOW_TO_USE.txt", HOW_TO_USE_TEXT)
-
-            # Add index.html
-            index_path = folder / "index.html"
-            if index_path.exists():
-                zf.write(index_path, arcname=f"{tid}/index.html")
-
-            # Add style.css
-            style_path = folder / "style.css"
-            if style_path.exists():
-                zf.write(style_path, arcname=f"{tid}/style.css")
-
-            # Add images folder contents
-            images_dir = folder / "images"
-            if images_dir.is_dir():
-                for img_file in images_dir.rglob("*"):
-                    if img_file.is_file():
-                        arcname = f"{tid}/images/{img_file.relative_to(images_dir)}"
-                        zf.write(img_file, arcname=arcname)
+            if tid == "universityportal":
+                for fname in [
+                    "index.html",
+                    "robots.txt",
+                    "access-slips.html",
+                    "codes.csv",
+                    "students.csv",
+                    "results.csv",
+                    "README.txt",
+                ]:
+                    fpath = folder / fname
+                    if fpath.exists():
+                        zf.write(fpath, arcname=f"{tid}/{fname}")
+                data_dir = folder / "data"
+                if data_dir.is_dir():
+                    for shard_file in data_dir.rglob("*"):
+                        if shard_file.is_file():
+                            zf.write(shard_file, arcname=f"{tid}/data/{shard_file.relative_to(data_dir)}")
             else:
-                # Add default images readme
-                zf.writestr(
-                    f"{tid}/images/README.txt",
-                    "Add your own business photos here and reference them in style.css or index.html.\n",
-                )
+                # Add root HOW_TO_USE.txt
+                zf.writestr(f"{tid}/HOW_TO_USE.txt", HOW_TO_USE_TEXT)
+
+                # Add index.html
+                index_path = folder / "index.html"
+                if index_path.exists():
+                    zf.write(index_path, arcname=f"{tid}/index.html")
+
+                # Add style.css
+                style_path = folder / "style.css"
+                if style_path.exists():
+                    zf.write(style_path, arcname=f"{tid}/style.css")
+
+                # Add images folder contents
+                images_dir = folder / "images"
+                if images_dir.is_dir():
+                    for img_file in images_dir.rglob("*"):
+                        if img_file.is_file():
+                            arcname = f"{tid}/images/{img_file.relative_to(images_dir)}"
+                            zf.write(img_file, arcname=arcname)
+                else:
+                    # Add default images readme
+                    zf.writestr(
+                        f"{tid}/images/README.txt",
+                        "Add your own business photos here and reference them in style.css or index.html.\n",
+                    )
 
         size_kb = os.path.getsize(zip_path) / 1024
         print(f"{tid:<14} {zip_path.name:<22} {size_kb:>6.1f} KB   OK")
@@ -199,7 +220,7 @@ def main():
         if not valid:
             print("\nVerification FAILED. Some template files are missing.")
             sys.exit(1)
-        print("\nVerification PASSED. All 8 template folders are complete.")
+        print(f"\nVerification PASSED. All {len(TEMPLATE_IDS)} template folders are complete.")
         sys.exit(0)
 
     # First verify integrity

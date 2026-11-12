@@ -34,6 +34,21 @@ export function validateUrl(url: string | undefined): string {
 }
 
 /**
+ * Validates image sources: allows safe http/https URLs or uploaded base64 raster data URIs (png/jpeg/webp/gif).
+ */
+export function validateImageUrl(url: string | undefined): string {
+  if (!url) return '';
+  const trimmed = url.trim();
+  if (/^https?:\/\//i.test(trimmed)) {
+    return trimmed;
+  }
+  if (/^data:image\/(png|jpeg|jpg|webp|gif);base64,[A-Za-z0-9+/=]+$/i.test(trimmed)) {
+    return trimmed;
+  }
+  return '';
+}
+
+/**
  * Normalizes a Nigerian phone number for tel: links (e.g. "0800 000 0000" -> "tel:08000000000").
  */
 export function normalizePhone(phone: string): string {
@@ -66,6 +81,115 @@ export function getInitials(name: string): string {
   const parts = name.trim().split(/\s+/).filter(Boolean);
   if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
   return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+}
+
+/**
+ * Parses a hex color (#RGB or #RRGGBB) into { r, g, b } components.
+ */
+export function hexToRgb(hex: string): { r: number; g: number; b: number } {
+  const clean = (hex || '').replace('#', '').trim();
+  if (/^[0-9a-fA-F]{3}$/.test(clean)) {
+    return {
+      r: parseInt(clean[0] + clean[0], 16),
+      g: parseInt(clean[1] + clean[1], 16),
+      b: parseInt(clean[2] + clean[2], 16),
+    };
+  }
+  if (/^[0-9a-fA-F]{6}$/.test(clean)) {
+    return {
+      r: parseInt(clean.slice(0, 2), 16),
+      g: parseInt(clean.slice(2, 4), 16),
+      b: parseInt(clean.slice(4, 6), 16),
+    };
+  }
+  return { r: 20, g: 57, b: 122 };
+}
+
+/**
+ * Converts { r, g, b } to #RRGGBB hex string.
+ */
+export function rgbToHex(r: number, g: number, b: number): string {
+  const clamp = (n: number) => Math.max(0, Math.min(255, Math.round(n)));
+  return (
+    '#' +
+    [clamp(r), clamp(g), clamp(b)]
+      .map((n) => n.toString(16).padStart(2, '0'))
+      .join('')
+      .toUpperCase()
+  );
+}
+
+/**
+ * Computes WCAG 2.1 relative luminance for a hex color.
+ */
+export function getRelativeLuminance(hex: string): number {
+  const { r, g, b } = hexToRgb(hex);
+  const srgb = [r, g, b].map((c) => {
+    const s = c / 255;
+    return s <= 0.03928 ? s / 12.92 : Math.pow((s + 0.055) / 1.055, 2.4);
+  });
+  return 0.2126 * srgb[0] + 0.7152 * srgb[1] + 0.0722 * srgb[2];
+}
+
+/**
+ * Computes WCAG 2.1 contrast ratio between two hex colors (1 to 21).
+ */
+export function getContrastRatio(hex1: string, hex2: string): number {
+  const l1 = getRelativeLuminance(hex1);
+  const l2 = getRelativeLuminance(hex2);
+  const lighter = Math.max(l1, l2);
+  const darker = Math.min(l1, l2);
+  return (lighter + 0.05) / (darker + 0.05);
+}
+
+/**
+ * Automatically chooses a readable foreground text color (#FFFFFF or #0F172A)
+ * that meets at least 4.5:1 WCAG AA contrast against the given background color.
+ */
+export function getContrastTextColor(
+  bgHex: string,
+  darkText = '#0F172A',
+  lightText = '#FFFFFF'
+): string {
+  const darkRatio = getContrastRatio(bgHex, darkText);
+  const lightRatio = getContrastRatio(bgHex, lightText);
+  if (lightRatio >= 4.5 && lightRatio >= darkRatio) return lightText;
+  if (darkRatio >= 4.5) return darkText;
+  return lightRatio >= darkRatio ? lightText : darkText;
+}
+
+/**
+ * Mixes two hex colors together by weight (0 = color1, 1 = color2).
+ */
+export function mixHexColors(hex1: string, hex2: string, weight: number): string {
+  const c1 = hexToRgb(hex1);
+  const c2 = hexToRgb(hex2);
+  const w = Math.max(0, Math.min(1, weight));
+  return rgbToHex(
+    c1.r * (1 - w) + c2.r * w,
+    c1.g * (1 - w) + c2.g * w,
+    c1.b * (1 - w) + c2.b * w
+  );
+}
+
+/**
+ * Computes lighter, darker, soft tint, and high-contrast foreground colors from a brand color.
+ */
+export function getBrandColorTokens(hex: string): {
+  base: string;
+  dark: string;
+  light: string;
+  soft: string;
+  contrast: string;
+  softContrast: string;
+} {
+  const base = /^#[0-9a-fA-F]{3,6}$/.test((hex || '').trim()) ? hex.trim() : '#14397A';
+  const dark = mixHexColors(base, '#000000', 0.22);
+  const light = mixHexColors(base, '#FFFFFF', 0.22);
+  const soft = mixHexColors(base, '#FFFFFF', 0.88);
+  const contrast = getContrastTextColor(base);
+  const softContrast = getContrastRatio(soft, dark) >= 4.5 ? dark : '#0F172A';
+  return { base, dark, light, soft, contrast, softContrast };
 }
 
 /**

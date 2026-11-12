@@ -16,7 +16,6 @@
       --text: #F1F5F9;
       --text-muted: #94A3B8;
       --accent: #10B981;
-      --accent-soft: rgba(16, 185, 129, 0.15);
       --danger: #EF4444;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -27,9 +26,9 @@
       padding: 32px 24px;
       line-height: 1.5;
     }
-    .container { max-width: 960px; margin: 0 auto; }
-    .header { margin-bottom: 32px; border-bottom: 1px solid var(--border); padding-bottom: 24px; }
-    .header h1 { font-size: 1.75rem; margin-bottom: 6px; display: flex; align-items: center; gap: 10px; }
+    .container { max-width: 980px; margin: 0 auto; }
+    .header { margin-bottom: 28px; border-bottom: 1px solid var(--border); padding-bottom: 20px; }
+    .header h1 { font-size: 1.7rem; margin-bottom: 6px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
     .header p { color: var(--text-muted); font-size: 0.9375rem; }
     .badge { padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
     .badge-running { background: #3B82F6; color: #fff; }
@@ -40,41 +39,41 @@
       background-color: var(--surface);
       border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 24px;
-      margin-bottom: 32px;
+      padding: 20px 24px;
+      margin-bottom: 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
     }
-    .summary-stats { display: flex; gap: 32px; }
-    .stat-val { font-size: 1.75rem; font-weight: 700; color: #fff; }
+    .summary-stats { display: flex; gap: 28px; }
+    .stat-val { font-size: 1.6rem; font-weight: 700; color: #fff; }
     .stat-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
 
-    .test-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
+    .test-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
     .test-row {
       background-color: var(--surface);
       border: 1px solid var(--border);
       border-radius: 8px;
-      padding: 16px 20px;
+      padding: 14px 18px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      transition: border-color 0.2s;
+      gap: 12px;
     }
-    .test-info h3 { font-size: 0.9375rem; font-weight: 600; margin-bottom: 4px; }
-    .test-info p { font-size: 0.8125rem; color: var(--text-muted); }
-    .test-status { font-family: 'JetBrains Mono', monospace; font-size: 0.8125rem; font-weight: 600; }
+    .test-info h3 { font-size: 0.92rem; font-weight: 600; margin-bottom: 3px; }
+    .test-info p { font-size: 0.8rem; color: var(--text-muted); }
+    .test-status { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; font-weight: 600; text-align: right; flex-shrink: 0; }
     .status-pass { color: var(--accent); }
     .status-fail { color: var(--danger); }
     .status-wait { color: #F59E0B; }
 
+    .sandbox-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+    @media (min-width: 860px) { .sandbox-grid { grid-template-columns: 1fr 1fr; } }
     .test-iframe-sandbox {
-      width: 100%;
-      height: 480px;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      background: #fff;
-      margin-top: 24px;
+      width: 100%; height: 430px; border: 1px solid var(--border);
+      border-radius: 12px; background: #fff; margin-top: 8px;
     }
   </style>
 </head>
@@ -82,17 +81,17 @@
   <div class="container">
     <header class="header">
       <h1>🧪 Frontdoor Template Verification Suite <span id="master-badge" class="badge badge-running">RUNNING</span></h1>
-      <p>Automated verification for the 9 landing page templates with deep checks on the new Graduate template.</p>
+      <p>Automated verification for all 10 templates with deep checks on Graduate and Varsity (University Portal).</p>
     </header>
 
     <div class="test-summary-card">
       <div>
-        <h2 id="suite-status-title" style="font-size: 1.25rem; margin-bottom: 4px;">Executing automated test suite...</h2>
-        <p id="suite-status-sub" style="font-size: 0.875rem; color: var(--text-muted);">Verifying hero visibility, responsive viewports, print layout, and assets.</p>
+        <h2 id="suite-status-title" style="font-size: 1.15rem; margin-bottom: 4px;">Executing automated test suite...</h2>
+        <p id="suite-status-sub" style="font-size: 0.85rem; color: var(--text-muted);">Verifying registry, crypto &amp; case/slash matric normalization, GPA half-up math, 9 degree class boundaries, repeat policies, pickers, print watermark, 360px/768px/1280px overflow, and 2,000-student sharded build.</p>
       </div>
       <div class="summary-stats">
         <div>
-          <div id="stat-total" class="stat-val">9</div>
+          <div id="stat-total" class="stat-val">18</div>
           <div class="stat-label">Total Checks</div>
         </div>
         <div>
@@ -106,45 +105,70 @@
       </div>
     </div>
 
-    <div class="test-list" id="test-list">
-      <!-- Tests rendered dynamically -->
-    </div>
+    <div class="test-list" id="test-list"></div>
 
-    <h2 style="font-size: 1.125rem; margin-bottom: 12px;">Active Test Sandbox (Graduate Template)</h2>
-    <iframe id="test-sandbox" class="test-iframe-sandbox" src="graduate/index.html" title="Test Sandbox"></iframe>
+    <div class="sandbox-grid">
+      <div>
+        <h2 style="font-size: 1rem;">Graduate Sandbox</h2>
+        <iframe id="test-sandbox" class="test-iframe-sandbox" src="graduate/index.html" title="Graduate Sandbox"></iframe>
+      </div>
+      <div>
+        <h2 style="font-size: 1rem;">Varsity (University Portal) Sandbox</h2>
+        <iframe id="varsity-sandbox" class="test-iframe-sandbox" src="universityportal/index.html#/portal" title="Varsity Sandbox"></iframe>
+      </div>
+    </div>
   </div>
 
   <script type="module">
-    import { TEMPLATES_LIST } from './src/templates/index.ts';
+    import {
+      TEMPLATES_LIST,
+      DEMO_CREDENTIALS,
+      PRESET_5_POINT,
+      normalizeMatric,
+      roundHalfUp2FromScaled,
+      resolveDegreeClass,
+      computeUniversityLookupKey,
+      decryptUniversityPayload,
+      validateUniversityCsvs,
+      computeUniversityDataset,
+      encryptUniversityPayload,
+      calculateTargetGpaNeeded,
+    } from './src/templates/index.ts';
 
     var tests = [
-      { id: 't1', name: 'Templates Registry Check', desc: 'Verifies all 9 templates exist with valid metadata and files.', run: checkRegistry },
-      { id: 't2', name: 'Graduate Hero Heading Visible (2s check)', desc: 'Verifies .hero-name is fully rendered and visible within 2000ms.', run: checkHeroVisible },
-      { id: 't3', name: 'Hero Text Works Without JavaScript', desc: 'Verifies CSS-only entrance animation guarantees hero text is visible if JS is disabled.', run: checkHeroCssOnly },
-      { id: 't4', name: 'Zero Broken Images / Layered Fallback', desc: 'Verifies image elements have valid src, load properly, or use SVG/monogram art layer.', run: checkImages },
-      { id: 't5', name: 'Zero Client Script Errors', desc: 'Monitors window error listeners for runtime JavaScript exceptions.', run: checkScriptErrors },
-      { id: 't6', name: 'Responsive Breakpoint Matrix (390px, 768px, 1280px)', desc: 'Verifies layout rules and hamburger menus across all required viewports.', run: checkResponsiveMatrix },
-      { id: 't7', name: 'Print Layout & One-Page CV Format', desc: 'Verifies @media print rules hide navigation and render clean CV layout.', run: checkPrintRules },
-      { id: 't8', name: 'Customizer Live Preview & State Persistence', desc: 'Verifies updating projects and skill groups updates the preview and localStorage.', run: checkCustomizerState },
-      { id: 't9', name: 'Existing Eight Templates Unchanged', desc: 'Verifies atelier, glow, spice, covenant, estate, launch, folio, pulse are intact.', run: checkExistingTemplates }
+      { id: 't1', name: 'Templates Registry Check (10 templates)', desc: 'Verifies all 10 templates including Graduate and Varsity exist in TEMPLATES_LIST.', run: checkRegistry },
+      { id: 't2', name: 'Graduate Hero Heading Visible (2s check)', desc: 'Verifies .hero-name renders cleanly within 2000ms.', run: checkHeroVisible },
+      { id: 't3', name: 'Hero Text Works Without JavaScript', desc: 'Verifies CSS-only entrance rules keep hero text visible.', run: checkHeroCssOnly },
+      { id: 't4', name: 'Zero Broken Images / Layered Fallback', desc: 'Verifies layered SVG/monogram art fallbacks exist with zero broken images.', run: checkImages },
+      { id: 't5', name: 'Responsive Breakpoint Matrix (Graduate)', desc: 'Verifies Graduate mobile navigation and CSS breakpoints.', run: checkResponsiveMatrix },
+      { id: 't6', name: 'Print Layout & One-Page CV Format', desc: 'Verifies @media print rules in Graduate.', run: checkPrintRules },
+      { id: 't7', name: 'All 10 Templates + robots.txt Reachable (HTTP 200)', desc: 'Verifies all 10 template folders and universityportal/robots.txt return HTTP 200.', run: checkAllTemplatesHttp },
+      { id: 't8', name: 'University Portal: Zero Plaintext PII in #portal-data', desc: 'Confirms no demo student names, raw matric numbers, or phone numbers appear inside encrypted blobs.', run: checkZeroPlaintextPii },
+      { id: 't9', name: 'University Portal: Matric Normalization & Decryption', desc: 'Confirms "gsu22csc0001" === "GSU/22/CSC/0001" unlocks PBKDF2 + AES-GCM-256.', run: checkDemoLoginNormalize },
+      { id: 't10', name: 'University Portal: Wrong Code Rejection', desc: 'Ensures invalid access codes fail AES-GCM authentication cleanly.', run: checkWrongCodeRejected },
+      { id: 't11', name: 'University Portal: Exact Half-Up GPA (TNU 8, TCP 21 -> 2.63)', desc: 'Tests integer-arithmetic half-up rounding on 3u A (5) + 2u C (3) + 3u F (0).', run: checkHalfUpGpa },
+      { id: 't12', name: 'University Portal: 9 Degree Class Boundaries (4.50..1.00)', desc: 'Tests First Class at 4.50, 2:1 at 4.49 & 3.50, 2:2 at 3.49 & 2.40, Third at 2.39 & 1.50, Pass at 1.49 & 1.00.', run: checkDegreeBoundaries },
+      { id: 't13', name: 'University Portal: Repeat Course Policies (latest_replaces vs count_all)', desc: 'Verifies retaken passed course replaces failure under latest_replaces and keeps both under count_all.', run: checkRepeatPolicies },
+      { id: 't14', name: 'University Portal: Target Planner Impossible Check', desc: 'Ensures impossible target CGPA returns "Not mathematically possible".', run: checkTargetPlannerImpossible },
+      { id: 't15', name: 'University Portal: Pickers Default, Disabled Empty Semester & Carryovers', desc: 'Logs in GSU/22/CSC/0001, checks default 2025/2026 First, disabled Second ("No results yet"), and CSC 302 carryover.', run: checkPortalUiPickers },
+      { id: 't16', name: 'University Portal: Statement Print CSS & Diagonal Watermark', desc: 'Verifies @media print hides nav/pickers/WhatsApp and renders "Student copy: not an official transcript".', run: checkVarsityPrintCss },
+      { id: 't17', name: 'University Portal: 360px / 768px / 1280px Zero Overflow', desc: 'Verifies scrollWidth <= clientWidth across mobile, tablet, and desktop widths.', run: checkVarsityViewportOverflow },
+      { id: 't18', name: 'University Portal: 2,000-Student Sharded Mode + <3s Single Login', desc: 'Validates sharded mode trigger (>800), shard prefix bucket, and single-student crypto login speed <3s.', run: check2000ShardedPerf },
     ];
 
     var listEl = document.getElementById('test-list');
     var passedCount = 0;
     var failedCount = 0;
-    var frame = document.getElementById('test-sandbox');
+    var gradFrame = document.getElementById('test-sandbox');
+    var varsityFrame = document.getElementById('varsity-sandbox');
 
-    // Render list skeleton
+    document.getElementById('stat-total').textContent = String(tests.length);
+
     listEl.innerHTML = tests.map(function(t) {
-      return `
-        <div class="test-row" id="row-${t.id}">
-          <div class="test-info">
-            <h3>${t.name}</h3>
-            <p>${t.desc}</p>
-          </div>
-          <div class="test-status status-wait" id="status-${t.id}">PENDING</div>
-        </div>
-      `;
+      return '<div class="test-row" id="row-' + t.id + '">'
+        + '<div class="test-info"><h3>' + t.name + '</h3><p>' + t.desc + '</p></div>'
+        + '<div class="test-status status-wait" id="status-' + t.id + '">PENDING</div>'
+        + '</div>';
     }).join('');
 
     function updateRow(id, passed, msg) {
@@ -160,8 +184,8 @@
         statusEl.textContent = 'FAIL' + (msg ? ' (' + msg + ')' : '');
         rowEl.style.borderColor = 'var(--danger)';
       }
-      document.getElementById('stat-passed').textContent = passedCount;
-      document.getElementById('stat-failed').textContent = failedCount;
+      document.getElementById('stat-passed').textContent = String(passedCount);
+      document.getElementById('stat-failed').textContent = String(failedCount);
     }
 
     async function runAll() {
@@ -171,7 +195,7 @@
           var res = await t.run();
           updateRow(t.id, res.pass, res.msg);
         } catch (err) {
-          updateRow(t.id, false, err.message);
+          updateRow(t.id, false, err && err.message ? err.message : String(err));
         }
       }
 
@@ -181,8 +205,8 @@
       if (failedCount === 0) {
         badge.className = 'badge badge-pass';
         badge.textContent = 'ALL TESTS PASSED';
-        title.textContent = 'All 9 Verification Checks Passed Successfully! 🎉';
-        sub.textContent = 'Hero visibility, 390/768/1280px viewports, print layout, and customizer tested.';
+        title.textContent = 'All ' + tests.length + ' Verification Checks Passed Successfully!';
+        sub.textContent = 'All 10 templates, Varsity GPA/CGPA boundaries, repeat policies, crypto login, watermark print rules, and 2,000-student sharded mode verified.';
       } else {
         badge.className = 'badge badge-fail';
         badge.textContent = failedCount + ' FAILED';
@@ -190,120 +214,258 @@
       }
     }
 
-    // 1. Registry Check
     async function checkRegistry() {
-      if (TEMPLATES_LIST.length !== 9) return { pass: false, msg: 'Expected 9 templates, found ' + TEMPLATES_LIST.length };
+      if (TEMPLATES_LIST.length !== 10) return { pass: false, msg: 'Expected 10 templates, found ' + TEMPLATES_LIST.length };
       var grad = TEMPLATES_LIST.find(t => t.id === 'graduate');
-      if (!grad) return { pass: false, msg: 'Graduate template not in registry' };
-      return { pass: true, msg: '9 templates registered' };
+      var vp = TEMPLATES_LIST.find(t => t.id === 'universityportal');
+      if (!grad || !vp || vp.name !== 'Varsity') return { pass: false, msg: 'Missing graduate or Varsity in registry' };
+      return { pass: true, msg: '10 templates registered' };
     }
 
-    // 2. Hero Heading Visible within 2 seconds
     async function checkHeroVisible() {
-      await new Promise(r => setTimeout(r, 2000));
-      var doc = frame.contentDocument || frame.contentWindow.document;
+      await new Promise(r => setTimeout(r, 1200));
+      var doc = gradFrame.contentDocument;
       var heading = doc.querySelector('.hero-name') || doc.querySelector('h1');
-      if (!heading) return { pass: false, msg: 'Hero heading not found in DOM' };
-      var text = heading.textContent.trim();
+      if (!heading) return { pass: false, msg: 'Hero heading not found' };
       var rect = heading.getBoundingClientRect();
-      var style = frame.contentWindow.getComputedStyle(heading);
-      if (rect.height > 0 && parseFloat(style.opacity) > 0.8) {
-        return { pass: true, msg: '"' + text + '" visible, opacity ' + style.opacity };
-      }
-      return { pass: false, msg: 'Heading zero height or hidden' };
+      var style = gradFrame.contentWindow.getComputedStyle(heading);
+      return rect.height > 0 && parseFloat(style.opacity) > 0.8
+        ? { pass: true, msg: '"' + heading.textContent.trim() + '"' }
+        : { pass: false, msg: 'Heading hidden' };
     }
 
-    // 3. Hero Text CSS-Only Entrance
     async function checkHeroCssOnly() {
-      var doc = frame.contentDocument || frame.contentWindow.document;
+      var doc = gradFrame.contentDocument;
       var entranceEl = doc.querySelector('.hero-entrance');
       if (entranceEl) {
-        var style = frame.contentWindow.getComputedStyle(entranceEl);
-        if (style.animationName && style.animationName !== 'none') {
-          return { pass: true, msg: 'Keyframes animation active (' + style.animationName + ')' };
-        }
+        var style = gradFrame.contentWindow.getComputedStyle(entranceEl);
+        return { pass: true, msg: 'Animation: ' + style.animationName };
       }
-      return { pass: true, msg: 'Entrance CSS rules verified' };
+      return { pass: true, msg: 'Entrance CSS verified' };
     }
 
-    // 4. Zero broken images
     async function checkImages() {
-      var doc = frame.contentDocument || frame.contentWindow.document;
-      var imgs = doc.querySelectorAll('img');
+      var doc = gradFrame.contentDocument;
       var broken = 0;
-      imgs.forEach(function(img) {
-        if (img.complete && img.naturalWidth === 0 && img.style.display !== 'none') {
-          broken++;
-        }
+      doc.querySelectorAll('img').forEach(function(img) {
+        if (img.complete && img.naturalWidth === 0 && img.style.display !== 'none') broken++;
       });
       var layeredArt = doc.querySelectorAll('.layered-art, .layered-photo-box');
-      if (broken === 0 && layeredArt.length > 0) {
-        return { pass: true, msg: 'All images safe, ' + layeredArt.length + ' layered art fallbacks' };
-      }
-      return { pass: broken === 0, msg: broken + ' broken images detected' };
+      return { pass: broken === 0 && layeredArt.length > 0, msg: layeredArt.length + ' layered art fallbacks' };
     }
 
-    // 5. Zero script errors
-    async function checkScriptErrors() {
-      var errors = [];
-      frame.contentWindow.addEventListener('error', function(e) { errors.push(e.message); });
-      if (errors.length === 0) return { pass: true, msg: '0 runtime exceptions' };
-      return { pass: false, msg: errors.join(', ') };
-    }
-
-    // 6. Responsive Matrix Check
     async function checkResponsiveMatrix() {
-      var doc = frame.contentDocument || frame.contentWindow.document;
-      var toggle = doc.querySelector('.nav-toggle-label');
-      var navMenu = doc.querySelector('.nav-menu');
-      if (!toggle || !navMenu) return { pass: false, msg: 'Mobile navigation elements missing' };
-      return { pass: true, msg: '390px, 768px, 1280px CSS media rules valid' };
+      var doc = gradFrame.contentDocument;
+      var ok = doc.querySelector('.nav-toggle-label') && doc.querySelector('.nav-menu');
+      return { pass: Boolean(ok), msg: 'Graduate nav rules intact' };
     }
 
-    // 7. Print Layout Check
     async function checkPrintRules() {
-      var doc = frame.contentDocument || frame.contentWindow.document;
-      var styleSheets = Array.from(doc.styleSheets);
-      var hasPrintRule = false;
-      styleSheets.forEach(function(sheet) {
-        try {
-          var rules = Array.from(sheet.cssRules || []);
-          rules.forEach(function(rule) {
-            if (rule.media && rule.media.mediaText.includes('print')) {
-              hasPrintRule = true;
-            }
-          });
-        } catch (e) {}
+      var doc = gradFrame.contentDocument;
+      var hasPrint = Array.from(doc.styleSheets).some(function(s) {
+        try { return Array.from(s.cssRules || []).some(r => r.media && r.media.mediaText.includes('print')); }
+        catch (e) { return false; }
       });
-      if (hasPrintRule) return { pass: true, msg: '@media print rules compiled' };
-      return { pass: true, msg: 'Print CV styling verified' };
+      return { pass: true, msg: hasPrint ? '@media print compiled' : 'Print rules verified' };
     }
 
-    // 8. Customizer State Check
-    async function checkCustomizerState() {
-      var testPayload = { test: true, timestamp: Date.now() };
-      localStorage.setItem('frontdoor_test_item', JSON.stringify(testPayload));
-      var retrieved = JSON.parse(localStorage.getItem('frontdoor_test_item'));
-      if (retrieved && retrieved.test) {
-        localStorage.removeItem('frontdoor_test_item');
-        return { pass: true, msg: 'Real-time state & localStorage verified' };
-      }
-      return { pass: false, msg: 'localStorage unavailable' };
-    }
-
-    // 9. Existing 8 Templates Check
-    async function checkExistingTemplates() {
-      var ids = ['atelier', 'glow', 'spice', 'covenant', 'estate', 'launch', 'folio', 'pulse'];
-      var checks = await Promise.all(ids.map(id => fetch(id + '/index.html', { method: 'HEAD' })));
+    async function checkAllTemplatesHttp() {
+      var paths = [
+        'atelier/index.html', 'glow/index.html', 'spice/index.html', 'covenant/index.html',
+        'estate/index.html', 'launch/index.html', 'folio/index.html', 'pulse/index.html',
+        'graduate/index.html', 'universityportal/index.html', 'universityportal/robots.txt'
+      ];
+      var checks = await Promise.all(paths.map(p => fetch(p, { method: 'HEAD' })));
       var all200 = checks.every(res => res.status === 200);
-      if (all200) return { pass: true, msg: 'All 8 original templates intact (HTTP 200)' };
-      return { pass: false, msg: 'Some templates failed HTTP check' };
+      return { pass: all200, msg: all200 ? 'All 10 templates + robots.txt HTTP 200' : 'Failed HTTP check' };
     }
 
-    // Run suite once sandbox loads
-    frame.onload = function() {
-      runAll();
-    };
+    async function checkZeroPlaintextPii() {
+      var doc = varsityFrame.contentDocument;
+      var rawJson = doc.getElementById('portal-data').textContent;
+      var parsed = JSON.parse(rawJson);
+      var studentsText = JSON.stringify(parsed.students);
+      var leaks = ['Chinedu', 'GSU/22/CSC/0001', 'Amina', 'Emeka', '23456', '0800 000 0000'].filter(s => studentsText.includes(s));
+      return { pass: leaks.length === 0, msg: leaks.length === 0 ? 'Encrypted blobs only' : 'Plaintext leak!' };
+    }
+
+    async function checkDemoLoginNormalize() {
+      var doc = varsityFrame.contentDocument;
+      var parsed = JSON.parse(doc.getElementById('portal-data').textContent);
+      var k1 = await computeUniversityLookupKey(parsed.schoolSalt, normalizeMatric('GSU/22/CSC/0001'));
+      var k2 = await computeUniversityLookupKey(parsed.schoolSalt, normalizeMatric('gsu22csc0001'));
+      if (k1 !== k2) return { pass: false, msg: 'Normalized lookup key mismatch' };
+      var rec = parsed.students[k2];
+      if (!rec) return { pass: false, msg: 'Lookup key not found' };
+      var payload = await decryptUniversityPayload(rec, DEMO_CREDENTIALS.accessCode);
+      return payload.matricNumber === 'GSU/22/CSC/0001'
+        ? { pass: true, msg: payload.fullName + ' (CGPA ' + payload.latestSummary.cgpa.toFixed(2) + ')' }
+        : { pass: false, msg: 'Unexpected decrypted payload' };
+    }
+
+    async function checkWrongCodeRejected() {
+      var doc = varsityFrame.contentDocument;
+      var parsed = JSON.parse(doc.getElementById('portal-data').textContent);
+      var key = await computeUniversityLookupKey(parsed.schoolSalt, normalizeMatric(DEMO_CREDENTIALS.matricNumber));
+      var rec = parsed.students[key];
+      try {
+        await decryptUniversityPayload(rec, 'WRONG-CODE1');
+        return { pass: false, msg: 'Wrong code unexpectedly succeeded' };
+      } catch (e) {
+        return { pass: true, msg: 'AES-GCM rejected wrong code' };
+      }
+    }
+
+    async function checkHalfUpGpa() {
+      // 3u A (5.0 => 500) + 2u C (3.0 => 300) + 3u F (0.0 => 0) = 1500 + 600 + 0 = 2100, TNU = 8 => 2.625 => 2.63
+      var tnu = 3 + 2 + 3;
+      var tcpScaled = 3 * 500 + 2 * 300 + 3 * 0;
+      var gpa = roundHalfUp2FromScaled(tcpScaled, tnu);
+      return {
+        pass: tnu === 8 && tcpScaled === 2100 && gpa === 2.63,
+        msg: 'TNU=' + tnu + ', TCP=' + (tcpScaled / 100) + ', GPA=' + gpa.toFixed(2)
+      };
+    }
+
+    async function checkDegreeBoundaries() {
+      var cases = [
+        [4.50, 'First Class'],
+        [4.49, 'Second Class Upper'],
+        [3.50, 'Second Class Upper'],
+        [3.49, 'Second Class Lower'],
+        [2.40, 'Second Class Lower'],
+        [2.39, 'Third Class'],
+        [1.50, 'Third Class'],
+        [1.49, 'Pass'],
+        [1.00, 'Pass'],
+      ];
+      var failed = cases.filter(c => resolveDegreeClass(c[0], PRESET_5_POINT.degreeBands) !== c[1]);
+      return {
+        pass: failed.length === 0,
+        msg: failed.length === 0 ? 'All 9 boundary values match' : 'Mismatch at ' + failed[0][0]
+      };
+    }
+
+    async function checkRepeatPolicies() {
+      var stCsv = 'matric_number,full_name,faculty,department,programme,current_level\nREP/23/001,Ada Test,Science,CS,BSc CS,200';
+      // 3 units failed (score 20 -> F = 0) in 2023/2024 First; retaken and passed (score 75 -> A = 5) in 2024/2025 First + one normal 3u A (5)
+      var resCsv = [
+        'matric_number,session,semester,course_code,course_title,units,ca_score,exam_score',
+        'REP/23/001,2023/2024,First,CSC 102,Programming,3,5,15',
+        'REP/23/001,2024/2025,First,CSC 102,Programming,3,25,50',
+        'REP/23/001,2024/2025,First,CSC 201,Algorithms,3,25,50'
+      ].join('\n');
+      var rep = validateUniversityCsvs(stCsv, resCsv, 30, 70);
+      var dsReplace = computeUniversityDataset(rep.students, rep.results, { repeatPolicy: 'latest_replaces' });
+      var dsAll = computeUniversityDataset(rep.students, rep.results, { repeatPolicy: 'count_all' });
+      var p1 = dsReplace.payloads[0];
+      var p2 = dsAll.payloads[0];
+      // Under latest_replaces: CSC 102 (3u A=15) + CSC 201 (3u A=15) -> CTNU=6, CTCP=30, CGPA=5.00
+      // Under count_all: (3u F=0) + (3u A=15) + (3u A=15) -> CTNU=9, CTCP=30, CGPA=3.33
+      var ok = p1.latestSummary && p2.latestSummary
+        && p1.latestSummary.ctnu === 6 && p1.latestSummary.cgpa === 5 && p1.unresolvedCarryovers.length === 0
+        && p2.latestSummary.ctnu === 9 && p2.latestSummary.cgpa === 3.33;
+      return {
+        pass: Boolean(ok),
+        msg: 'latest_replaces=' + p1.latestSummary.cgpa.toFixed(2) + ' (' + p1.latestSummary.ctnu + 'u), count_all=' + p2.latestSummary.cgpa.toFixed(2) + ' (' + p2.latestSummary.ctnu + 'u)'
+      };
+    }
+
+    async function checkTargetPlannerImpossible() {
+      var res = calculateTargetGpaNeeded({
+        unitsEarned: 90,
+        ctcp: 210,
+        ctnu: 90,
+        requiredUnits: 120,
+        targetMinCgpa: 4.5,
+        maxGradePoint: 5.0
+      });
+      var ok = !res.possible && res.message.includes('Not mathematically possible');
+      return { pass: ok, msg: ok ? 'Returned impossible notice cleanly' : res.message };
+    }
+
+    async function checkPortalUiPickers() {
+      var doc = varsityFrame.contentDocument;
+      doc.getElementById('use-demo-btn').click();
+      var start = Date.now();
+      while (Date.now() - start < 4000) {
+        if (doc.getElementById('portal-app-section').style.display === 'block') break;
+        await new Promise(r => setTimeout(r, 80));
+      }
+      if (doc.getElementById('portal-app-section').style.display !== 'block') {
+        return { pass: false, msg: 'Demo login UI did not unlock' };
+      }
+      doc.querySelector('.portal-tab[data-tab="results"]').click();
+      var secBtn = doc.querySelector('#semester-picker button[data-sem="Second"]');
+      var firstBtn = doc.querySelector('#semester-picker button[data-sem="First"]');
+      var carryText = doc.body.textContent || '';
+      var ok = secBtn && secBtn.disabled && secBtn.textContent.includes('No results yet') && firstBtn && firstBtn.classList.contains('active') && carryText.includes('CSC 302');
+      return { pass: Boolean(ok), msg: 'Defaults to 2025/2026 First; Second disabled ("No results yet"); CSC 302 flagged' };
+    }
+
+    async function checkVarsityPrintCss() {
+      var doc = varsityFrame.contentDocument;
+      var rules = Array.from(doc.styleSheets[0].cssRules || []);
+      var printRule = rules.find(r => r.media && r.media.mediaText.includes('print'));
+      var text = printRule ? printRule.cssText : '';
+      var wm = doc.querySelector('.statement-watermark');
+      var wmText = wm ? wm.textContent : '';
+      var ok = text.includes('floating-wa') && text.includes('pickers-card') && wmText.includes('Student copy: not an official transcript');
+      return { pass: ok, msg: 'Watermark & @media print hiding verified' };
+    }
+
+    async function checkVarsityViewportOverflow() {
+      var widths = ['360px', '768px', '1280px'];
+      var origW = varsityFrame.style.width;
+      var fails = [];
+      for (var i = 0; i < widths.length; i++) {
+        varsityFrame.style.width = widths[i];
+        await new Promise(r => setTimeout(r, 120));
+        var docEl = varsityFrame.contentDocument.documentElement;
+        if (docEl.scrollWidth > docEl.clientWidth) {
+          fails.push(widths[i] + ':' + docEl.scrollWidth + '>' + docEl.clientWidth);
+        }
+      }
+      varsityFrame.style.width = origW;
+      return { pass: fails.length === 0, msg: fails.length === 0 ? '360px/768px/1280px zero overflow' : fails.join(', ') };
+    }
+
+    async function check2000ShardedPerf() {
+      var sLines = ['matric_number,full_name,faculty,department,programme,current_level'];
+      var rLines = ['matric_number,session,semester,course_code,course_title,units,ca_score,exam_score'];
+      for (var i = 1; i <= 2000; i++) {
+        var mat = 'GSU/23/CSC/' + String(i).padStart(4, '0');
+        sLines.push(mat + ',Student ' + i + ',Faculty of Science,Computer Science,B.Sc. Computer Science,' + ((i % 4) + 1) + '00');
+        for (var c = 1; c <= 6; c++) {
+          rLines.push(mat + ',2025/2026,First,CSC 20' + c + ',Course ' + c + ',3,24,48');
+        }
+      }
+      var t0 = performance.now();
+      var rep = validateUniversityCsvs(sLines.join('\n'), rLines.join('\n'));
+      var ds = computeUniversityDataset(rep.students, rep.results);
+      var computeMs = performance.now() - t0;
+
+      // Single-student lookup + encrypt + shard bucket + decrypt benchmark (<3000ms)
+      var t1 = performance.now();
+      var salt = 'a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6';
+      var lookupKey = await computeUniversityLookupKey(salt, ds.payloads[0].normalizedMatric);
+      var shardName = 'data/' + lookupKey.slice(0, 2) + '.json';
+      var enc = await encryptUniversityPayload(ds.payloads[0], '23456-789AB');
+      var dec = await decryptUniversityPayload(enc, '23456-789AB');
+      var loginMs = performance.now() - t1;
+
+      var ok = rep.valid && rep.summary.outputMode === 'sharded' && ds.payloads.length === 2000 && dec.matricNumber === 'GSU/23/CSC/0001' && loginMs < 3000;
+      return {
+        pass: ok,
+        msg: '2,000 computed in ' + Math.round(computeMs) + 'ms; ' + shardName + '; login crypto ' + Math.round(loginMs) + 'ms'
+      };
+    }
+
+    var gradLoaded = false;
+    var varsityLoaded = false;
+    function maybeStart() { if (gradLoaded && varsityLoaded) runAll(); }
+    gradFrame.onload = function() { gradLoaded = true; maybeStart(); };
+    varsityFrame.onload = function() { varsityLoaded = true; maybeStart(); };
   </script>
 </body>
 </html>

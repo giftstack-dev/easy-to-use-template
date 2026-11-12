@@ -9,7 +9,7 @@
 
 ## What is Frontdoor HTML Templates?
 
-**Frontdoor HTML Templates** is a collection of nine high-performance, conversion-focused landing pages designed specifically for the Nigerian commercial landscape. Every template is engineered with:
+**Frontdoor HTML Templates** is a collection of ten high-performance, conversion-focused landing pages designed specifically for the Nigerian commercial and education landscape. Every template is engineered with:
 
 - **100% Pure HTML5 & CSS3**: Zero JavaScript, zero frameworks, zero CSS libraries (no Bootstrap, no Tailwind runtime), and zero icon font dependencies. Open `index.html` in any browser and everything works instantly.
 - **WhatsApp-First Conversion**: Click-to-chat WhatsApp buttons with pre-filled, URL-encoded Nigerian messages on every service, product card, and package.
@@ -19,7 +19,7 @@
 
 ---
 
-## The Nine Templates
+## The Ten Templates
 
 | Template | Industry / Domain | Demo Brand | Key Techniques & Features |
 | :--- | :--- | :--- | :--- |
@@ -32,6 +32,7 @@
 | **Folio** | Freelancer Portfolio | *Damilola Vance* | Senior brand & UI/UX product designer portfolio, case study cards with tags, interactive skills matrix, career timeline, project booking. |
 | **Pulse** | High-Energy Gym (Dark) | *Pulse Fitness Lekki* | Industrial asphalt dark mode with athletic lime accents, Monday–Saturday weekly class schedule table, membership tiers in Naira, free trial CTA. |
 | **Graduate** | Developer & Graduate CV | *Chinedu Okafor* | Personal developer portfolio, 3 featured projects with GitHub & live links, grouped skill chips, career timeline, education, and instant print-to-PDF one-page CV layout. |
+| **Varsity** | University & Results Portal | *Greenfield State University* | Complete university website + AES-GCM-256 encrypted student results portal with 5-point/4-point GPA &amp; CGPA engine, carryover tracking, Target Planner, pickers (no broken filters), printable watermarked statements of result, and single-file or sharded CSV-to-ZIP builder. |
 
 ---
 
@@ -66,10 +67,10 @@ You can host the entire gallery or any individual template on GitHub Pages compl
 A zero-dependency Python 3 utility using only the standard library (`zipfile`, `pathlib`, `argparse`, `sys`) is provided to bundle standalone ZIP packages into the `/downloads/` directory:
 
 ```bash
-# 1. Verify template completeness (checks that index.html & style.css exist in all 9 folders)
+# 1. Verify template completeness (checks that index.html & style.css exist in all 10 folders)
 python3 tools/package_templates.py --check
 
-# 2. Package all 9 templates into standalone downloads/{template}.zip archives
+# 2. Package all 10 templates into standalone downloads/{template}.zip archives
 python3 tools/package_templates.py
 ```
 

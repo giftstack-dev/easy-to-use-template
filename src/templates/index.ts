@@ -1,14 +1,19 @@
 /**
- * Frontdoor HTML Templates - Registry of All 9 Templates
- * ======================================================
+ * Frontdoor HTML Templates - Registry of All 10 Templates
+ * =======================================================
  */
 
 import { TemplateMetadata, TemplateConfig } from './types.ts';
 import { graduateDefaultConfig, buildGraduateHtml } from './graduate.ts';
+import { universityportalDefaultConfig, buildUniversityPortalHtml } from './universityportal.ts';
 
 export * from './types.ts';
 export * from './shared.ts';
 export * from './graduate.ts';
+export * from './universityportalEngine.ts';
+export * from './universityportal.ts';
+export * from './universityportalDemoData.ts';
+export * from './zipBuilder.ts';
 
 export const TEMPLATES_LIST: TemplateMetadata[] = [
   {
@@ -110,10 +115,24 @@ export const TEMPLATES_LIST: TemplateMetadata[] = [
     description: 'A clean personal portfolio for graduates, developers, and job seekers, with a projects showcase, experience timeline, education, and a printable one-page CV layout.',
     demoBrand: 'Chinedu Okafor',
   },
+  {
+    id: 'universityportal',
+    name: 'Varsity',
+    category: 'School & Education',
+    businessType: 'Universities & colleges',
+    file: '/src/templates/universityportal.ts',
+    createdAt: '2026-11-12',
+    featureTags: ['GPA and CGPA', 'Pickers, not filters', 'Statement of result'],
+    description: 'A university website with a student results portal: pick a session and semester, see GPA, CGPA, carryovers, and academic standing, and print a statement of result.',
+    demoBrand: 'Greenfield State University',
+  },
 ];
 
 export const TEMPLATE_COUNT = TEMPLATES_LIST.length;
 
 export const TEMPLATE_BUILDERS: Record<string, (config?: Partial<TemplateConfig>) => string> = {
   graduate: buildGraduateHtml,
+  universityportal: buildUniversityPortalHtml,
 };
+
+export { graduateDefaultConfig, universityportalDefaultConfig };

@@ -1,0 +1,367 @@
+matric_number,session,semester,course_code,course_title,units,level,ca_score,exam_score
+GSU/22/CSC/0001,2023/2024,First,CSC 201,Computer Programming II (OOP),3,200,26,60
+GSU/22/CSC/0001,2023/2024,First,CSC 203,Discrete Structures,3,200,27,62
+GSU/22/CSC/0001,2023/2024,First,CSC 205,Computer Architecture,3,200,19,44
+GSU/22/CSC/0001,2023/2024,First,MTH 201,Mathematical Methods I,3,200,27,63
+GSU/22/CSC/0001,2023/2024,First,STA 211,Statistical Inference,2,200,22,52
+GSU/22/CSC/0001,2023/2024,First,GST 201,Entrepreneurship Studies I,2,200,27,62
+GSU/22/CSC/0001,2023/2024,First,CSC 207,Operating Systems Fundamentals,2,200,24,55
+GSU/22/CSC/0001,2023/2024,Second,CSC 202,Data Structures & Algorithms,3,200,22,50
+GSU/22/CSC/0001,2023/2024,Second,CSC 204,Database Management Systems,3,200,13,29
+GSU/22/CSC/0001,2023/2024,Second,CSC 206,Software Engineering I,3,200,20,46
+GSU/22/CSC/0001,2023/2024,Second,MTH 204,Linear Algebra,3,200,25,58
+GSU/22/CSC/0001,2023/2024,Second,CSC 208,Web Application Development,2,200,23,54
+GSU/22/CSC/0001,2023/2024,Second,GST 202,Peace & Conflict Resolution,2,200,22,50
+GSU/22/CSC/0001,2023/2024,Second,CSC 210,Assembly Language Programming,2,200,16,36
+GSU/22/CSC/0001,2024/2025,First,CSC 301,Structured Programming & Compilers,3,300,14,31
+GSU/22/CSC/0001,2024/2025,First,CSC 303,Object-Oriented Analysis & Design,3,300,21,50
+GSU/22/CSC/0001,2024/2025,First,CSC 305,Computer Networks & Security,3,300,14,32
+GSU/22/CSC/0001,2024/2025,First,CSC 307,Numerical Analysis,3,300,19,43
+GSU/22/CSC/0001,2024/2025,First,CSC 309,Algorithms & Complexity,3,300,21,48
+GSU/22/CSC/0001,2024/2025,First,CSC 311,Human-Computer Interaction,2,300,14,31
+GSU/22/CSC/0001,2024/2025,First,GST 301,Entrepreneurship Venture Creation,2,300,21,50
+GSU/22/CSC/0001,2024/2025,First,CSC 102,Introduction to Programming,3,300,20,46
+GSU/22/CSC/0001,2024/2025,Second,CSC 302,Systems Analysis & Design,3,300,12,27
+GSU/22/CSC/0001,2024/2025,Second,CSC 304,Artificial Intelligence,3,300,17,38
+GSU/22/CSC/0001,2024/2025,Second,CSC 306,SIWES Industrial Training,4,300,24,55
+GSU/22/CSC/0001,2024/2025,Second,CSC 308,Distributed Computing,3,300,25,59
+GSU/22/CSC/0001,2024/2025,Second,CSC 310,Research Methodology in Computing,2,300,17,40
+GSU/22/CSC/0001,2024/2025,Second,CSC 312,Cloud Infrastructure Basics,2,300,27,63
+GSU/22/CSC/0001,2024/2025,Second,CSC 314,Cybersecurity Operations,2,300,18,41
+GSU/22/CSC/0001,2025/2026,First,CSC 301,Structured Programming & Compilers,3,300,16,36
+GSU/22/CSC/0001,2025/2026,First,CSC 303,Object-Oriented Analysis & Design,3,300,23,52
+GSU/22/CSC/0001,2025/2026,First,CSC 305,Computer Networks & Security,3,300,12,29
+GSU/22/CSC/0001,2025/2026,First,CSC 307,Numerical Analysis,3,300,14,33
+GSU/22/CSC/0001,2025/2026,First,CSC 309,Algorithms & Complexity,3,300,20,46
+GSU/22/CSC/0001,2025/2026,First,CSC 311,Human-Computer Interaction,2,300,23,54
+GSU/22/CSC/0001,2025/2026,First,GST 301,Entrepreneurship Venture Creation,2,300,17,39
+GSU/22/CSC/0002,2023/2024,First,CSC 201,Computer Programming II (OOP),3,200,23,53
+GSU/22/CSC/0002,2023/2024,First,CSC 203,Discrete Structures,3,200,29,66
+GSU/22/CSC/0002,2023/2024,First,CSC 205,Computer Architecture,3,200,17,41
+GSU/22/CSC/0002,2023/2024,First,MTH 201,Mathematical Methods I,3,200,29,66
+GSU/22/CSC/0002,2023/2024,First,STA 211,Statistical Inference,2,200,24,56
+GSU/22/CSC/0002,2023/2024,First,GST 201,Entrepreneurship Studies I,2,200,28,66
+GSU/22/CSC/0002,2023/2024,First,CSC 207,Operating Systems Fundamentals,2,200,25,58
+GSU/22/CSC/0002,2023/2024,Second,CSC 202,Data Structures & Algorithms,3,200,18,42
+GSU/22/CSC/0002,2023/2024,Second,CSC 204,Database Management Systems,3,200,22,50
+GSU/22/CSC/0002,2023/2024,Second,CSC 206,Software Engineering I,3,200,26,62
+GSU/22/CSC/0002,2023/2024,Second,MTH 204,Linear Algebra,3,200,24,56
+GSU/22/CSC/0002,2023/2024,Second,CSC 208,Web Application Development,2,200,25,58
+GSU/22/CSC/0002,2023/2024,Second,GST 202,Peace & Conflict Resolution,2,200,21,49
+GSU/22/CSC/0002,2023/2024,Second,CSC 210,Assembly Language Programming,2,200,22,51
+GSU/22/CSC/0002,2024/2025,First,CSC 301,Structured Programming & Compilers,3,300,28,65
+GSU/22/CSC/0002,2024/2025,First,CSC 303,Object-Oriented Analysis & Design,3,300,23,55
+GSU/22/CSC/0002,2024/2025,First,CSC 305,Computer Networks & Security,3,300,25,58
+GSU/22/CSC/0002,2024/2025,First,CSC 307,Numerical Analysis,3,300,22,52
+GSU/22/CSC/0002,2024/2025,First,CSC 309,Algorithms & Complexity,3,300,26,62
+GSU/22/CSC/0002,2024/2025,First,CSC 311,Human-Computer Interaction,2,300,27,62
+GSU/22/CSC/0002,2024/2025,First,GST 301,Entrepreneurship Venture Creation,2,300,21,49
+GSU/22/CSC/0002,2024/2025,Second,CSC 302,Systems Analysis & Design,3,300,24,56
+GSU/22/CSC/0002,2024/2025,Second,CSC 304,Artificial Intelligence,3,300,22,50
+GSU/22/CSC/0002,2024/2025,Second,CSC 306,SIWES Industrial Training,4,300,23,52
+GSU/22/CSC/0002,2024/2025,Second,CSC 308,Distributed Computing,3,300,25,57
+GSU/22/CSC/0002,2024/2025,Second,CSC 310,Research Methodology in Computing,2,300,27,63
+GSU/22/CSC/0002,2024/2025,Second,CSC 312,Cloud Infrastructure Basics,2,300,26,62
+GSU/22/CSC/0002,2024/2025,Second,CSC 314,Cybersecurity Operations,2,300,27,64
+GSU/22/CSC/0002,2025/2026,First,CSC 301,Structured Programming & Compilers,3,300,25,58
+GSU/22/CSC/0002,2025/2026,First,CSC 303,Object-Oriented Analysis & Design,3,300,27,63
+GSU/22/CSC/0002,2025/2026,First,CSC 305,Computer Networks & Security,3,300,22,52
+GSU/22/CSC/0002,2025/2026,First,CSC 307,Numerical Analysis,3,300,20,47
+GSU/22/CSC/0002,2025/2026,First,CSC 309,Algorithms & Complexity,3,300,22,50
+GSU/22/CSC/0002,2025/2026,First,CSC 311,Human-Computer Interaction,2,300,26,62
+GSU/22/CSC/0002,2025/2026,First,GST 301,Entrepreneurship Venture Creation,2,300,25,57
+GSU/23/CSC/0003,2023/2024,First,CSC 101,Introduction to Computer Science,3,100,26,59
+GSU/23/CSC/0003,2023/2024,First,CSC 103,Problem Solving & Algorithms,3,100,23,52
+GSU/23/CSC/0003,2023/2024,First,MTH 101,Elementary Mathematics I,3,100,25,59
+GSU/23/CSC/0003,2023/2024,First,PHY 101,General Physics I,3,100,23,52
+GSU/23/CSC/0003,2023/2024,First,STA 111,Descriptive Statistics,2,100,21,49
+GSU/23/CSC/0003,2023/2024,First,GST 101,Use of English I,2,100,25,58
+GSU/23/CSC/0003,2023/2024,First,GST 103,Nigerian Peoples & Culture,2,100,18,43
+GSU/23/CSC/0003,2023/2024,Second,CSC 102,Introduction to Programming,3,100,15,36
+GSU/23/CSC/0003,2023/2024,Second,CSC 104,Digital Logic Design,3,100,23,52
+GSU/23/CSC/0003,2023/2024,Second,MTH 102,Elementary Mathematics II,3,100,15,35
+GSU/23/CSC/0003,2023/2024,Second,PHY 102,General Physics II,3,100,17,41
+GSU/23/CSC/0003,2023/2024,Second,STA 112,Probability I,2,100,22,51
+GSU/23/CSC/0003,2023/2024,Second,GST 102,Use of English II,2,100,22,52
+GSU/23/CSC/0003,2023/2024,Second,GST 104,Philosophy & Logic,2,100,22,50
+GSU/23/CSC/0003,2024/2025,First,CSC 201,Computer Programming II (OOP),3,200,26,60
+GSU/23/CSC/0003,2024/2025,First,CSC 203,Discrete Structures,3,200,21,48
+GSU/23/CSC/0003,2024/2025,First,CSC 205,Computer Architecture,3,200,11,25
+GSU/23/CSC/0003,2024/2025,First,MTH 201,Mathematical Methods I,3,200,26,60
+GSU/23/CSC/0003,2024/2025,First,STA 211,Statistical Inference,2,200,20,45
+GSU/23/CSC/0003,2024/2025,First,GST 201,Entrepreneurship Studies I,2,200,14,33
+GSU/23/CSC/0003,2024/2025,First,CSC 207,Operating Systems Fundamentals,2,200,23,52
+GSU/23/CSC/0003,2024/2025,Second,CSC 202,Data Structures & Algorithms,3,200,21,50
+GSU/23/CSC/0003,2024/2025,Second,CSC 204,Database Management Systems,3,200,26,59
+GSU/23/CSC/0003,2024/2025,Second,CSC 206,Software Engineering I,3,200,17,41
+GSU/23/CSC/0003,2024/2025,Second,MTH 204,Linear Algebra,3,200,19,44
+GSU/23/CSC/0003,2024/2025,Second,CSC 208,Web Application Development,2,200,23,52
+GSU/23/CSC/0003,2024/2025,Second,GST 202,Peace & Conflict Resolution,2,200,22,51
+GSU/23/CSC/0003,2024/2025,Second,CSC 210,Assembly Language Programming,2,200,16,36
+GSU/23/CSC/0003,2025/2026,First,CSC 201,Computer Programming II (OOP),3,200,26,60
+GSU/23/CSC/0003,2025/2026,First,CSC 203,Discrete Structures,3,200,26,60
+GSU/23/CSC/0003,2025/2026,First,CSC 205,Computer Architecture,3,200,20,48
+GSU/23/CSC/0003,2025/2026,First,MTH 201,Mathematical Methods I,3,200,19,45
+GSU/23/CSC/0003,2025/2026,First,STA 211,Statistical Inference,2,200,25,57
+GSU/23/CSC/0003,2025/2026,First,GST 201,Entrepreneurship Studies I,2,200,26,61
+GSU/23/CSC/0003,2025/2026,First,CSC 207,Operating Systems Fundamentals,2,200,23,52
+GSU/24/CSC/0004,2024/2025,First,CSC 101,Introduction to Computer Science,3,100,23,52
+GSU/24/CSC/0004,2024/2025,First,CSC 103,Problem Solving & Algorithms,3,100,23,53
+GSU/24/CSC/0004,2024/2025,First,MTH 101,Elementary Mathematics I,3,100,15,34
+GSU/24/CSC/0004,2024/2025,First,PHY 101,General Physics I,3,100,18,41
+GSU/24/CSC/0004,2024/2025,First,STA 111,Descriptive Statistics,2,100,21,48
+GSU/24/CSC/0004,2024/2025,First,GST 101,Use of English I,2,100,20,45
+GSU/24/CSC/0004,2024/2025,First,GST 103,Nigerian Peoples & Culture,2,100,21,49
+GSU/24/CSC/0004,2024/2025,Second,CSC 102,Introduction to Programming,3,100,18,42
+GSU/24/CSC/0004,2024/2025,Second,CSC 104,Digital Logic Design,3,100,17,39
+GSU/24/CSC/0004,2024/2025,Second,MTH 102,Elementary Mathematics II,3,100,22,50
+GSU/24/CSC/0004,2024/2025,Second,PHY 102,General Physics II,3,100,13,30
+GSU/24/CSC/0004,2024/2025,Second,STA 112,Probability I,2,100,11,26
+GSU/24/CSC/0004,2024/2025,Second,GST 102,Use of English II,2,100,19,45
+GSU/24/CSC/0004,2024/2025,Second,GST 104,Philosophy & Logic,2,100,12,29
+GSU/24/CSC/0004,2025/2026,First,CSC 101,Introduction to Computer Science,3,100,17,39
+GSU/24/CSC/0004,2025/2026,First,CSC 103,Problem Solving & Algorithms,3,100,13,29
+GSU/24/CSC/0004,2025/2026,First,MTH 101,Elementary Mathematics I,3,100,17,39
+GSU/24/CSC/0004,2025/2026,First,PHY 101,General Physics I,3,100,10,22
+GSU/24/CSC/0004,2025/2026,First,STA 111,Descriptive Statistics,2,100,16,37
+GSU/24/CSC/0004,2025/2026,First,GST 101,Use of English I,2,100,17,40
+GSU/24/CSC/0004,2025/2026,First,GST 103,Nigerian Peoples & Culture,2,100,19,43
+GSU/22/ECO/0005,2023/2024,First,ECO 201,Microeconomic Theory I,3,200,15,34
+GSU/22/ECO/0005,2023/2024,First,ECO 203,Macroeconomic Theory I,3,200,18,43
+GSU/22/ECO/0005,2023/2024,First,ECO 205,Mathematical Economics I,3,200,18,43
+GSU/22/ECO/0005,2023/2024,First,ECO 207,History of Economic Thought,2,200,21,50
+GSU/22/ECO/0005,2023/2024,First,ECO 209,Applied Statistics for Economics,3,200,23,53
+GSU/22/ECO/0005,2023/2024,First,GST 201,Entrepreneurship Studies I,2,200,16,37
+GSU/22/ECO/0005,2023/2024,First,FIN 201,Money & Banking,2,200,19,44
+GSU/22/ECO/0005,2023/2024,Second,ECO 202,Microeconomic Theory II,3,200,18,43
+GSU/22/ECO/0005,2023/2024,Second,ECO 204,Macroeconomic Theory II,3,200,21,49
+GSU/22/ECO/0005,2023/2024,Second,ECO 206,Public Sector Economics,3,200,21,48
+GSU/22/ECO/0005,2023/2024,Second,ECO 208,Development Economics I,2,200,12,27
+GSU/22/ECO/0005,2023/2024,Second,ECO 210,Structure of the Nigerian Economy,2,200,21,49
+GSU/22/ECO/0005,2023/2024,Second,GST 202,Peace & Conflict Resolution,2,200,16,36
+GSU/22/ECO/0005,2023/2024,Second,FIN 202,Corporate Finance,2,200,25,59
+GSU/22/ECO/0005,2024/2025,First,ECO 301,Intermediate Microeconomics,3,300,25,58
+GSU/22/ECO/0005,2024/2025,First,ECO 303,Intermediate Macroeconomics,3,300,23,52
+GSU/22/ECO/0005,2024/2025,First,ECO 305,Econometrics I,3,300,22,50
+GSU/22/ECO/0005,2024/2025,First,ECO 307,International Trade,3,300,21,50
+GSU/22/ECO/0005,2024/2025,First,ECO 309,Monetary Economics,2,300,19,43
+GSU/22/ECO/0005,2024/2025,First,ECO 311,Labour Economics,2,300,20,47
+GSU/22/ECO/0005,2024/2025,First,GST 301,Entrepreneurship Venture Creation,2,300,21,49
+GSU/22/ECO/0005,2024/2025,Second,ECO 302,Econometrics II,3,300,26,59
+GSU/22/ECO/0005,2024/2025,Second,ECO 304,International Finance,3,300,22,52
+GSU/22/ECO/0005,2024/2025,Second,ECO 306,Project Evaluation,3,300,23,54
+GSU/22/ECO/0005,2024/2025,Second,ECO 308,Research Methodology in Economics,2,300,21,49
+GSU/22/ECO/0005,2024/2025,Second,ECO 310,Industrial Economics,2,300,17,40
+GSU/22/ECO/0005,2024/2025,Second,ECO 312,Environmental Economics,2,300,21,50
+GSU/22/ECO/0005,2024/2025,Second,ECO 314,Public Debt & Fiscal Policy,2,300,25,57
+GSU/22/ECO/0005,2024/2025,Second,ECO 104,Statistics for Economists I,3,300,18,43
+GSU/22/ECO/0005,2025/2026,First,ECO 301,Intermediate Microeconomics,3,300,22,52
+GSU/22/ECO/0005,2025/2026,First,ECO 303,Intermediate Macroeconomics,3,300,22,50
+GSU/22/ECO/0005,2025/2026,First,ECO 305,Econometrics I,3,300,26,61
+GSU/22/ECO/0005,2025/2026,First,ECO 307,International Trade,3,300,23,53
+GSU/22/ECO/0005,2025/2026,First,ECO 309,Monetary Economics,2,300,23,52
+GSU/22/ECO/0005,2025/2026,First,ECO 311,Labour Economics,2,300,23,53
+GSU/22/ECO/0005,2025/2026,First,GST 301,Entrepreneurship Venture Creation,2,300,19,43
+GSU/23/ECO/0006,2023/2024,First,ECO 101,Principles of Microeconomics,3,100,24,55
+GSU/23/ECO/0006,2023/2024,First,ECO 103,Introduction to Mathematics for Economists,3,100,13,30
+GSU/23/ECO/0006,2023/2024,First,ACC 101,Principles of Accounting I,3,100,20,45
+GSU/23/ECO/0006,2023/2024,First,BUS 101,Introduction to Business,2,100,21,50
+GSU/23/ECO/0006,2023/2024,First,STA 111,Descriptive Statistics,2,100,21,50
+GSU/23/ECO/0006,2023/2024,First,GST 101,Use of English I,2,100,23,55
+GSU/23/ECO/0006,2023/2024,First,GST 103,Nigerian Peoples & Culture,2,100,19,45
+GSU/23/ECO/0006,2023/2024,Second,ECO 102,Principles of Macroeconomics,3,100,15,36
+GSU/23/ECO/0006,2023/2024,Second,ECO 104,Statistics for Economists I,3,100,20,47
+GSU/23/ECO/0006,2023/2024,Second,ACC 102,Principles of Accounting II,3,100,23,53
+GSU/23/ECO/0006,2023/2024,Second,POL 102,Introduction to Political Science,2,100,24,57
+GSU/23/ECO/0006,2023/2024,Second,ECO 106,Nigerian Economic History,2,100,25,57
+GSU/23/ECO/0006,2023/2024,Second,GST 102,Use of English II,2,100,23,52
+GSU/23/ECO/0006,2023/2024,Second,GST 104,Philosophy & Logic,2,100,13,31
+GSU/23/ECO/0006,2024/2025,First,ECO 201,Microeconomic Theory I,3,200,14,31
+GSU/23/ECO/0006,2024/2025,First,ECO 203,Macroeconomic Theory I,3,200,23,52
+GSU/23/ECO/0006,2024/2025,First,ECO 205,Mathematical Economics I,3,200,15,35
+GSU/23/ECO/0006,2024/2025,First,ECO 207,History of Economic Thought,2,200,20,45
+GSU/23/ECO/0006,2024/2025,First,ECO 209,Applied Statistics for Economics,3,200,20,47
+GSU/23/ECO/0006,2024/2025,First,GST 201,Entrepreneurship Studies I,2,200,18,43
+GSU/23/ECO/0006,2024/2025,First,FIN 201,Money & Banking,2,200,23,52
+GSU/23/ECO/0006,2024/2025,Second,ECO 202,Microeconomic Theory II,3,200,15,34
+GSU/23/ECO/0006,2024/2025,Second,ECO 204,Macroeconomic Theory II,3,200,14,31
+GSU/23/ECO/0006,2024/2025,Second,ECO 206,Public Sector Economics,3,200,21,48
+GSU/23/ECO/0006,2024/2025,Second,ECO 208,Development Economics I,2,200,24,56
+GSU/23/ECO/0006,2024/2025,Second,ECO 210,Structure of the Nigerian Economy,2,200,24,56
+GSU/23/ECO/0006,2024/2025,Second,GST 202,Peace & Conflict Resolution,2,200,17,40
+GSU/23/ECO/0006,2024/2025,Second,FIN 202,Corporate Finance,2,200,18,41
+GSU/23/ECO/0006,2025/2026,First,ECO 201,Microeconomic Theory I,3,200,17,41
+GSU/23/ECO/0006,2025/2026,First,ECO 203,Macroeconomic Theory I,3,200,21,48
+GSU/23/ECO/0006,2025/2026,First,ECO 205,Mathematical Economics I,3,200,20,48
+GSU/23/ECO/0006,2025/2026,First,ECO 207,History of Economic Thought,2,200,21,48
+GSU/23/ECO/0006,2025/2026,First,ECO 209,Applied Statistics for Economics,3,200,20,47
+GSU/23/ECO/0006,2025/2026,First,GST 201,Entrepreneurship Studies I,2,200,23,52
+GSU/23/ECO/0006,2025/2026,First,FIN 201,Money & Banking,2,200,19,45
+GSU/23/ECO/0007,2023/2024,First,ECO 101,Principles of Microeconomics,3,100,17,41
+GSU/23/ECO/0007,2023/2024,First,ECO 103,Introduction to Mathematics for Economists,3,100,20,45
+GSU/23/ECO/0007,2023/2024,First,ACC 101,Principles of Accounting I,3,100,13,31
+GSU/23/ECO/0007,2023/2024,First,BUS 101,Introduction to Business,2,100,21,49
+GSU/23/ECO/0007,2023/2024,First,STA 111,Descriptive Statistics,2,100,21,50
+GSU/23/ECO/0007,2023/2024,First,GST 101,Use of English I,2,100,14,34
+GSU/23/ECO/0007,2023/2024,First,GST 103,Nigerian Peoples & Culture,2,100,18,41
+GSU/23/ECO/0007,2023/2024,Second,ECO 102,Principles of Macroeconomics,3,100,20,48
+GSU/23/ECO/0007,2023/2024,Second,ECO 104,Statistics for Economists I,3,100,22,50
+GSU/23/ECO/0007,2023/2024,Second,ACC 102,Principles of Accounting II,3,100,17,41
+GSU/23/ECO/0007,2023/2024,Second,POL 102,Introduction to Political Science,2,100,20,47
+GSU/23/ECO/0007,2023/2024,Second,ECO 106,Nigerian Economic History,2,100,10,23
+GSU/23/ECO/0007,2023/2024,Second,GST 102,Use of English II,2,100,22,50
+GSU/23/ECO/0007,2023/2024,Second,GST 104,Philosophy & Logic,2,100,16,36
+GSU/23/ECO/0007,2024/2025,First,ECO 201,Microeconomic Theory I,3,200,21,50
+GSU/23/ECO/0007,2024/2025,First,ECO 203,Macroeconomic Theory I,3,200,15,36
+GSU/23/ECO/0007,2024/2025,First,ECO 205,Mathematical Economics I,3,200,7,16
+GSU/23/ECO/0007,2024/2025,First,ECO 207,History of Economic Thought,2,200,16,36
+GSU/23/ECO/0007,2024/2025,First,ECO 209,Applied Statistics for Economics,3,200,13,30
+GSU/23/ECO/0007,2024/2025,First,GST 201,Entrepreneurship Studies I,2,200,15,35
+GSU/23/ECO/0007,2024/2025,First,FIN 201,Money & Banking,2,200,14,33
+GSU/23/ECO/0007,2024/2025,Second,ECO 202,Microeconomic Theory II,3,200,16,38
+GSU/23/ECO/0007,2024/2025,Second,ECO 204,Macroeconomic Theory II,3,200,18,41
+GSU/23/ECO/0007,2024/2025,Second,ECO 206,Public Sector Economics,3,200,20,46
+GSU/23/ECO/0007,2024/2025,Second,ECO 208,Development Economics I,2,200,16,36
+GSU/23/ECO/0007,2024/2025,Second,ECO 210,Structure of the Nigerian Economy,2,200,17,39
+GSU/23/ECO/0007,2024/2025,Second,GST 202,Peace & Conflict Resolution,2,200,7,15
+GSU/23/ECO/0007,2024/2025,Second,FIN 202,Corporate Finance,2,200,22,50
+GSU/23/ECO/0007,2025/2026,First,ECO 201,Microeconomic Theory I,3,200,16,36
+GSU/23/ECO/0007,2025/2026,First,ECO 203,Macroeconomic Theory I,3,200,12,28
+GSU/23/ECO/0007,2025/2026,First,ECO 205,Mathematical Economics I,3,200,20,46
+GSU/23/ECO/0007,2025/2026,First,ECO 207,History of Economic Thought,2,200,14,31
+GSU/23/ECO/0007,2025/2026,First,ECO 209,Applied Statistics for Economics,3,200,17,38
+GSU/23/ECO/0007,2025/2026,First,GST 201,Entrepreneurship Studies I,2,200,14,34
+GSU/23/ECO/0007,2025/2026,First,FIN 201,Money & Banking,2,200,16,37
+GSU/24/ECO/0008,2024/2025,First,ECO 101,Principles of Microeconomics,3,100,25,59
+GSU/24/ECO/0008,2024/2025,First,ECO 103,Introduction to Mathematics for Economists,3,100,20,46
+GSU/24/ECO/0008,2024/2025,First,ACC 101,Principles of Accounting I,3,100,20,48
+GSU/24/ECO/0008,2024/2025,First,BUS 101,Introduction to Business,2,100,23,54
+GSU/24/ECO/0008,2024/2025,First,STA 111,Descriptive Statistics,2,100,26,62
+GSU/24/ECO/0008,2024/2025,First,GST 101,Use of English I,2,100,23,54
+GSU/24/ECO/0008,2024/2025,First,GST 103,Nigerian Peoples & Culture,2,100,23,52
+GSU/24/ECO/0008,2024/2025,Second,ECO 102,Principles of Macroeconomics,3,100,23,53
+GSU/24/ECO/0008,2024/2025,Second,ECO 104,Statistics for Economists I,3,100,28,64
+GSU/24/ECO/0008,2024/2025,Second,ACC 102,Principles of Accounting II,3,100,28,64
+GSU/24/ECO/0008,2024/2025,Second,POL 102,Introduction to Political Science,2,100,17,39
+GSU/24/ECO/0008,2024/2025,Second,ECO 106,Nigerian Economic History,2,100,27,62
+GSU/24/ECO/0008,2024/2025,Second,GST 102,Use of English II,2,100,26,60
+GSU/24/ECO/0008,2024/2025,Second,GST 104,Philosophy & Logic,2,100,22,50
+GSU/24/ECO/0008,2025/2026,First,ECO 101,Principles of Microeconomics,3,100,19,45
+GSU/24/ECO/0008,2025/2026,First,ECO 103,Introduction to Mathematics for Economists,3,100,22,50
+GSU/24/ECO/0008,2025/2026,First,ACC 101,Principles of Accounting I,3,100,23,52
+GSU/24/ECO/0008,2025/2026,First,BUS 101,Introduction to Business,2,100,14,32
+GSU/24/ECO/0008,2025/2026,First,STA 111,Descriptive Statistics,2,100,23,53
+GSU/24/ECO/0008,2025/2026,First,GST 101,Use of English I,2,100,16,38
+GSU/24/ECO/0008,2025/2026,First,GST 103,Nigerian Peoples & Culture,2,100,20,46
+GSU/22/ENG/0009,2023/2024,First,ENG 201,English Morphology & Syntax,3,200,28,65
+GSU/22/ENG/0009,2023/2024,First,ENG 203,Phonology of English,3,200,28,64
+GSU/22/ENG/0009,2023/2024,First,LIT 201,African Novel & Short Story,3,200,20,45
+GSU/22/ENG/0009,2023/2024,First,LIT 203,Elizabethan & Jacobean Drama,2,200,24,55
+GSU/22/ENG/0009,2023/2024,First,ENG 205,Creative Writing Workshop I,2,200,17,39
+GSU/22/ENG/0009,2023/2024,First,GST 201,Entrepreneurship Studies I,2,200,17,39
+GSU/22/ENG/0009,2023/2024,First,ENG 207,Advanced Academic Writing,2,200,24,57
+GSU/22/ENG/0009,2023/2024,Second,ENG 202,Semantics & Pragmatics,3,200,17,41
+GSU/22/ENG/0009,2023/2024,Second,ENG 204,Varieties of English,3,200,25,57
+GSU/22/ENG/0009,2023/2024,Second,LIT 202,Modern African Poetry,3,200,27,63
+GSU/22/ENG/0009,2023/2024,Second,LIT 204,Literary Criticism I,2,200,17,39
+GSU/22/ENG/0009,2023/2024,Second,ENG 206,Editorial & Publishing Practice,2,200,22,50
+GSU/22/ENG/0009,2023/2024,Second,GST 202,Peace & Conflict Resolution,2,200,22,52
+GSU/22/ENG/0009,2023/2024,Second,ENG 208,Discourse Analysis,2,200,27,63
+GSU/22/ENG/0009,2024/2025,First,ENG 301,Sociolinguistics,3,300,25,57
+GSU/22/ENG/0009,2024/2025,First,ENG 303,Stylistics & Rhetoric,3,300,23,52
+GSU/22/ENG/0009,2024/2025,First,LIT 301,West African Drama,3,300,25,57
+GSU/22/ENG/0009,2024/2025,First,LIT 303,Caribbean & Diaspora Literature,2,300,22,51
+GSU/22/ENG/0009,2024/2025,First,ENG 305,Psycholinguistics,2,300,23,55
+GSU/22/ENG/0009,2024/2025,First,ENG 307,Media & Communication English,2,300,23,54
+GSU/22/ENG/0009,2024/2025,First,GST 301,Entrepreneurship Venture Creation,2,300,21,49
+GSU/22/ENG/0009,2024/2025,Second,ENG 302,Applied English Linguistics,3,300,23,52
+GSU/22/ENG/0009,2024/2025,Second,ENG 304,English in Nigeria,3,300,13,30
+GSU/22/ENG/0009,2024/2025,Second,LIT 302,Contemporary Feminist Literature,3,300,28,64
+GSU/22/ENG/0009,2024/2025,Second,ENG 306,Research Methods in English Studies,3,300,20,48
+GSU/22/ENG/0009,2024/2025,Second,ENG 308,Technical & Business Writing,2,300,25,57
+GSU/22/ENG/0009,2024/2025,Second,LIT 304,Comparative Literature,2,300,16,38
+GSU/22/ENG/0009,2024/2025,Second,ENG 310,Translation & Interpretation,2,300,26,60
+GSU/22/ENG/0009,2025/2026,First,ENG 301,Sociolinguistics,3,300,20,47
+GSU/22/ENG/0009,2025/2026,First,ENG 303,Stylistics & Rhetoric,3,300,23,55
+GSU/22/ENG/0009,2025/2026,First,LIT 301,West African Drama,3,300,24,57
+GSU/22/ENG/0009,2025/2026,First,LIT 303,Caribbean & Diaspora Literature,2,300,28,64
+GSU/22/ENG/0009,2025/2026,First,ENG 305,Psycholinguistics,2,300,22,52
+GSU/22/ENG/0009,2025/2026,First,ENG 307,Media & Communication English,2,300,24,56
+GSU/22/ENG/0009,2025/2026,First,GST 301,Entrepreneurship Venture Creation,2,300,23,53
+GSU/23/ENG/0010,2023/2024,First,ENG 101,Introduction to English Grammar,3,100,19,45
+GSU/23/ENG/0010,2023/2024,First,ENG 103,Spoken English & Phonetics,3,100,19,44
+GSU/23/ENG/0010,2023/2024,First,LIT 101,Introduction to Prose Fiction,3,100,20,48
+GSU/23/ENG/0010,2023/2024,First,LIT 103,Introduction to Poetry,2,100,24,56
+GSU/23/ENG/0010,2023/2024,First,HIS 101,African Oral Literature,2,100,21,48
+GSU/23/ENG/0010,2023/2024,First,GST 101,Use of English I,2,100,19,45
+GSU/23/ENG/0010,2023/2024,First,GST 103,Nigerian Peoples & Culture,2,100,20,47
+GSU/23/ENG/0010,2023/2024,Second,ENG 102,Basic English Composition,3,100,24,56
+GSU/23/ENG/0010,2023/2024,Second,ENG 104,History of the English Language,3,100,17,39
+GSU/23/ENG/0010,2023/2024,Second,LIT 102,Introduction to Drama,3,100,20,46
+GSU/23/ENG/0010,2023/2024,Second,LIT 104,Nigerian Literature in English,2,100,22,50
+GSU/23/ENG/0010,2023/2024,Second,LIN 102,Introduction to General Linguistics,2,100,24,56
+GSU/23/ENG/0010,2023/2024,Second,GST 102,Use of English II,2,100,22,50
+GSU/23/ENG/0010,2023/2024,Second,GST 104,Philosophy & Logic,2,100,19,44
+GSU/23/ENG/0010,2024/2025,First,ENG 201,English Morphology & Syntax,3,200,11,26
+GSU/23/ENG/0010,2024/2025,First,ENG 203,Phonology of English,3,200,18,43
+GSU/23/ENG/0010,2024/2025,First,LIT 201,African Novel & Short Story,3,200,23,53
+GSU/23/ENG/0010,2024/2025,First,LIT 203,Elizabethan & Jacobean Drama,2,200,18,43
+GSU/23/ENG/0010,2024/2025,First,ENG 205,Creative Writing Workshop I,2,200,15,35
+GSU/23/ENG/0010,2024/2025,First,GST 201,Entrepreneurship Studies I,2,200,11,26
+GSU/23/ENG/0010,2024/2025,First,ENG 207,Advanced Academic Writing,2,200,19,45
+GSU/23/ENG/0010,2024/2025,Second,ENG 202,Semantics & Pragmatics,3,200,17,41
+GSU/23/ENG/0010,2024/2025,Second,ENG 204,Varieties of English,3,200,23,53
+GSU/23/ENG/0010,2024/2025,Second,LIT 202,Modern African Poetry,3,200,21,49
+GSU/23/ENG/0010,2024/2025,Second,LIT 204,Literary Criticism I,2,200,21,49
+GSU/23/ENG/0010,2024/2025,Second,ENG 206,Editorial & Publishing Practice,2,200,25,59
+GSU/23/ENG/0010,2024/2025,Second,GST 202,Peace & Conflict Resolution,2,200,25,59
+GSU/23/ENG/0010,2024/2025,Second,ENG 208,Discourse Analysis,2,200,21,50
+GSU/23/ENG/0010,2025/2026,First,ENG 201,English Morphology & Syntax,3,200,23,53
+GSU/23/ENG/0010,2025/2026,First,ENG 203,Phonology of English,3,200,20,45
+GSU/23/ENG/0010,2025/2026,First,LIT 201,African Novel & Short Story,3,200,14,34
+GSU/23/ENG/0010,2025/2026,First,LIT 203,Elizabethan & Jacobean Drama,2,200,19,45
+GSU/23/ENG/0010,2025/2026,First,ENG 205,Creative Writing Workshop I,2,200,23,54
+GSU/23/ENG/0010,2025/2026,First,GST 201,Entrepreneurship Studies I,2,200,14,33
+GSU/23/ENG/0010,2025/2026,First,ENG 207,Advanced Academic Writing,2,200,18,42
+GSU/24/ENG/0011,2024/2025,First,ENG 101,Introduction to English Grammar,3,100,17,39
+GSU/24/ENG/0011,2024/2025,First,ENG 103,Spoken English & Phonetics,3,100,18,43
+GSU/24/ENG/0011,2024/2025,First,LIT 101,Introduction to Prose Fiction,3,100,18,41
+GSU/24/ENG/0011,2024/2025,First,LIT 103,Introduction to Poetry,2,100,21,50
+GSU/24/ENG/0011,2024/2025,First,HIS 101,African Oral Literature,2,100,21,50
+GSU/24/ENG/0011,2024/2025,First,GST 101,Use of English I,2,100,18,42
+GSU/24/ENG/0011,2024/2025,First,GST 103,Nigerian Peoples & Culture,2,100,22,50
+GSU/24/ENG/0011,2024/2025,Second,ENG 102,Basic English Composition,3,100,7,16
+GSU/24/ENG/0011,2024/2025,Second,ENG 104,History of the English Language,3,100,18,42
+GSU/24/ENG/0011,2024/2025,Second,LIT 102,Introduction to Drama,3,100,16,37
+GSU/24/ENG/0011,2024/2025,Second,LIT 104,Nigerian Literature in English,2,100,19,44
+GSU/24/ENG/0011,2024/2025,Second,LIN 102,Introduction to General Linguistics,2,100,15,34
+GSU/24/ENG/0011,2024/2025,Second,GST 102,Use of English II,2,100,17,38
+GSU/24/ENG/0011,2024/2025,Second,GST 104,Philosophy & Logic,2,100,13,30
+GSU/24/ENG/0011,2025/2026,First,ENG 101,Introduction to English Grammar,3,100,23,52
+GSU/24/ENG/0011,2025/2026,First,ENG 103,Spoken English & Phonetics,3,100,17,41
+GSU/24/ENG/0011,2025/2026,First,LIT 101,Introduction to Prose Fiction,3,100,11,27
+GSU/24/ENG/0011,2025/2026,First,LIT 103,Introduction to Poetry,2,100,22,51
+GSU/24/ENG/0011,2025/2026,First,HIS 101,African Oral Literature,2,100,22,51
+GSU/24/ENG/0011,2025/2026,First,GST 101,Use of English I,2,100,21,49
+GSU/24/ENG/0011,2025/2026,First,GST 103,Nigerian Peoples & Culture,2,100,17,39
+GSU/24/ENG/0012,2024/2025,First,ENG 101,Introduction to English Grammar,3,100,22,52
+GSU/24/ENG/0012,2024/2025,First,ENG 103,Spoken English & Phonetics,3,100,19,43
+GSU/24/ENG/0012,2024/2025,First,LIT 101,Introduction to Prose Fiction,3,100,25,58
+GSU/24/ENG/0012,2024/2025,First,LIT 103,Introduction to Poetry,2,100,20,46
+GSU/24/ENG/0012,2024/2025,First,HIS 101,African Oral Literature,2,100,26,60
+GSU/24/ENG/0012,2024/2025,First,GST 101,Use of English I,2,100,16,36
+GSU/24/ENG/0012,2024/2025,First,GST 103,Nigerian Peoples & Culture,2,100,15,36
+GSU/24/ENG/0012,2024/2025,Second,ENG 102,Basic English Composition,3,100,23,52
+GSU/24/ENG/0012,2024/2025,Second,ENG 104,History of the English Language,3,100,26,61
+GSU/24/ENG/0012,2024/2025,Second,LIT 102,Introduction to Drama,3,100,26,61
+GSU/24/ENG/0012,2024/2025,Second,LIT 104,Nigerian Literature in English,2,100,23,53
+GSU/24/ENG/0012,2024/2025,Second,LIN 102,Introduction to General Linguistics,2,100,18,42
+GSU/24/ENG/0012,2024/2025,Second,GST 102,Use of English II,2,100,26,60
+GSU/24/ENG/0012,2024/2025,Second,GST 104,Philosophy & Logic,2,100,22,51
+GSU/24/ENG/0012,2025/2026,First,ENG 101,Introduction to English Grammar,3,100,22,52
+GSU/24/ENG/0012,2025/2026,First,ENG 103,Spoken English & Phonetics,3,100,20,48
+GSU/24/ENG/0012,2025/2026,First,LIT 101,Introduction to Prose Fiction,3,100,19,44
+GSU/24/ENG/0012,2025/2026,First,LIT 103,Introduction to Poetry,2,100,21,48
+GSU/24/ENG/0012,2025/2026,First,HIS 101,African Oral Literature,2,100,26,61
+GSU/24/ENG/0012,2025/2026,First,GST 101,Use of English I,2,100,22,51
+GSU/24/ENG/0012,2025/2026,First,GST 103,Nigerian Peoples & Culture,2,100,21,49

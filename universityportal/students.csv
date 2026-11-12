@@ -1,0 +1,13 @@
+matric_number,full_name,faculty,department,programme,current_level,entry_session,gender,email,phone
+GSU/22/CSC/0001,Chinedu Okafor,Faculty of Science,Department of Computer Science,B.Sc. Computer Science,300,2022/2023,Male,chinedu.okafor@example.com,08031110001
+GSU/22/CSC/0002,Aisha Bello,Faculty of Science,Department of Computer Science,B.Sc. Computer Science,300,2022/2023,Female,aisha.bello@example.com,08031110002
+GSU/23/CSC/0003,Oluwatobi Adeyemi,Faculty of Science,Department of Computer Science,B.Sc. Computer Science,200,2023/2024,Male,oluwatobi.adeyemi@example.com,08031110003
+GSU/24/CSC/0004,Ngozi Eze,Faculty of Science,Department of Computer Science,B.Sc. Computer Science,100,2024/2025,Female,ngozi.eze@example.com,08031110004
+GSU/22/ECO/0005,Ibrahim Danjuma,Faculty of Social Sciences,Department of Economics,B.Sc. Economics,300,2022/2023,Male,ibrahim.danjuma@example.com,08031110005
+GSU/23/ECO/0006,Favour Oghenekevwe,Faculty of Social Sciences,Department of Economics,B.Sc. Economics,200,2023/2024,Female,favour.oghenekevwe@example.com,08031110006
+GSU/23/ECO/0007,Emeka Nwosu,Faculty of Social Sciences,Department of Economics,B.Sc. Economics,200,2023/2024,Male,emeka.nwosu@example.com,08031110007
+GSU/24/ECO/0008,Zainab Abdullahi,Faculty of Social Sciences,Department of Economics,B.Sc. Economics,100,2024/2025,Female,zainab.abdullahi@example.com,08031110008
+GSU/22/ENG/0009,Kemi Adesina,Faculty of Arts,Department of English,B.A. English,300,2022/2023,Female,kemi.adesina@example.com,08031110009
+GSU/23/ENG/0010,Sadiq Umar,Faculty of Arts,Department of English,B.A. English,200,2023/2024,Male,sadiq.umar@example.com,08031110010
+GSU/24/ENG/0011,Blessing Okoro,Faculty of Arts,Department of English,B.A. English,100,2024/2025,Female,blessing.okoro@example.com,08031110011
+GSU/24/ENG/0012,Tunde Ogunleye,Faculty of Arts,Department of English,B.A. English,100,2024/2025,Male,tunde.ogunleye@example.com,08031110012

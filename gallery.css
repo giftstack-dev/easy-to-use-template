@@ -420,7 +420,8 @@ h1, h2, h3, h4 {
 #filt-estate:checked ~ .filter-bar label[for="filt-estate"],
 #filt-tech:checked ~ .filter-bar label[for="filt-tech"],
 #filt-folio:checked ~ .filter-bar label[for="filt-folio"],
-#filt-fitness:checked ~ .filter-bar label[for="filt-fitness"] {
+#filt-fitness:checked ~ .filter-bar label[for="filt-fitness"],
+#filt-school:checked ~ .filter-bar label[for="filt-school"] {
   background-color: var(--primary);
   color: #FFFFFF;
   border-color: var(--primary);
@@ -538,6 +539,7 @@ h1, h2, h3, h4 {
 .gallery-wrapper:has(#filt-tech:checked) .template-card:not([data-cat="tech"]) { display: none; }
 .gallery-wrapper:has(#filt-folio:checked) .template-card:not([data-cat="folio"]) { display: none; }
 .gallery-wrapper:has(#filt-fitness:checked) .template-card:not([data-cat="fitness"]) { display: none; }
+.gallery-wrapper:has(#filt-school:checked) .template-card:not([data-cat="school"]) { display: none; }
 
 /* ==========================================================================
    HOW IT WORKS (3 Steps)

@@ -18,6 +18,7 @@
       --border: #E2E8F0;
       --text: #0F172A;
       --text-muted: #64748B;
+      --danger: #B91C1C;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -36,231 +37,127 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 12px;
       flex-shrink: 0;
       z-index: 10;
+      flex-wrap: wrap;
     }
-    .header-left {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
+    .header-left { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
     .brand {
-      font-weight: 700;
-      font-size: 1.125rem;
-      color: var(--primary);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 6px;
+      font-weight: 700; font-size: 1.125rem; color: var(--primary);
+      text-decoration: none; display: flex; align-items: center; gap: 6px;
     }
-    .template-select-wrap {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.875rem;
-      font-weight: 600;
-    }
+    .template-select-wrap { display: flex; align-items: center; gap: 8px; font-size: 0.875rem; font-weight: 600; }
     select.form-select {
-      padding: 6px 12px;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      background-color: var(--bg);
-      font-weight: 600;
-      color: var(--text);
-      cursor: pointer;
+      padding: 6px 12px; border: 1px solid var(--border); border-radius: 6px;
+      background-color: var(--bg); font-weight: 600; color: var(--text); cursor: pointer;
     }
     .viewport-controls {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      background-color: var(--bg);
-      padding: 4px;
-      border-radius: 8px;
-      border: 1px solid var(--border);
+      display: flex; align-items: center; gap: 4px;
+      background-color: var(--bg); padding: 4px; border-radius: 8px; border: 1px solid var(--border);
     }
     .viewport-btn {
-      padding: 6px 12px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      border: none;
-      background: transparent;
-      border-radius: 6px;
-      cursor: pointer;
-      color: var(--text-muted);
-      transition: all 0.2s;
+      padding: 6px 12px; font-size: 0.75rem; font-weight: 600; border: none;
+      background: transparent; border-radius: 6px; cursor: pointer; color: var(--text-muted);
     }
     .viewport-btn.active {
-      background-color: var(--surface);
-      color: var(--primary);
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      background-color: var(--surface); color: var(--primary); box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     }
-    .header-actions {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+    .header-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
     .btn {
-      padding: 8px 16px;
-      font-size: 0.8125rem;
-      font-weight: 600;
-      border-radius: 6px;
-      cursor: pointer;
-      border: 1px solid transparent;
-      transition: all 0.2s;
-      text-decoration: none;
+      padding: 8px 16px; font-size: 0.8125rem; font-weight: 600; border-radius: 6px;
+      cursor: pointer; border: 1px solid transparent; transition: all 0.2s; text-decoration: none;
+      display: inline-flex; align-items: center; justify-content: center; gap: 6px;
     }
+    .btn:disabled { opacity: 0.55; cursor: not-allowed; }
     .btn-primary { background-color: var(--accent); color: #fff; }
-    .btn-primary:hover { background-color: #0d645d; }
+    .btn-primary:hover:not(:disabled) { background-color: #0d645d; }
     .btn-outline { background-color: transparent; border-color: var(--border); color: var(--text); }
-    .btn-outline:hover { background-color: var(--bg); }
-    
-    /* Layout */
-    .customizer-body {
-      display: flex;
-      flex-grow: 1;
-      overflow: hidden;
-    }
+    .btn-outline:hover:not(:disabled) { background-color: var(--bg); }
+    .btn-danger { background-color: #FEF2F2; border-color: #FECACA; color: #991B1B; }
+    .btn-sm { padding: 6px 10px; font-size: 0.75rem; }
+
+    .customizer-body { display: flex; flex-grow: 1; overflow: hidden; }
     .editor-pane {
-      width: 440px;
-      background-color: var(--surface);
-      border-right: 1px solid var(--border);
-      overflow-y: auto;
-      padding: 24px;
-      flex-shrink: 0;
+      width: 470px; background-color: var(--surface); border-right: 1px solid var(--border);
+      overflow-y: auto; padding: 20px; flex-shrink: 0;
     }
     .preview-pane {
-      flex-grow: 1;
-      background-color: #CBD5E1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-      overflow: hidden;
-      position: relative;
+      flex-grow: 1; background-color: #CBD5E1; display: flex; flex-direction: column;
+      align-items: center; justify-content: flex-start; padding: 16px 24px 24px; overflow: hidden;
     }
+    .preview-banner {
+      width: 100%; max-width: 1280px; background: #0F172A; color: #F8FAFC;
+      border-radius: 8px; padding: 8px 14px; margin-bottom: 10px;
+      display: none; align-items: center; justify-content: space-between; gap: 10px;
+      font-size: 0.8rem; flex-wrap: wrap;
+    }
+    .preview-banner.visible { display: flex; }
     .preview-frame-container {
-      width: 100%;
-      height: 100%;
-      max-width: 1280px;
-      background-color: #fff;
-      border-radius: 12px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-      overflow: hidden;
+      width: 100%; flex-grow: 1; min-height: 0; max-width: 1280px; background-color: #fff;
+      border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.15); overflow: hidden;
       transition: max-width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .preview-frame-container.viewport-mobile { max-width: 390px; height: 844px; }
+    .preview-frame-container.viewport-mobile { max-width: 390px; }
     .preview-frame-container.viewport-tablet { max-width: 768px; }
     .preview-frame-container.viewport-desktop { max-width: 1280px; }
-    iframe#preview-frame {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
+    iframe#preview-frame { width: 100%; height: 100%; border: none; }
 
-    /* Accordions in Editor */
     .accordion-group {
-      margin-bottom: 12px;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      overflow: hidden;
-      background-color: #fff;
+      margin-bottom: 12px; border: 1px solid var(--border); border-radius: 8px;
+      overflow: hidden; background-color: #fff;
     }
     .accordion-header {
-      padding: 14px 16px;
-      background-color: var(--bg);
-      font-weight: 600;
-      font-size: 0.875rem;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      user-select: none;
+      padding: 13px 16px; background-color: var(--bg); font-weight: 600; font-size: 0.875rem;
+      cursor: pointer; display: flex; justify-content: space-between; align-items: center; user-select: none;
     }
     .accordion-content {
-      padding: 16px;
-      display: none;
-      flex-direction: column;
-      gap: 12px;
-      border-top: 1px solid var(--border);
+      padding: 16px; display: none; flex-direction: column; gap: 12px; border-top: 1px solid var(--border);
     }
     .accordion-group.open .accordion-content { display: flex; }
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
+    .form-group { display: flex; flex-direction: column; gap: 4px; }
     .form-group label {
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
+      font-size: 0.72rem; font-weight: 700; color: var(--text-muted);
+      text-transform: uppercase; letter-spacing: 0.05em;
     }
     .form-control {
-      padding: 8px 12px;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      font-size: 0.875rem;
+      padding: 8px 10px; border: 1px solid var(--border); border-radius: 6px;
+      font-size: 0.84rem; width: 100%; font-family: inherit;
     }
-    .form-control:focus {
-      outline: none;
-      border-color: var(--accent);
-      box-shadow: 0 0 0 2px rgba(15, 118, 110, 0.15);
-    }
-    .chip-editor {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 6px;
-    }
-    .removable-chip {
-      background-color: var(--accent-soft);
-      color: var(--accent);
-      padding: 4px 8px;
-      border-radius: 4px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .removable-chip button {
-      background: none;
-      border: none;
-      color: var(--accent);
-      cursor: pointer;
-      font-weight: bold;
-    }
+    .form-control:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 2px rgba(15, 118, 110, 0.15); }
     .item-card {
-      background-color: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 12px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      position: relative;
+      background-color: var(--bg); border: 1px solid var(--border); border-radius: 6px;
+      padding: 10px; display: flex; flex-direction: column; gap: 8px;
     }
     .remove-btn {
-      align-self: flex-end;
-      background: none;
-      border: none;
-      color: #EF4444;
-      font-size: 0.75rem;
-      font-weight: 600;
-      cursor: pointer;
+      align-self: flex-end; background: none; border: none; color: #EF4444;
+      font-size: 0.75rem; font-weight: 600; cursor: pointer;
     }
     .add-btn {
-      padding: 6px 12px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      background-color: var(--accent-soft);
-      color: var(--accent);
-      border: 1px dashed var(--accent);
-      border-radius: 6px;
-      cursor: pointer;
-      text-align: center;
+      padding: 8px 12px; font-size: 0.78rem; font-weight: 600; background-color: var(--accent-soft);
+      color: var(--accent); border: 1px dashed var(--accent); border-radius: 6px; cursor: pointer; text-align: center;
     }
+    .drop-zone {
+      border: 1.5px dashed #94A3B8; border-radius: 8px; padding: 12px;
+      background: var(--bg); text-align: center; font-size: 0.8rem; color: var(--text-muted);
+      cursor: pointer; transition: border-color 0.2s, background 0.2s;
+    }
+    .drop-zone.drag-over { border-color: var(--accent); background: var(--accent-soft); color: var(--text); }
+    .diag-box {
+      border-radius: 6px; padding: 10px 12px; font-size: 0.8rem; border: 1px solid var(--border); line-height: 1.45;
+    }
+    .diag-ok { background: #ECFDF5; border-color: #A7F3D0; color: #065F46; }
+    .diag-err { background: #FEF2F2; border-color: #FECACA; color: #991B1B; }
+    .diag-warn { background: #FFFBEB; border-color: #FDE68A; color: #92400E; }
+    .diag-info { background: #EFF6FF; border-color: #BFDBFE; color: #1E3A8A; }
+    .mini-table { width: 100%; border-collapse: collapse; font-size: 0.75rem; }
+    .mini-table th, .mini-table td { border-bottom: 1px solid var(--border); padding: 6px 4px; text-align: left; }
+    .progress-bar-wrap { width: 100%; height: 10px; background: var(--border); border-radius: 99px; overflow: hidden; }
+    .progress-bar-fill { height: 100%; background: var(--accent); width: 0%; transition: width 0.1s; }
+    .color-row { display: grid; grid-template-columns: 44px 1fr; gap: 8px; align-items: center; }
+    input[type="color"] { width: 44px; height: 34px; border: 1px solid var(--border); border-radius: 6px; background: #fff; cursor: pointer; }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .sub-heading { font-size: 0.76rem; font-weight: 700; color: var(--primary); margin-top: 4px; border-top: 1px solid var(--border); padding-top: 8px; }
   </style>
 </head>
 <body>
@@ -271,10 +168,11 @@
         <label for="template-picker">Template:</label>
         <select id="template-picker" class="form-select">
           <option value="graduate" selected>Graduate (Developer Portfolio)</option>
+          <option value="universityportal">Varsity (University &amp; Results Portal)</option>
           <option value="atelier">Atelier (Fashion)</option>
           <option value="glow">Glow (Beauty Spa)</option>
-          <option value="spice">Spice (Food & Catering)</option>
-          <option value="covenant">Covenant (Church & Faith)</option>
+          <option value="spice">Spice (Food &amp; Catering)</option>
+          <option value="covenant">Covenant (Church &amp; Faith)</option>
           <option value="estate">Estate (Real Estate)</option>
           <option value="launch">Launch (Tech Startup)</option>
           <option value="folio">Folio (Product Designer)</option>
@@ -283,131 +181,266 @@
       </div>
     </div>
 
-    <!-- Viewport Switcher -->
     <div class="viewport-controls">
-      <button class="viewport-btn" data-vp="mobile">📱 390px</button>
+      <button class="viewport-btn" data-vp="mobile">📱 360px</button>
       <button class="viewport-btn" data-vp="tablet">💻 768px</button>
       <button class="viewport-btn active" data-vp="desktop">🖥️ 1280px</button>
     </div>
 
     <div class="header-actions">
       <button id="reset-btn" class="btn btn-outline">Reset Demo</button>
-      <button id="print-cv-btn" class="btn btn-outline">🖨️ Print CV</button>
+      <button id="print-cv-btn" class="btn btn-outline">🖨️ Print</button>
       <a id="download-zip-btn" href="downloads/graduate.zip" download class="btn btn-primary">Download ZIP</a>
     </div>
   </header>
 
   <div class="customizer-body">
-    <!-- Editor Controls Pane -->
-    <aside class="editor-pane" id="editor-pane">
-      <!-- Injected Dynamically Based On Selected Template -->
-    </aside>
+    <aside class="editor-pane" id="editor-pane"></aside>
 
-    <!-- Live Preview Pane -->
     <main class="preview-pane">
+      <div id="varsity-preview-banner" class="preview-banner">
+        <span id="varsity-banner-text">Preview of your generated portal</span>
+        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+          <button type="button" id="use-demo-preview-btn" class="btn btn-sm btn-outline" style="color:#fff; border-color:rgba(255,255,255,0.35);">Use demo account</button>
+          <button type="button" id="toggle-portal-route-btn" class="btn btn-sm btn-primary">Open Student Portal View</button>
+        </div>
+      </div>
       <div id="preview-container" class="preview-frame-container viewport-desktop">
         <iframe id="preview-frame" title="Live Preview"></iframe>
       </div>
     </main>
   </div>
 
+  <!-- Hidden iframe for safe in-page slip printing inside AI Studio iframe -->
+  <iframe id="slips-print-frame" style="position:absolute;width:0;height:0;border:0;" title="Access Slips Print Frame"></iframe>
+
   <script type="module">
     import { graduateDefaultConfig, buildGraduateHtml } from './src/templates/graduate.ts';
+    import {
+      universityportalDefaultConfig,
+      buildUniversityPortalHtml,
+      DEMO_STUDENTS_CSV,
+      DEMO_RESULTS_CSV,
+      DEMO_ACCESS_CODES,
+      DEMO_CREDENTIALS,
+      PRESET_5_POINT,
+      PRESET_4_POINT,
+      getPresetConfig,
+      validateUniversityCsvs,
+      computeUniversityDataset,
+      buildEncryptedUniversityPortalData,
+      buildUniversityAccessSlipsHtml,
+      buildUniversityCodesCsv,
+      buildRobotsTxt,
+      buildUniversityReadme,
+      SINGLE_FILE_STUDENT_LIMIT,
+      createZipBlob,
+      escapeHtml,
+      getContrastRatio,
+      validateImageUrl,
+    } from './src/templates/index.ts';
 
-    var currentTemplate = 'graduate';
+    var urlParams = new URLSearchParams(window.location.search);
+    var requestedTemplate = urlParams.get('template');
+    var validTemplates = ['graduate', 'universityportal', 'atelier', 'glow', 'spice', 'covenant', 'estate', 'launch', 'folio', 'pulse'];
+    var currentTemplate = validTemplates.includes(requestedTemplate) ? requestedTemplate : 'graduate';
+
+    // Graduate persisted config (no PII)
     var state = JSON.parse(localStorage.getItem('frontdoor_graduate_config') || 'null') || JSON.parse(JSON.stringify(graduateDefaultConfig));
+
+    // Varsity University Portal in-memory only state (never store student codes or PII in localStorage/sessionStorage/cookies)
+    function createInitialVarsityState() {
+      var cfg = JSON.parse(JSON.stringify(universityportalDefaultConfig));
+      var rep = validateUniversityCsvs(DEMO_STUDENTS_CSV, DEMO_RESULTS_CSV, cfg.caMax || 30, cfg.examMax || 70);
+      var accessRecords = rep.students.map(function (s) {
+        return {
+          matricNumber: s.matricNumber,
+          normalizedMatric: s.normalizedMatric,
+          fullName: s.fullName,
+          faculty: s.faculty,
+          department: s.department,
+          programme: s.programme,
+          currentLevel: s.currentLevel,
+          accessCode: DEMO_ACCESS_CODES[s.normalizedMatric] || '23456-789AB',
+        };
+      });
+      return {
+        config: cfg,
+        studentsCsv: DEMO_STUDENTS_CSV,
+        resultsCsv: DEMO_RESULTS_CSV,
+        validation: rep,
+        accessRecords: accessRecords,
+        showCodes: false,
+        confirmReissuePending: false,
+        previewPortalRoute: false,
+        isCustomBuilt: false,
+        abortController: null,
+        building: false,
+      };
+    }
+
+    var varsityState = createInitialVarsityState();
 
     var frame = document.getElementById('preview-frame');
     var editorPane = document.getElementById('editor-pane');
     var picker = document.getElementById('template-picker');
     var container = document.getElementById('preview-container');
+    var bannerEl = document.getElementById('varsity-preview-banner');
+    var bannerTextEl = document.getElementById('varsity-banner-text');
+    var toggleRouteBtn = document.getElementById('toggle-portal-route-btn');
+    var useDemoPreviewBtn = document.getElementById('use-demo-preview-btn');
+    var downloadBtn = document.getElementById('download-zip-btn');
+    var currentBlobUrl = '';
+
+    picker.value = currentTemplate;
 
     function saveState() {
       localStorage.setItem('frontdoor_graduate_config', JSON.stringify(state));
     }
 
-    function renderPreview() {
-      if (currentTemplate === 'graduate') {
-        var html = buildGraduateHtml(state);
-        var blob = new Blob([html], { type: 'text/html' });
-        frame.src = URL.createObjectURL(blob);
-      } else {
-        frame.src = currentTemplate + '/index.html';
+    function updateBanner() {
+      if (currentTemplate !== 'universityportal') {
+        bannerEl.classList.remove('visible');
+        return;
       }
-      document.getElementById('download-zip-btn').href = 'downloads/' + currentTemplate + '.zip';
+      bannerEl.classList.add('visible');
+      var pd = varsityState.config.portalData;
+      var stats = pd && pd.stats ? pd.stats : { students: 0, sessions: 0, departments: 0 };
+      if (pd && pd.isDemo) {
+        bannerTextEl.textContent = 'Preview of your generated portal • Demo: ' + DEMO_CREDENTIALS.matricNumber + ' | Code: ' + DEMO_CREDENTIALS.accessCode;
+      } else {
+        var extra = stats.students > 100 ? ' (preview shows first 100 of ' + stats.students.toLocaleString() + ')' : '';
+        bannerTextEl.textContent = 'Preview of your generated portal • ' + stats.students.toLocaleString() + ' student(s), ' + (pd.mode === 'sharded' ? 'sharded mode' : 'single-file') + extra;
+      }
+      useDemoPreviewBtn.style.display = pd && pd.isDemo ? 'none' : 'inline-flex';
+      toggleRouteBtn.textContent = varsityState.previewPortalRoute ? 'View University Website' : 'Open Student Portal View';
     }
 
+    toggleRouteBtn.addEventListener('click', function () {
+      varsityState.previewPortalRoute = !varsityState.previewPortalRoute;
+      renderPreview();
+    });
+
+    useDemoPreviewBtn.addEventListener('click', function () {
+      var freshDemo = createInitialVarsityState();
+      varsityState.config.portalData = freshDemo.config.portalData;
+      varsityState.studentsCsv = freshDemo.studentsCsv;
+      varsityState.resultsCsv = freshDemo.resultsCsv;
+      varsityState.validation = freshDemo.validation;
+      varsityState.accessRecords = freshDemo.accessRecords;
+      varsityState.isCustomBuilt = false;
+      varsityState.previewPortalRoute = true;
+      renderEditor();
+      renderPreview();
+    });
+
+    function renderPreview() {
+      if (currentBlobUrl) {
+        URL.revokeObjectURL(currentBlobUrl);
+        currentBlobUrl = '';
+      }
+      updateBanner();
+
+      if (currentTemplate === 'graduate') {
+        var html = buildGraduateHtml(state);
+        currentBlobUrl = URL.createObjectURL(new Blob([html], { type: 'text/html' }));
+        frame.src = currentBlobUrl;
+        downloadBtn.href = 'downloads/graduate.zip';
+        downloadBtn.setAttribute('download', 'graduate.zip');
+      } else if (currentTemplate === 'universityportal') {
+        var portalHtml = buildUniversityPortalHtml(varsityState.config, { previewLimit: 100 });
+        currentBlobUrl = URL.createObjectURL(new Blob([portalHtml], { type: 'text/html' }));
+        frame.src = varsityState.previewPortalRoute ? (currentBlobUrl + '#/portal') : currentBlobUrl;
+        downloadBtn.href = '#download-universityportal-zip';
+        downloadBtn.removeAttribute('download');
+      } else {
+        frame.src = currentTemplate + '/index.html';
+        downloadBtn.href = 'downloads/' + currentTemplate + '.zip';
+        downloadBtn.setAttribute('download', currentTemplate + '.zip');
+      }
+    }
+
+    // Intercept Download ZIP for Varsity University Portal to generate full single or sharded ZIP
+    downloadBtn.addEventListener('click', function (e) {
+      if (currentTemplate !== 'universityportal') return;
+      e.preventDefault();
+
+      var pd = varsityState.config.portalData;
+      var mode = pd && pd.mode === 'sharded' ? 'sharded' : 'single';
+      var fullHtml = buildUniversityPortalHtml(varsityState.config);
+      var slips = buildUniversityAccessSlipsHtml(varsityState.config, varsityState.accessRecords);
+      var codes = buildUniversityCodesCsv(varsityState.accessRecords);
+      var robots = buildRobotsTxt();
+      var readme = buildUniversityReadme(varsityState.config, mode);
+
+      var files = [
+        { path: 'universityportal/index.html', content: fullHtml },
+        { path: 'universityportal/robots.txt', content: robots },
+        { path: 'universityportal/access-slips.html', content: slips },
+        { path: 'universityportal/codes.csv', content: codes },
+        { path: 'universityportal/students.csv', content: varsityState.studentsCsv },
+        { path: 'universityportal/results.csv', content: varsityState.resultsCsv },
+        { path: 'universityportal/README.txt', content: readme },
+      ];
+
+      if (mode === 'sharded' && pd && pd.shards) {
+        Object.keys(pd.shards).forEach(function (prefix) {
+          files.push({
+            path: 'universityportal/data/' + prefix + '.json',
+            content: JSON.stringify(pd.shards[prefix]),
+          });
+        });
+      }
+
+      var zipBlob = createZipBlob(files);
+      var url = URL.createObjectURL(zipBlob);
+      var a = document.createElement('a');
+      a.href = url;
+      a.download = 'universityportal-bundle.zip';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(function () { URL.revokeObjectURL(url); }, 4000);
+    });
+
     function renderEditor() {
+      if (currentTemplate === 'universityportal') {
+        renderVarsityEditor();
+        return;
+      }
       if (currentTemplate !== 'graduate') {
-        editorPane.innerHTML = '<div style="padding: 20px; color: var(--text-muted);"><h3 style="margin-bottom:8px; color:var(--text);">Direct File Editing</h3><p>Open <code>' + currentTemplate + '/index.html</code> or <code>style.css</code> in your text editor to customize this template directly.</p></div>';
+        editorPane.innerHTML = '<div style="padding: 20px; color: var(--text-muted);"><h3 style="margin-bottom:8px; color:var(--text);">Direct File Editing</h3><p>Open <code>' + escapeHtml(currentTemplate) + '/index.html</code> or <code>style.css</code> in your text editor to customize this template directly.</p></div>';
         return;
       }
 
       editorPane.innerHTML = `
         <div style="margin-bottom: 20px;">
-          <h2 style="font-size: 1.125rem; font-weight: 700; margin-bottom: 4px;">Graduate CV & Portfolio</h2>
+          <h2 style="font-size: 1.125rem; font-weight: 700; margin-bottom: 4px;">Graduate CV &amp; Portfolio</h2>
           <p style="font-size: 0.8125rem; color: var(--text-muted);">Customize your profile, skills, projects, and career timeline below. Changes update live in the preview pane.</p>
         </div>
 
-        <!-- 1. Profile Accordion -->
         <div class="accordion-group open">
           <div class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
-            <span>👤 Profile & Personal Details</span>
-            <span>▼</span>
+            <span>👤 Profile &amp; Personal Details</span><span>▼</span>
           </div>
           <div class="accordion-content">
-            <div class="form-group">
-              <label>Full Name</label>
-              <input type="text" class="form-control" id="f-name" value="${state.businessName}">
-            </div>
-            <div class="form-group">
-              <label>Headline / Target Role</label>
-              <input type="text" class="form-control" id="f-headline" value="${state.headline}">
-            </div>
-            <div class="form-group">
-              <label>Short Bio</label>
-              <textarea class="form-control" id="f-bio" rows="2">${state.shortBio}</textarea>
-            </div>
-            <div class="form-group">
-              <label>Location</label>
-              <input type="text" class="form-control" id="f-location" value="${state.location}">
-            </div>
-            <div class="form-group">
-              <label>Availability</label>
-              <input type="text" class="form-control" id="f-avail" value="${state.availability}">
-            </div>
-            <div class="form-group">
-              <label>Degree</label>
-              <input type="text" class="form-control" id="f-degree" value="${state.degree}">
-            </div>
-            <div class="form-group">
-              <label>University / School</label>
-              <input type="text" class="form-control" id="f-school" value="${state.school}">
-            </div>
-            <div class="form-group">
-              <label>Class of Degree</label>
-              <input type="text" class="form-control" id="f-class" value="${state.classOfDegree}">
-            </div>
-            <div class="form-group">
-              <label>GitHub URL</label>
-              <input type="url" class="form-control" id="f-github" value="${state.github}">
-            </div>
-            <div class="form-group">
-              <label>LinkedIn URL</label>
-              <input type="url" class="form-control" id="f-linkedin" value="${state.linkedin}">
-            </div>
-            <div class="form-group">
-              <label>CV File URL (Leave empty for WhatsApp request button)</label>
-              <input type="text" class="form-control" id="f-cv" value="${state.cvUrl || ''}">
-            </div>
+            <div class="form-group"><label>Full Name</label><input type="text" class="form-control" id="f-name" value="${escapeHtml(state.businessName)}"></div>
+            <div class="form-group"><label>Headline / Target Role</label><input type="text" class="form-control" id="f-headline" value="${escapeHtml(state.headline)}"></div>
+            <div class="form-group"><label>Short Bio</label><textarea class="form-control" id="f-bio" rows="2">${escapeHtml(state.shortBio)}</textarea></div>
+            <div class="form-group"><label>Location</label><input type="text" class="form-control" id="f-location" value="${escapeHtml(state.location)}"></div>
+            <div class="form-group"><label>Availability</label><input type="text" class="form-control" id="f-avail" value="${escapeHtml(state.availability)}"></div>
+            <div class="form-group"><label>Degree</label><input type="text" class="form-control" id="f-degree" value="${escapeHtml(state.degree)}"></div>
+            <div class="form-group"><label>University / School</label><input type="text" class="form-control" id="f-school" value="${escapeHtml(state.school)}"></div>
+            <div class="form-group"><label>Class of Degree</label><input type="text" class="form-control" id="f-class" value="${escapeHtml(state.classOfDegree)}"></div>
+            <div class="form-group"><label>GitHub URL</label><input type="url" class="form-control" id="f-github" value="${escapeHtml(state.github)}"></div>
+            <div class="form-group"><label>LinkedIn URL</label><input type="url" class="form-control" id="f-linkedin" value="${escapeHtml(state.linkedin)}"></div>
+            <div class="form-group"><label>CV File URL (Leave empty for WhatsApp request button)</label><input type="text" class="form-control" id="f-cv" value="${escapeHtml(state.cvUrl || '')}"></div>
           </div>
         </div>
 
-        <!-- 2. Skills Accordion -->
         <div class="accordion-group">
           <div class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
-            <span>⚡ Skills & Tech Stack</span>
-            <span>▼</span>
+            <span>⚡ Skills &amp; Tech Stack</span><span>▼</span>
           </div>
           <div class="accordion-content">
             <div id="skills-list"></div>
@@ -415,11 +448,9 @@
           </div>
         </div>
 
-        <!-- 3. Projects Accordion -->
         <div class="accordion-group">
           <div class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
-            <span>💻 Selected Projects</span>
-            <span>▼</span>
+            <span>💻 Selected Projects</span><span>▼</span>
           </div>
           <div class="accordion-content">
             <div id="projects-list"></div>
@@ -427,11 +458,9 @@
           </div>
         </div>
 
-        <!-- 4. Experience Accordion -->
         <div class="accordion-group">
           <div class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
-            <span>🏢 Career Experience</span>
-            <span>▼</span>
+            <span>🏢 Career Experience</span><span>▼</span>
           </div>
           <div class="accordion-content">
             <div id="experience-list"></div>
@@ -439,52 +468,834 @@
           </div>
         </div>
 
-        <!-- 5. Education & Certifications Accordion -->
         <div class="accordion-group">
           <div class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
-            <span>🎓 Education & Certifications</span>
-            <span>▼</span>
+            <span>🎓 Education &amp; Certifications</span><span>▼</span>
+          </div>
+          <div class="accordion-content">
+            <div class="form-group"><label>Degree Honors &amp; Project Note</label><textarea class="form-control" id="f-edu-note" rows="2">${escapeHtml(state.education[0]?.note || '')}</textarea></div>
+            <div class="form-group"><label>Certifications (comma-separated)</label><input type="text" class="form-control" id="f-certs" value="${escapeHtml(state.certifications.join(', '))}"></div>
+          </div>
+        </div>
+
+        <div class="accordion-group">
+          <div class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
+            <span>📞 Contact &amp; Channels</span><span>▼</span>
+          </div>
+          <div class="accordion-content">
+            <div class="form-group"><label>Phone Number</label><input type="text" class="form-control" id="f-phone" value="${escapeHtml(state.phone)}"></div>
+            <div class="form-group"><label>WhatsApp Number</label><input type="text" class="form-control" id="f-whatsapp" value="${escapeHtml(state.whatsapp)}"></div>
+            <div class="form-group"><label>Email Address</label><input type="email" class="form-control" id="f-email" value="${escapeHtml(state.email)}"></div>
+          </div>
+        </div>
+      `;
+      attachGraduateEvents();
+    }
+
+    function renderVarsityEditor() {
+      var cfg = varsityState.config;
+      var contrastRatio = getContrastRatio(cfg.primaryColor || '#1B3A6B', '#FFFFFF').toFixed(2);
+      var preset = cfg.gradingPreset || '5-point';
+      var policy = cfg.repeatPolicy || 'latest_replaces';
+
+      editorPane.innerHTML = `
+        <div style="margin-bottom: 16px;">
+          <h2 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 4px;">Varsity — University Portal Builder</h2>
+          <p style="font-size: 0.8rem; color: var(--text-muted);">Customize institutional details, upload your <code>students.csv</code> &amp; <code>results.csv</code>, configure grading &amp; repeat rules, and download a ready-to-host portal ZIP.</p>
+        </div>
+
+        <!-- 1. Institution Accordion -->
+        <div class="accordion-group open">
+          <div class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
+            <span>1. Institution</span><span>▼</span>
+          </div>
+          <div class="accordion-content">
+            <div class="form-group"><label>Institution Name</label><input type="text" class="form-control" id="vp-name" value="${escapeHtml(cfg.businessName)}"></div>
+            <div class="two-col">
+              <div class="form-group"><label>Motto</label><input type="text" class="form-control" id="vp-motto" value="${escapeHtml(cfg.motto || '')}"></div>
+              <div class="form-group"><label>Established</label><input type="text" class="form-control" id="vp-est" value="${escapeHtml(cfg.established || '')}"></div>
+            </div>
+            <div class="form-group">
+              <label>University Crest / Logo (URL or Upload)</label>
+              <input type="text" class="form-control" id="vp-logo-url" placeholder="https://... or upload image" value="${escapeHtml(cfg.logoUrl || '')}">
+              <input type="file" id="vp-logo-file" accept="image/png,image/jpeg,image/webp,image/gif" style="font-size:0.75rem; margin-top:4px;">
+            </div>
+            <div class="two-col">
+              <div class="form-group"><label>Campus Address</label><input type="text" class="form-control" id="vp-address" value="${escapeHtml(cfg.address || '')}"></div>
+              <div class="form-group"><label>City / State</label><input type="text" class="form-control" id="vp-location" value="${escapeHtml(cfg.location || '')}"></div>
+            </div>
+            <div class="form-group"><label>Public Website URL (printed on slips)</label><input type="url" class="form-control" id="vp-website" value="${escapeHtml(cfg.institutionWebsite || '')}"></div>
+            <div class="form-group"><label>Hero Headline</label><input type="text" class="form-control" id="vp-headline" value="${escapeHtml(cfg.headline || '')}"></div>
+            <div class="form-group"><label>Short Intro</label><textarea class="form-control" id="vp-bio" rows="2">${escapeHtml(cfg.shortBio || '')}</textarea></div>
+            <div class="form-group"><label>About Institution</label><textarea class="form-control" id="vp-about" rows="3">${escapeHtml(cfg.aboutText || '')}</textarea></div>
+
+            <div class="sub-heading">Office Contacts (ICT Helpdesk / Registry / Bursary)</div>
+            <div class="item-card">
+              <label style="font-size:0.72rem; font-weight:700;">ICT Helpdesk</label>
+              <input class="form-control" id="vp-ict-phone" placeholder="Phone" value="${escapeHtml(cfg.helpdesk?.phone || cfg.phone || '')}">
+              <input class="form-control" id="vp-ict-wa" placeholder="WhatsApp Number" value="${escapeHtml(cfg.helpdesk?.whatsapp || cfg.whatsapp || '')}">
+              <input class="form-control" id="vp-ict-email" placeholder="Email" value="${escapeHtml(cfg.helpdesk?.email || cfg.email || '')}">
+            </div>
+            <div class="item-card">
+              <label style="font-size:0.72rem; font-weight:700;">Registry</label>
+              <input class="form-control" id="vp-reg-phone" placeholder="Phone" value="${escapeHtml(cfg.registry?.phone || '')}">
+              <input class="form-control" id="vp-reg-email" placeholder="Email" value="${escapeHtml(cfg.registry?.email || '')}">
+            </div>
+            <div class="item-card">
+              <label style="font-size:0.72rem; font-weight:700;">Bursary</label>
+              <input class="form-control" id="vp-bur-phone" placeholder="Phone" value="${escapeHtml(cfg.bursary?.phone || '')}">
+              <input class="form-control" id="vp-bur-email" placeholder="Email" value="${escapeHtml(cfg.bursary?.email || '')}">
+            </div>
+
+            <div class="sub-heading">Faculties &amp; Programmes</div>
+            <div id="vp-faculties-list" style="display:grid; gap:8px;"></div>
+            <button type="button" id="vp-add-faculty-btn" class="add-btn">+ Add Faculty</button>
+
+            <div class="sub-heading">Admissions Steps</div>
+            <div id="vp-adm-list" style="display:grid; gap:8px;"></div>
+            <button type="button" id="vp-add-adm-btn" class="add-btn">+ Add Admissions Step</button>
+
+            <div class="sub-heading">News &amp; Events</div>
+            <div id="vp-news-list" style="display:grid; gap:8px;"></div>
+            <button type="button" id="vp-add-news-btn" class="add-btn">+ Add News Item</button>
+
+            <div class="sub-heading">Academic Calendar</div>
+            <div id="vp-cal-list" style="display:grid; gap:8px;"></div>
+            <button type="button" id="vp-add-cal-btn" class="add-btn">+ Add Calendar Date</button>
+          </div>
+        </div>
+
+        <!-- 2. Brand Accordion -->
+        <div class="accordion-group">
+          <div class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
+            <span>2. Brand</span><span>▼</span>
           </div>
           <div class="accordion-content">
             <div class="form-group">
-              <label>Degree Honors & Project Note</label>
-              <textarea class="form-control" id="f-edu-note" rows="2">${state.education[0]?.note || ''}</textarea>
+              <label>Primary Brand Color (Contrast vs white: <span id="vp-contrast-readout">${contrastRatio}:1</span>)</label>
+              <div class="color-row">
+                <input type="color" id="vp-primary-color" value="${escapeHtml(cfg.primaryColor || '#1B3A6B')}">
+                <input type="text" class="form-control" id="vp-primary-hex" value="${escapeHtml(cfg.primaryColor || '#1B3A6B')}">
+              </div>
             </div>
             <div class="form-group">
-              <label>Certifications (comma-separated)</label>
-              <input type="text" class="form-control" id="f-certs" value="${state.certifications.join(', ')}">
+              <label>Accent Color</label>
+              <div class="color-row">
+                <input type="color" id="vp-accent-color" value="${escapeHtml(cfg.accentColor || '#B45309')}">
+                <input type="text" class="form-control" id="vp-accent-hex" value="${escapeHtml(cfg.accentColor || '#B45309')}">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Page Background</label>
+              <div class="color-row">
+                <input type="color" id="vp-bg-color" value="${escapeHtml(cfg.backgroundColor || '#F7F8FB')}">
+                <input type="text" class="form-control" id="vp-bg-hex" value="${escapeHtml(cfg.backgroundColor || '#F7F8FB')}">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Card Surface</label>
+              <div class="color-row">
+                <input type="color" id="vp-surface-color" value="${escapeHtml(cfg.surfaceColor || '#FFFFFF')}">
+                <input type="text" class="form-control" id="vp-surface-hex" value="${escapeHtml(cfg.surfaceColor || '#FFFFFF')}">
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- 6. Contact Channels Accordion -->
+        <!-- 3. Images & Sections Accordion -->
         <div class="accordion-group">
           <div class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
-            <span>📞 Contact & Channels</span>
-            <span>▼</span>
+            <span>3. Images &amp; Sections</span><span>▼</span>
           </div>
           <div class="accordion-content">
+            <p style="font-size:0.78rem; color:var(--text-muted);">4 campus showcase slots. Leave photo URL blank to keep crisp institutional gradient art fallback.</p>
+            <div id="vp-gallery-list" style="display:grid; gap:8px;"></div>
+          </div>
+        </div>
+
+        <!-- 4. Portal Data Accordion -->
+        <div class="accordion-group open">
+          <div class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
+            <span>4. Portal Data (CSVs &amp; Encryption)</span><span>▼</span>
+          </div>
+          <div class="accordion-content">
+            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+              <button type="button" id="dl-sample-students" class="btn btn-outline btn-sm">Sample students.csv</button>
+              <button type="button" id="dl-sample-results" class="btn btn-outline btn-sm">Sample results.csv</button>
+            </div>
+
             <div class="form-group">
-              <label>Phone Number</label>
-              <input type="text" class="form-control" id="f-phone" value="${state.phone}">
+              <label>1. Upload students.csv (up to 10,000 students)</label>
+              <div class="drop-zone" id="drop-students">
+                Drop <code>students.csv</code> here or click to browse
+                <input type="file" id="file-students" accept=".csv,text/csv" style="display:none;">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>2. Upload results.csv (up to 250,000 rows)</label>
+              <div class="drop-zone" id="drop-results">
+                Drop <code>results.csv</code> here or click to browse
+                <input type="file" id="file-results" accept=".csv,text/csv" style="display:none;">
+              </div>
+            </div>
+
+            <div id="vp-validation-output"></div>
+            <div id="vp-size-indicator" class="diag-box diag-info">Checking output bundle size...</div>
+
+            <div id="vp-progress-box" style="display:none; flex-direction:column; gap:6px;">
+              <div style="display:flex; justify-content:space-between; font-size:0.76rem; font-weight:600;">
+                <span id="vp-progress-label">Encrypting...</span>
+                <span id="vp-progress-eta"></span>
+              </div>
+              <div class="progress-bar-wrap"><div class="progress-bar-fill" id="vp-progress-fill"></div></div>
+              <button type="button" id="vp-cancel-build-btn" class="btn btn-danger btn-sm">Cancel build</button>
+            </div>
+
+            <button type="button" id="vp-generate-btn" class="btn btn-primary">Generate portal</button>
+          </div>
+        </div>
+
+        <!-- 5. Grading Accordion -->
+        <div class="accordion-group">
+          <div class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
+            <span>5. Grading &amp; Academic Rules</span><span>▼</span>
+          </div>
+          <div class="accordion-content">
+            <div class="diag-box diag-info">
+              These are common defaults. Institutions differ, so check your own grading policy.
             </div>
             <div class="form-group">
-              <label>WhatsApp Number</label>
-              <input type="text" class="form-control" id="f-whatsapp" value="${state.whatsapp}">
+              <label>Grading Preset</label>
+              <select class="form-control" id="vp-preset">
+                <option value="5-point" ${preset === '5-point' ? 'selected' : ''}>Nigerian university (5-point)</option>
+                <option value="4-point" ${preset === '4-point' ? 'selected' : ''}>Polytechnic / College (4-point)</option>
+              </select>
+            </div>
+            <div class="two-col">
+              <div class="form-group"><label>CA Max Score</label><input type="number" class="form-control" id="vp-ca-max" value="${cfg.caMax ?? 30}" min="0" max="100"></div>
+              <div class="form-group"><label>Exam Max Score</label><input type="number" class="form-control" id="vp-exam-max" value="${cfg.examMax ?? 70}" min="1" max="100"></div>
+            </div>
+            <div class="two-col">
+              <div class="form-group"><label>Course Pass Mark</label><input type="number" class="form-control" id="vp-pass-mark" value="${cfg.passMark ?? 40}" min="1" max="100"></div>
+              <div class="form-group"><label>Required Units for Degree</label><input type="number" class="form-control" id="vp-req-units" value="${cfg.requiredUnits ?? 120}" min="1" max="400"></div>
             </div>
             <div class="form-group">
-              <label>Email Address</label>
-              <input type="email" class="form-control" id="f-email" value="${state.email}">
+              <label>Repeat Policy (retaken failed courses)</label>
+              <select class="form-control" id="vp-repeat-policy">
+                <option value="latest_replaces" ${policy === 'latest_replaces' ? 'selected' : ''}>Latest passing attempt replaces failed attempt</option>
+                <option value="count_all" ${policy === 'count_all' ? 'selected' : ''}>All attempts count in CGPA</option>
+              </select>
+            </div>
+
+            <div class="sub-heading">Grade Bands (Grade | Min | Max | Point | Remark)</div>
+            <div id="vp-grade-bands" style="display:grid; gap:6px;"></div>
+
+            <div class="sub-heading">Class of Degree Bands (Class | Min | Max)</div>
+            <div id="vp-degree-bands" style="display:grid; gap:6px;"></div>
+
+            <div class="sub-heading">Academic Standing Rules</div>
+            <div class="two-col">
+              <div class="form-group"><label>Good Standing Min CGPA</label><input type="number" step="0.01" class="form-control" id="vp-good-min" value="${cfg.standingRules?.goodStandingMin ?? 1.5}"></div>
+              <div class="form-group"><label>Senate Referral Below</label><input type="number" step="0.01" class="form-control" id="vp-senate-min" value="${cfg.standingRules?.senateThreshold ?? 1.0}"></div>
+            </div>
+            <p style="font-size:0.75rem; color:var(--text-muted);">Click "Generate portal" in Section 4 after editing grading rules to recompute GPA/CGPA.</p>
+          </div>
+        </div>
+
+        <!-- 6. Access Codes Accordion -->
+        <div class="accordion-group">
+          <div class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
+            <span>6. Access Codes &amp; Printable Slips</span><span>▼</span>
+          </div>
+          <div class="accordion-content">
+            <div class="diag-box diag-warn">
+              <strong>Security Warning:</strong> Keep <code>codes.csv</code> and <code>access-slips.html</code> offline on a password-protected workstation. Never upload them to your public host.
+            </div>
+            <div class="diag-box diag-info">
+              <strong>Privacy Notice (NDPA 2023):</strong> Encrypted blobs reveal zero names, matric numbers, or grades publicly. Publish only with institutional authorization.
+            </div>
+            <div style="display:flex; flex-wrap:wrap; gap:6px;">
+              <button type="button" id="vp-toggle-codes-btn" class="btn btn-outline btn-sm">${varsityState.showCodes ? 'Hide codes' : 'Show codes'}</button>
+              <button type="button" id="vp-print-slips-btn" class="btn btn-primary btn-sm">Print access slips</button>
+              <button type="button" id="vp-dl-codes-btn" class="btn btn-outline btn-sm">Download codes.csv</button>
+              <button type="button" id="vp-reissue-btn" class="btn btn-danger btn-sm">Reissue codes</button>
+            </div>
+            <div id="vp-reissue-warn" class="diag-box diag-err" style="display:${varsityState.confirmReissuePending ? 'flex' : 'none'}; flex-direction:column; gap:8px;">
+              <span><strong>Warning:</strong> Reissuing access codes invalidates all old printed slips immediately. Students holding old slips will no longer unlock their portal until issued new slips.</span>
+              <div style="display:flex; gap:8px;">
+                <button type="button" id="vp-confirm-reissue-btn" class="btn btn-primary btn-sm">Confirm &amp; Reissue All Codes</button>
+                <button type="button" id="vp-cancel-reissue-btn" class="btn btn-outline btn-sm">Cancel</button>
+              </div>
+            </div>
+            <div style="max-height:240px; overflow:auto; border:1px solid var(--border); border-radius:6px;">
+              <table class="mini-table">
+                <thead><tr><th>Matric No</th><th>Name</th><th>Dept / Lvl</th><th>Code</th></tr></thead>
+                <tbody id="vp-codes-tbody"></tbody>
+              </table>
             </div>
           </div>
         </div>
       `;
 
-      attachEditorEvents();
+      attachVarsityEvents();
     }
 
-    function attachEditorEvents() {
-      // Profile bindings
+    function updateSizeIndicator() {
+      var box = document.getElementById('vp-size-indicator');
+      if (!box) return;
+      var pd = varsityState.config.portalData;
+      var rep = varsityState.validation;
+      var studentCount = rep && rep.summary ? rep.summary.studentsCount : (pd && pd.stats ? pd.stats.students : 0);
+      var mode = studentCount > SINGLE_FILE_STUDENT_LIMIT ? 'sharded' : 'single';
+      var htmlBytes = new Blob([buildUniversityPortalHtml(varsityState.config)]).size;
+      var shardBytes = 0;
+      var shardCount = 0;
+      if (pd && pd.mode === 'sharded' && pd.shards) {
+        var keys = Object.keys(pd.shards);
+        shardCount = keys.length;
+        keys.forEach(function (k) { shardBytes += new Blob([JSON.stringify(pd.shards[k])]).size; });
+      }
+      var formatSize = function (b) {
+        return b > 1048576 ? (b / 1048576).toFixed(2) + ' MB' : Math.round(b / 1024) + ' KB';
+      };
+
+      if (mode === 'sharded') {
+        box.className = 'diag-box diag-info';
+        box.innerHTML = '<strong>Output Mode: Sharded (<code>data/{xx}.json</code>)</strong> — ' + studentCount.toLocaleString() + ' students (&gt;' + SINGLE_FILE_STUDENT_LIMIT + '). '
+          + (pd && pd.mode === 'sharded'
+            ? 'Core <code>index.html</code>: <strong>' + formatSize(htmlBytes) + '</strong> + ' + shardCount + ' shard file(s) totaling <strong>' + formatSize(shardBytes) + '</strong>.'
+            : 'Each student login fetches only a tiny ~15 KB shard file instead of downloading one huge HTML file.');
+      } else {
+        box.className = htmlBytes > 3 * 1024 * 1024 ? 'diag-box diag-warn' : 'diag-box diag-ok';
+        box.innerHTML = '<strong>Output Mode: Single File</strong> (' + studentCount + ' students &le;' + SINGLE_FILE_STUDENT_LIMIT + '). Built size: <strong>' + formatSize(htmlBytes) + '</strong>.';
+      }
+    }
+
+    function renderValidationReport() {
+      var out = document.getElementById('vp-validation-output');
+      if (!out) return;
+      var rep = varsityState.validation;
+      if (!rep) return;
+
+      if (!rep.valid) {
+        out.innerHTML = `
+          <div class="diag-box diag-err">
+            <strong>${rep.errors.length} validation error(s) found — fix CSV before building:</strong>
+            <table class="mini-table" style="margin-top:6px;">
+              <thead><tr><th>File</th><th>Row</th><th>Issue</th></tr></thead>
+              <tbody>
+                ${rep.errors.slice(0, 12).map(function (er) {
+                  return '<tr><td>' + escapeHtml(er.file) + '</td><td>' + er.row + '</td><td>' + escapeHtml(er.message) + '</td></tr>';
+                }).join('')}
+              </tbody>
+            </table>
+          </div>
+        `;
+      } else {
+        out.innerHTML = `
+          <div class="diag-box diag-ok">
+            <strong>CSV Validated:</strong> ${rep.summary.studentsCount.toLocaleString()} students, ${rep.summary.facultiesCount} faculties, ${rep.summary.departmentsCount} departments, ${rep.summary.sessionsCount} session(s), ${rep.summary.resultRowsCount.toLocaleString()} rows.
+            ${rep.warnings.length > 0 ? '<div style="margin-top:4px; color:#92400E;">(' + rep.warnings.length + ' warning(s), e.g. ' + escapeHtml(rep.warnings[0].message) + ')</div>' : ''}
+          </div>
+        `;
+      }
+      var genBtn = document.getElementById('vp-generate-btn');
+      if (genBtn) genBtn.disabled = !rep.valid || varsityState.building;
+      updateSizeIndicator();
+    }
+
+    function renderCodesTable() {
+      var tbody = document.getElementById('vp-codes-tbody');
+      if (!tbody) return;
+      tbody.innerHTML = varsityState.accessRecords.slice(0, 300).map(function (r) {
+        return '<tr><td><code>' + escapeHtml(r.matricNumber) + '</code></td><td>' + escapeHtml(r.fullName) + '</td><td>' + escapeHtml(r.department) + ' (' + escapeHtml(r.currentLevel) + ')</td><td><code>' + (varsityState.showCodes ? escapeHtml(r.accessCode) : '•••••-•••••') + '</code></td></tr>';
+      }).join('');
+      if (varsityState.accessRecords.length > 300) {
+        tbody.innerHTML += '<tr><td colspan="4" style="color:#64748B;">Showing first 300 of ' + varsityState.accessRecords.length.toLocaleString() + ' students. Use "Download codes.csv" or "Print access slips" for the full list.</td></tr>';
+      }
+    }
+
+    function triggerTextDownload(filename, text) {
+      var b = new Blob([text], { type: 'text/csv;charset=utf-8' });
+      var u = URL.createObjectURL(b);
+      var a = document.createElement('a');
+      a.href = u;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(function () { URL.revokeObjectURL(u); }, 2000);
+    }
+
+    function attachVarsityEvents() {
+      var cfg = varsityState.config;
+      function bindVp(id, prop) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        el.addEventListener('input', function () {
+          cfg[prop] = el.value;
+          renderPreview();
+        });
+      }
+      bindVp('vp-name', 'businessName');
+      bindVp('vp-motto', 'motto');
+      bindVp('vp-est', 'established');
+      bindVp('vp-address', 'address');
+      bindVp('vp-location', 'location');
+      bindVp('vp-website', 'institutionWebsite');
+      bindVp('vp-headline', 'headline');
+      bindVp('vp-bio', 'shortBio');
+      bindVp('vp-about', 'aboutText');
+
+      // Office contacts
+      function bindOffice(id, officeKey, field) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        el.addEventListener('input', function () {
+          if (!cfg[officeKey]) cfg[officeKey] = {};
+          cfg[officeKey][field] = el.value;
+          if (officeKey === 'helpdesk') cfg[field] = el.value;
+          renderPreview();
+        });
+      }
+      bindOffice('vp-ict-phone', 'helpdesk', 'phone');
+      bindOffice('vp-ict-wa', 'helpdesk', 'whatsapp');
+      bindOffice('vp-ict-email', 'helpdesk', 'email');
+      bindOffice('vp-reg-phone', 'registry', 'phone');
+      bindOffice('vp-reg-email', 'registry', 'email');
+      bindOffice('vp-bur-phone', 'bursary', 'phone');
+      bindOffice('vp-bur-email', 'bursary', 'email');
+
+      // Logo URL + Upload
+      var logoUrlEl = document.getElementById('vp-logo-url');
+      if (logoUrlEl) {
+        logoUrlEl.addEventListener('input', function () {
+          cfg.logoUrl = validateImageUrl(logoUrlEl.value);
+          renderPreview();
+        });
+      }
+      var logoFileEl = document.getElementById('vp-logo-file');
+      if (logoFileEl) {
+        logoFileEl.addEventListener('change', function () {
+          var file = logoFileEl.files && logoFileEl.files[0];
+          if (!file) return;
+          var reader = new FileReader();
+          reader.onload = function () {
+            var res = typeof reader.result === 'string' ? reader.result : '';
+            if (validateImageUrl(res)) {
+              cfg.logoUrl = res;
+              if (logoUrlEl) logoUrlEl.value = res.slice(0, 60) + '...';
+              renderPreview();
+            }
+          };
+          reader.readAsDataURL(file);
+        });
+      }
+
+      // Colors
+      function syncColor(pickerId, hexId, prop, readoutId) {
+        var cEl = document.getElementById(pickerId);
+        var hEl = document.getElementById(hexId);
+        if (!cEl || !hEl) return;
+        function applyColor(val) {
+          if (/^#[0-9a-fA-F]{6}$/.test(val.trim())) {
+            cfg[prop] = val.trim();
+            cEl.value = cfg[prop];
+            hEl.value = cfg[prop];
+            if (readoutId) {
+              var ro = document.getElementById(readoutId);
+              if (ro) ro.textContent = getContrastRatio(cfg[prop], '#FFFFFF').toFixed(2) + ':1';
+            }
+            renderPreview();
+          }
+        }
+        cEl.addEventListener('input', function () { applyColor(cEl.value); });
+        hEl.addEventListener('input', function () { applyColor(hEl.value); });
+      }
+      syncColor('vp-primary-color', 'vp-primary-hex', 'primaryColor', 'vp-contrast-readout');
+      syncColor('vp-accent-color', 'vp-accent-hex', 'accentColor', null);
+      syncColor('vp-bg-color', 'vp-bg-hex', 'backgroundColor', null);
+      syncColor('vp-surface-color', 'vp-surface-hex', 'surfaceColor', null);
+
+      // Faculties editor
+      function renderFaculties() {
+        var el = document.getElementById('vp-faculties-list');
+        if (!el) return;
+        el.innerHTML = (cfg.faculties || []).map(function (f, i) {
+          return '<div class="item-card">'
+            + '<button type="button" class="remove-btn" data-del-fac="' + i + '">✕ Remove</button>'
+            + '<input class="form-control" value="' + escapeHtml(f.name) + '" placeholder="Faculty name" data-fac-idx="' + i + '" data-fac-f="name">'
+            + '<input class="form-control" value="' + escapeHtml(f.deanEmail || '') + '" placeholder="Dean office email" data-fac-idx="' + i + '" data-fac-f="deanEmail">'
+            + '<textarea class="form-control" rows="2" placeholder="Department | Programme (one per line)" data-fac-idx="' + i + '" data-fac-f="depts">' + escapeHtml((f.departments || []).map(function (d) { return d.name + ' | ' + d.programme; }).join('\n')) + '</textarea>'
+            + '</div>';
+        }).join('');
+        el.querySelectorAll('[data-del-fac]').forEach(function (b) {
+          b.onclick = function () { cfg.faculties.splice(Number(b.getAttribute('data-del-fac')), 1); renderFaculties(); renderPreview(); };
+        });
+        el.querySelectorAll('[data-fac-idx]').forEach(function (inp) {
+          inp.addEventListener('input', function () {
+            var idx = Number(inp.getAttribute('data-fac-idx'));
+            var field = inp.getAttribute('data-fac-f');
+            if (field === 'depts') {
+              cfg.faculties[idx].departments = inp.value.split('\n').map(function (line) {
+                var parts = line.split('|');
+                return { name: (parts[0] || '').trim(), programme: (parts[1] || parts[0] || '').trim() };
+              }).filter(function (d) { return d.name; });
+            } else {
+              cfg.faculties[idx][field] = inp.value;
+            }
+            renderPreview();
+          });
+        });
+      }
+      renderFaculties();
+      document.getElementById('vp-add-faculty-btn').onclick = function () {
+        cfg.faculties.push({ name: 'Faculty of Engineering', deanEmail: 'eng@example.com', departments: [{ name: 'Civil Engineering', programme: 'B.Eng. Civil Engineering' }] });
+        renderFaculties();
+        renderPreview();
+      };
+
+      // Admissions steps editor
+      function renderAdm() {
+        var el = document.getElementById('vp-adm-list');
+        if (!el) return;
+        el.innerHTML = (cfg.admissionsSteps || []).map(function (s, i) {
+          return '<div class="item-card">'
+            + '<button type="button" class="remove-btn" data-del-adm="' + i + '">✕ Remove</button>'
+            + '<input class="form-control" value="' + escapeHtml(s.title) + '" placeholder="Step title" data-adm-idx="' + i + '" data-adm-f="title">'
+            + '<textarea class="form-control" rows="2" placeholder="Description" data-adm-idx="' + i + '" data-adm-f="description">' + escapeHtml(s.description) + '</textarea>'
+            + '</div>';
+        }).join('');
+        el.querySelectorAll('[data-del-adm]').forEach(function (b) {
+          b.onclick = function () { cfg.admissionsSteps.splice(Number(b.getAttribute('data-del-adm')), 1); renderAdm(); renderPreview(); };
+        });
+        el.querySelectorAll('[data-adm-idx]').forEach(function (inp) {
+          inp.addEventListener('input', function () {
+            cfg.admissionsSteps[Number(inp.getAttribute('data-adm-idx'))][inp.getAttribute('data-adm-f')] = inp.value;
+            renderPreview();
+          });
+        });
+      }
+      renderAdm();
+      document.getElementById('vp-add-adm-btn').onclick = function () {
+        cfg.admissionsSteps.push({ step: String(cfg.admissionsSteps.length + 1), title: 'Clearance & Registration', description: 'Complete departmental screening with your JAMB letter.' });
+        renderAdm();
+        renderPreview();
+      };
+
+      // News & Events editor
+      function renderNews() {
+        var el = document.getElementById('vp-news-list');
+        if (!el) return;
+        el.innerHTML = (cfg.news || []).map(function (n, idx) {
+          return '<div class="item-card">'
+            + '<button type="button" class="remove-btn" data-del-news="' + idx + '">✕ Remove</button>'
+            + '<input class="form-control" value="' + escapeHtml(n.date) + '" placeholder="Date" data-news-idx="' + idx + '" data-news-f="date">'
+            + '<input class="form-control" value="' + escapeHtml(n.title) + '" placeholder="Title" data-news-idx="' + idx + '" data-news-f="title">'
+            + '<textarea class="form-control" rows="2" data-news-idx="' + idx + '" data-news-f="text">' + escapeHtml(n.text) + '</textarea>'
+            + '</div>';
+        }).join('');
+        el.querySelectorAll('[data-del-news]').forEach(function (b) {
+          b.onclick = function () { cfg.news.splice(Number(b.getAttribute('data-del-news')), 1); renderNews(); renderPreview(); };
+        });
+        el.querySelectorAll('[data-news-idx]').forEach(function (inp) {
+          inp.addEventListener('input', function () {
+            cfg.news[Number(inp.getAttribute('data-news-idx'))][inp.getAttribute('data-news-f')] = inp.value;
+            renderPreview();
+          });
+        });
+      }
+      renderNews();
+      document.getElementById('vp-add-news-btn').onclick = function () {
+        cfg.news.push({ date: 'This Week', title: 'Senate Notice', text: 'Enter university announcement details here.' });
+        renderNews();
+        renderPreview();
+      };
+
+      // Calendar editor
+      function renderCalendar() {
+        var el = document.getElementById('vp-cal-list');
+        if (!el) return;
+        el.innerHTML = (cfg.calendar || []).map(function (c, i) {
+          return '<div class="item-card">'
+            + '<button type="button" class="remove-btn" data-del-cal="' + i + '">✕ Remove</button>'
+            + '<input class="form-control" value="' + escapeHtml(c.date) + '" placeholder="Date" data-cal-idx="' + i + '" data-cal-f="date">'
+            + '<input class="form-control" value="' + escapeHtml(c.title) + '" placeholder="Milestone" data-cal-idx="' + i + '" data-cal-f="title">'
+            + '<input class="form-control" value="' + escapeHtml(c.detail || '') + '" placeholder="Detail" data-cal-idx="' + i + '" data-cal-f="detail">'
+            + '</div>';
+        }).join('');
+        el.querySelectorAll('[data-del-cal]').forEach(function (b) {
+          b.onclick = function () { cfg.calendar.splice(Number(b.getAttribute('data-del-cal')), 1); renderCalendar(); renderPreview(); };
+        });
+        el.querySelectorAll('[data-cal-idx]').forEach(function (inp) {
+          inp.addEventListener('input', function () {
+            cfg.calendar[Number(inp.getAttribute('data-cal-idx'))][inp.getAttribute('data-cal-f')] = inp.value;
+            renderPreview();
+          });
+        });
+      }
+      renderCalendar();
+      document.getElementById('vp-add-cal-btn').onclick = function () {
+        cfg.calendar.push({ date: 'Jun 2026', title: 'Convocation Ceremony', detail: 'University Auditorium' });
+        renderCalendar();
+        renderPreview();
+      };
+
+      // Gallery 4 slots
+      var galEl = document.getElementById('vp-gallery-list');
+      if (galEl) {
+        galEl.innerHTML = (cfg.galleryImages || []).slice(0, 4).map(function (g, i) {
+          return '<div class="item-card">'
+            + '<input class="form-control" value="' + escapeHtml(g.label) + '" placeholder="Caption" data-gal-idx="' + i + '" data-gal-f="label">'
+            + '<input class="form-control" value="' + escapeHtml(g.url || '') + '" placeholder="Photo URL (https://... optional)" data-gal-idx="' + i + '" data-gal-f="url">'
+            + '</div>';
+        }).join('');
+        galEl.querySelectorAll('[data-gal-idx]').forEach(function (inp) {
+          inp.addEventListener('input', function () {
+            var idx = Number(inp.getAttribute('data-gal-idx'));
+            var f = inp.getAttribute('data-gal-f');
+            cfg.galleryImages[idx][f] = f === 'url' ? validateImageUrl(inp.value) : inp.value;
+            renderPreview();
+          });
+        });
+      }
+
+      // Sample CSV downloads
+      document.getElementById('dl-sample-students').onclick = function () { triggerTextDownload('students.csv', DEMO_STUDENTS_CSV); };
+      document.getElementById('dl-sample-results').onclick = function () { triggerTextDownload('results.csv', DEMO_RESULTS_CSV); };
+
+      // Drag & drop + browse CSV uploaders
+      function wireCsvDrop(zoneId, inputId, targetProp) {
+        var zone = document.getElementById(zoneId);
+        var input = document.getElementById(inputId);
+        if (!zone || !input) return;
+
+        function handleFile(file) {
+          if (!file) return;
+          var reader = new FileReader();
+          reader.onload = function () {
+            varsityState[targetProp] = String(reader.result || '');
+            zone.innerHTML = 'Loaded <strong>' + escapeHtml(file.name) + '</strong> (' + Math.round(file.size / 1024) + ' KB)';
+            varsityState.validation = validateUniversityCsvs(
+              varsityState.studentsCsv,
+              varsityState.resultsCsv,
+              cfg.caMax ?? 30,
+              cfg.examMax ?? 70
+            );
+            renderValidationReport();
+          };
+          reader.readAsText(file);
+        }
+
+        zone.onclick = function () { input.click(); };
+        input.onchange = function () { handleFile(input.files && input.files[0]); };
+        zone.addEventListener('dragover', function (e) { e.preventDefault(); zone.classList.add('drag-over'); });
+        zone.addEventListener('dragleave', function () { zone.classList.remove('drag-over'); });
+        zone.addEventListener('drop', function (e) {
+          e.preventDefault();
+          zone.classList.remove('drag-over');
+          if (e.dataTransfer && e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
+        });
+      }
+      wireCsvDrop('drop-students', 'file-students', 'studentsCsv');
+      wireCsvDrop('drop-results', 'file-results', 'resultsCsv');
+
+      // Grading accordion controls
+      function renderGradingEditors() {
+        var gbEl = document.getElementById('vp-grade-bands');
+        if (gbEl) {
+          gbEl.innerHTML = (cfg.gradeBands || []).map(function (g, i) {
+            return '<div style="display:grid; grid-template-columns:46px 52px 52px 54px 1fr; gap:4px; align-items:center;">'
+              + '<input class="form-control" value="' + escapeHtml(g.grade) + '" data-gb-idx="' + i + '" data-gb-f="grade">'
+              + '<input type="number" class="form-control" value="' + g.min + '" data-gb-idx="' + i + '" data-gb-f="min">'
+              + '<input type="number" class="form-control" value="' + g.max + '" data-gb-idx="' + i + '" data-gb-f="max">'
+              + '<input type="number" step="0.01" class="form-control" value="' + g.point + '" data-gb-idx="' + i + '" data-gb-f="point">'
+              + '<input class="form-control" value="' + escapeHtml(g.remark) + '" data-gb-idx="' + i + '" data-gb-f="remark">'
+              + '</div>';
+          }).join('');
+          gbEl.querySelectorAll('input').forEach(function (inp) {
+            inp.addEventListener('input', function () {
+              var idx = Number(inp.getAttribute('data-gb-idx'));
+              var f = inp.getAttribute('data-gb-f');
+              cfg.gradeBands[idx][f] = (f === 'min' || f === 'max' || f === 'point') ? Number(inp.value) : inp.value;
+            });
+          });
+        }
+
+        var dbEl = document.getElementById('vp-degree-bands');
+        if (dbEl) {
+          dbEl.innerHTML = (cfg.degreeBands || []).map(function (d, i) {
+            return '<div style="display:grid; grid-template-columns:1fr 64px 64px; gap:4px; align-items:center;">'
+              + '<input class="form-control" value="' + escapeHtml(d.label) + '" data-db-idx="' + i + '" data-db-f="label">'
+              + '<input type="number" step="0.01" class="form-control" value="' + d.min + '" data-db-idx="' + i + '" data-db-f="min">'
+              + '<input type="number" step="0.01" class="form-control" value="' + d.max + '" data-db-idx="' + i + '" data-db-f="max">'
+              + '</div>';
+          }).join('');
+          dbEl.querySelectorAll('input').forEach(function (inp) {
+            inp.addEventListener('input', function () {
+              var idx = Number(inp.getAttribute('data-db-idx'));
+              var f = inp.getAttribute('data-db-f');
+              cfg.degreeBands[idx][f] = (f === 'min' || f === 'max') ? Number(inp.value) : inp.value;
+            });
+          });
+        }
+      }
+      renderGradingEditors();
+
+      document.getElementById('vp-preset').addEventListener('change', function (e) {
+        var presetId = e.target.value === '4-point' ? '4-point' : '5-point';
+        var pCfg = getPresetConfig(presetId);
+        cfg.gradingPreset = presetId;
+        cfg.caMax = pCfg.caMax;
+        cfg.examMax = pCfg.examMax;
+        cfg.passMark = pCfg.passMark;
+        cfg.requiredUnits = pCfg.requiredUnits;
+        cfg.gradeBands = JSON.parse(JSON.stringify(pCfg.gradeBands));
+        cfg.degreeBands = JSON.parse(JSON.stringify(pCfg.degreeBands));
+        cfg.standingRules = JSON.parse(JSON.stringify(pCfg.standingRules));
+        document.getElementById('vp-ca-max').value = cfg.caMax;
+        document.getElementById('vp-exam-max').value = cfg.examMax;
+        document.getElementById('vp-pass-mark').value = cfg.passMark;
+        document.getElementById('vp-req-units').value = cfg.requiredUnits;
+        document.getElementById('vp-good-min').value = cfg.standingRules.goodStandingMin;
+        document.getElementById('vp-senate-min').value = cfg.standingRules.senateThreshold;
+        renderGradingEditors();
+        renderPreview();
+      });
+
+      var caEl = document.getElementById('vp-ca-max');
+      var exEl = document.getElementById('vp-exam-max');
+      caEl.addEventListener('input', function () {
+        cfg.caMax = Number(caEl.value) || 30;
+        varsityState.validation = validateUniversityCsvs(varsityState.studentsCsv, varsityState.resultsCsv, cfg.caMax, cfg.examMax ?? 70);
+        renderValidationReport();
+      });
+      exEl.addEventListener('input', function () {
+        cfg.examMax = Number(exEl.value) || 70;
+        varsityState.validation = validateUniversityCsvs(varsityState.studentsCsv, varsityState.resultsCsv, cfg.caMax ?? 30, cfg.examMax);
+        renderValidationReport();
+      });
+      document.getElementById('vp-pass-mark').addEventListener('input', function (e) { cfg.passMark = Number(e.target.value) || 40; });
+      document.getElementById('vp-req-units').addEventListener('input', function (e) { cfg.requiredUnits = Number(e.target.value) || 120; renderPreview(); });
+      document.getElementById('vp-repeat-policy').addEventListener('change', function (e) { cfg.repeatPolicy = e.target.value; });
+      document.getElementById('vp-good-min').addEventListener('input', function (e) { cfg.standingRules.goodStandingMin = Number(e.target.value) || 1.5; });
+      document.getElementById('vp-senate-min').addEventListener('input', function (e) { cfg.standingRules.senateThreshold = Number(e.target.value) || 1.0; });
+
+      // Generate / Encrypt portal with Web Workers + ETA + Cancel button
+      async function runPortalBuild(reissueFreshCodes) {
+        var rep = validateUniversityCsvs(
+          varsityState.studentsCsv,
+          varsityState.resultsCsv,
+          cfg.caMax ?? 30,
+          cfg.examMax ?? 70
+        );
+        varsityState.validation = rep;
+        renderValidationReport();
+        if (!rep.valid) return;
+
+        var pBox = document.getElementById('vp-progress-box');
+        var pLabel = document.getElementById('vp-progress-label');
+        var pEta = document.getElementById('vp-progress-eta');
+        var pFill = document.getElementById('vp-progress-fill');
+        var genBtn = document.getElementById('vp-generate-btn');
+
+        varsityState.abortController = new AbortController();
+        varsityState.building = true;
+        if (pBox) pBox.style.display = 'flex';
+        if (pFill) pFill.style.width = '0%';
+        if (genBtn) { genBtn.disabled = true; genBtn.textContent = 'Encrypting records in browser...'; }
+
+        var existingMap = {};
+        if (!reissueFreshCodes) {
+          varsityState.accessRecords.forEach(function (r) { existingMap[r.normalizedMatric] = r.accessCode; });
+        }
+
+        try {
+          var dataset = computeUniversityDataset(rep.students, rep.results, {
+            caMax: cfg.caMax ?? 30,
+            examMax: cfg.examMax ?? 70,
+            passMark: cfg.passMark ?? 40,
+            requiredUnits: cfg.requiredUnits ?? 120,
+            gradeBands: cfg.gradeBands,
+            degreeBands: cfg.degreeBands,
+            standingRules: cfg.standingRules,
+            repeatPolicy: cfg.repeatPolicy || 'latest_replaces',
+          });
+
+          var built = await buildEncryptedUniversityPortalData(dataset, {
+            existingCodes: reissueFreshCodes ? undefined : existingMap,
+            isDemo: false,
+            useWorkers: true,
+            signal: varsityState.abortController.signal,
+            onProgress: function (completed, total, etaSeconds) {
+              var pct = total > 0 ? Math.round((completed / total) * 100) : 100;
+              if (pFill) pFill.style.width = pct + '%';
+              if (pLabel) pLabel.textContent = 'Encrypted ' + completed.toLocaleString() + ' / ' + total.toLocaleString() + ' (' + pct + '%)';
+              if (pEta) pEta.textContent = completed < total ? ('~' + etaSeconds + 's left') : 'Finishing...';
+            },
+          });
+
+          cfg.portalData = built.portalData;
+          varsityState.accessRecords = built.accessRecords;
+          varsityState.isCustomBuilt = true;
+          varsityState.confirmReissuePending = false;
+          var warnEl = document.getElementById('vp-reissue-warn');
+          if (warnEl) warnEl.style.display = 'none';
+          if (pLabel) pLabel.textContent = 'Done! Portal ready for preview and ZIP download.';
+          if (pEta) pEta.textContent = '100%';
+          renderCodesTable();
+          updateSizeIndicator();
+          renderPreview();
+        } catch (err) {
+          if (pLabel) pLabel.textContent = (err && err.message) ? err.message : 'Build interrupted.';
+          if (pEta) pEta.textContent = '';
+        } finally {
+          varsityState.building = false;
+          varsityState.abortController = null;
+          if (genBtn) { genBtn.disabled = false; genBtn.textContent = 'Generate portal'; }
+        }
+      }
+
+      document.getElementById('vp-generate-btn').onclick = function () { runPortalBuild(false); };
+      document.getElementById('vp-cancel-build-btn').onclick = function () {
+        if (varsityState.abortController) varsityState.abortController.abort();
+      };
+      document.getElementById('vp-reissue-btn').onclick = function () {
+        varsityState.confirmReissuePending = true;
+        var w = document.getElementById('vp-reissue-warn');
+        if (w) w.style.display = 'flex';
+      };
+      document.getElementById('vp-cancel-reissue-btn').onclick = function () {
+        varsityState.confirmReissuePending = false;
+        var w = document.getElementById('vp-reissue-warn');
+        if (w) w.style.display = 'none';
+      };
+      document.getElementById('vp-confirm-reissue-btn').onclick = function () {
+        runPortalBuild(true);
+      };
+      document.getElementById('vp-toggle-codes-btn').onclick = function () {
+        varsityState.showCodes = !varsityState.showCodes;
+        document.getElementById('vp-toggle-codes-btn').textContent = varsityState.showCodes ? 'Hide codes' : 'Show codes';
+        renderCodesTable();
+      };
+      document.getElementById('vp-dl-codes-btn').onclick = function () {
+        triggerTextDownload('codes.csv', buildUniversityCodesCsv(varsityState.accessRecords));
+      };
+      document.getElementById('vp-print-slips-btn').onclick = function () {
+        var printFrame = document.getElementById('slips-print-frame');
+        var slipsHtml = buildUniversityAccessSlipsHtml(cfg, varsityState.accessRecords);
+        printFrame.srcdoc = slipsHtml;
+        printFrame.onload = function () {
+          if (printFrame.contentWindow) printFrame.contentWindow.print();
+        };
+      };
+
+      renderValidationReport();
+      renderCodesTable();
+    }
+
+    function attachGraduateEvents() {
       function bind(id, prop) {
         var el = document.getElementById(id);
         if (el) {
@@ -520,7 +1331,6 @@
           }
         });
       }
-
       var certsInput = document.getElementById('f-certs');
       if (certsInput) {
         certsInput.addEventListener('input', function() {
@@ -530,18 +1340,14 @@
         });
       }
 
-      // Render Dynamic Skills
       renderSkillsList();
       renderProjectsList();
       renderExperienceList();
 
       document.getElementById('add-skill-group-btn').onclick = function() {
         state.skillGroups.push({ title: 'New Skill Area', items: ['Skill 1', 'Skill 2'] });
-        saveState();
-        renderSkillsList();
-        renderPreview();
+        saveState(); renderSkillsList(); renderPreview();
       };
-
       document.getElementById('add-project-btn').onclick = function() {
         state.projects.push({
           title: 'New Featured Project',
@@ -551,21 +1357,14 @@
           liveUrl: 'https://demo.example.com',
           imageUrl: 'https://picsum.photos/seed/new-p/800/500'
         });
-        saveState();
-        renderProjectsList();
-        renderPreview();
+        saveState(); renderProjectsList(); renderPreview();
       };
-
       document.getElementById('add-exp-btn').onclick = function() {
         state.experience.push({
-          role: 'Junior Engineer',
-          organization: 'Tech Enterprise, Lagos',
-          period: '2024 - Present',
+          role: 'Junior Engineer', organization: 'Tech Enterprise, Lagos', period: '2024 - Present',
           points: ['Implemented modern responsive web components and accessible designs.']
         });
-        saveState();
-        renderExperienceList();
-        renderPreview();
+        saveState(); renderExperienceList(); renderPreview();
       };
     }
 
@@ -573,131 +1372,37 @@
       var container = document.getElementById('skills-list');
       if (!container) return;
       container.innerHTML = state.skillGroups.map(function(g, idx) {
-        return `
-          <div class="item-card">
-            <button class="remove-btn" onclick="window.removeSkillGroup(${idx})">✕ Remove</button>
-            <div class="form-group">
-              <label>Group Title</label>
-              <input type="text" class="form-control" value="${g.title}" oninput="window.updateSkillGroupTitle(${idx}, this.value)">
-            </div>
-            <div class="form-group">
-              <label>Skills (comma separated)</label>
-              <input type="text" class="form-control" value="${g.items.join(', ')}" oninput="window.updateSkillGroupItems(${idx}, this.value)">
-            </div>
-          </div>
-        `;
+        return `<div class="item-card"><button class="remove-btn" onclick="window.removeSkillGroup(${idx})">✕ Remove</button><div class="form-group"><label>Group Title</label><input type="text" class="form-control" value="${escapeHtml(g.title)}" oninput="window.updateSkillGroupTitle(${idx}, this.value)"></div><div class="form-group"><label>Skills (comma separated)</label><input type="text" class="form-control" value="${escapeHtml(g.items.join(', '))}" oninput="window.updateSkillGroupItems(${idx}, this.value)"></div></div>`;
       }).join('');
     }
-
     function renderProjectsList() {
       var container = document.getElementById('projects-list');
       if (!container) return;
       container.innerHTML = state.projects.map(function(p, idx) {
-        return `
-          <div class="item-card">
-            <button class="remove-btn" onclick="window.removeProject(${idx})">✕ Remove</button>
-            <div class="form-group">
-              <label>Title</label>
-              <input type="text" class="form-control" value="${p.title}" oninput="window.updateProject(${idx}, 'title', this.value)">
-            </div>
-            <div class="form-group">
-              <label>Description</label>
-              <textarea class="form-control" rows="2" oninput="window.updateProject(${idx}, 'description', this.value)">${p.description}</textarea>
-            </div>
-            <div class="form-group">
-              <label>Tags (comma separated)</label>
-              <input type="text" class="form-control" value="${p.tags.join(', ')}" oninput="window.updateProject(${idx}, 'tags', this.value.split(',').map(s=>s.trim()).filter(Boolean))">
-            </div>
-            <div class="form-group">
-              <label>GitHub Code Link</label>
-              <input type="url" class="form-control" value="${p.repoUrl}" oninput="window.updateProject(${idx}, 'repoUrl', this.value)">
-            </div>
-            <div class="form-group">
-              <label>Live Demo Link</label>
-              <input type="url" class="form-control" value="${p.liveUrl || ''}" oninput="window.updateProject(${idx}, 'liveUrl', this.value)">
-            </div>
-          </div>
-        `;
+        return `<div class="item-card"><button class="remove-btn" onclick="window.removeProject(${idx})">✕ Remove</button><div class="form-group"><label>Title</label><input type="text" class="form-control" value="${escapeHtml(p.title)}" oninput="window.updateProject(${idx}, 'title', this.value)"></div><div class="form-group"><label>Description</label><textarea class="form-control" rows="2" oninput="window.updateProject(${idx}, 'description', this.value)">${escapeHtml(p.description)}</textarea></div><div class="form-group"><label>Tags</label><input type="text" class="form-control" value="${escapeHtml(p.tags.join(', '))}" oninput="window.updateProject(${idx}, 'tags', this.value.split(',').map(s=>s.trim()).filter(Boolean))"></div><div class="form-group"><label>GitHub Link</label><input type="url" class="form-control" value="${escapeHtml(p.repoUrl)}" oninput="window.updateProject(${idx}, 'repoUrl', this.value)"></div><div class="form-group"><label>Live Demo Link</label><input type="url" class="form-control" value="${escapeHtml(p.liveUrl || '')}" oninput="window.updateProject(${idx}, 'liveUrl', this.value)"></div></div>`;
       }).join('');
     }
-
     function renderExperienceList() {
       var container = document.getElementById('experience-list');
       if (!container) return;
       container.innerHTML = state.experience.map(function(e, idx) {
-        return `
-          <div class="item-card">
-            <button class="remove-btn" onclick="window.removeExp(${idx})">✕ Remove</button>
-            <div class="form-group">
-              <label>Role</label>
-              <input type="text" class="form-control" value="${e.role}" oninput="window.updateExp(${idx}, 'role', this.value)">
-            </div>
-            <div class="form-group">
-              <label>Organization</label>
-              <input type="text" class="form-control" value="${e.organization}" oninput="window.updateExp(${idx}, 'organization', this.value)">
-            </div>
-            <div class="form-group">
-              <label>Period</label>
-              <input type="text" class="form-control" value="${e.period}" oninput="window.updateExp(${idx}, 'period', this.value)">
-            </div>
-            <div class="form-group">
-              <label>Bullet Points (one per line)</label>
-              <textarea class="form-control" rows="2" oninput="window.updateExp(${idx}, 'points', this.value.split('\\n').filter(Boolean))">${e.points.join('\n')}</textarea>
-            </div>
-          </div>
-        `;
+        return `<div class="item-card"><button class="remove-btn" onclick="window.removeExp(${idx})">✕ Remove</button><div class="form-group"><label>Role</label><input type="text" class="form-control" value="${escapeHtml(e.role)}" oninput="window.updateExp(${idx}, 'role', this.value)"></div><div class="form-group"><label>Organization</label><input type="text" class="form-control" value="${escapeHtml(e.organization)}" oninput="window.updateExp(${idx}, 'organization', this.value)"></div><div class="form-group"><label>Period</label><input type="text" class="form-control" value="${escapeHtml(e.period)}" oninput="window.updateExp(${idx}, 'period', this.value)"></div><div class="form-group"><label>Bullets</label><textarea class="form-control" rows="2" oninput="window.updateExp(${idx}, 'points', this.value.split('\\n').filter(Boolean))">${escapeHtml(e.points.join('\n'))}</textarea></div></div>`;
       }).join('');
     }
 
-    // Window handlers for inline events
-    window.removeSkillGroup = function(idx) {
-      state.skillGroups.splice(idx, 1);
-      saveState();
-      renderSkillsList();
-      renderPreview();
-    };
-    window.updateSkillGroupTitle = function(idx, val) {
-      state.skillGroups[idx].title = val;
-      saveState();
-      renderPreview();
-    };
-    window.updateSkillGroupItems = function(idx, val) {
-      state.skillGroups[idx].items = val.split(',').map(function(s) { return s.trim(); }).filter(Boolean);
-      saveState();
-      renderPreview();
-    };
+    window.removeSkillGroup = function(idx) { state.skillGroups.splice(idx, 1); saveState(); renderSkillsList(); renderPreview(); };
+    window.updateSkillGroupTitle = function(idx, val) { state.skillGroups[idx].title = val; saveState(); renderPreview(); };
+    window.updateSkillGroupItems = function(idx, val) { state.skillGroups[idx].items = val.split(',').map(function(s) { return s.trim(); }).filter(Boolean); saveState(); renderPreview(); };
+    window.removeProject = function(idx) { state.projects.splice(idx, 1); saveState(); renderProjectsList(); renderPreview(); };
+    window.updateProject = function(idx, prop, val) { state.projects[idx][prop] = val; saveState(); renderPreview(); };
+    window.removeExp = function(idx) { state.experience.splice(idx, 1); saveState(); renderExperienceList(); renderPreview(); };
+    window.updateExp = function(idx, prop, val) { state.experience[idx][prop] = val; saveState(); renderPreview(); };
 
-    window.removeProject = function(idx) {
-      state.projects.splice(idx, 1);
-      saveState();
-      renderProjectsList();
-      renderPreview();
-    };
-    window.updateProject = function(idx, prop, val) {
-      state.projects[idx][prop] = val;
-      saveState();
-      renderPreview();
-    };
-
-    window.removeExp = function(idx) {
-      state.experience.splice(idx, 1);
-      saveState();
-      renderExperienceList();
-      renderPreview();
-    };
-    window.updateExp = function(idx, prop, val) {
-      state.experience[idx][prop] = val;
-      saveState();
-      renderPreview();
-    };
-
-    // Viewport switcher
     document.querySelectorAll('.viewport-btn').forEach(function(btn) {
       btn.addEventListener('click', function() {
         document.querySelectorAll('.viewport-btn').forEach(function(b) { b.classList.remove('active'); });
         btn.classList.add('active');
-        var vp = btn.getAttribute('data-vp');
-        container.className = 'preview-frame-container viewport-' + vp;
+        container.className = 'preview-frame-container viewport-' + btn.getAttribute('data-vp');
       });
     });
 
@@ -708,21 +1413,21 @@
     });
 
     document.getElementById('reset-btn').onclick = function() {
-      if (confirm('Reset Graduate demo content to default?')) {
+      if (currentTemplate === 'universityportal') {
+        if (varsityState.abortController) varsityState.abortController.abort();
+        varsityState = createInitialVarsityState();
+      } else {
         state = JSON.parse(JSON.stringify(graduateDefaultConfig));
         saveState();
-        renderEditor();
-        renderPreview();
       }
+      renderEditor();
+      renderPreview();
     };
 
     document.getElementById('print-cv-btn').onclick = function() {
-      if (frame.contentWindow) {
-        frame.contentWindow.print();
-      }
+      if (frame.contentWindow) frame.contentWindow.print();
     };
 
-    // Initialize
     renderEditor();
     renderPreview();
   </script>
